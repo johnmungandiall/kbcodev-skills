@@ -1413,7 +1413,7 @@
         {
           "id": "kbcodedev/flutter-adaptive-ui-engine",
           "path": "categories/12-mobile-cross-platform/flutter-adaptive-ui-engine.md",
-          "title": "Flutter Adaptive UI, Animation & Theming Engine",
+          "title": "Flutter Production UI Engineering Engine",
           "runtime": "dart",
           "difficulty": "advanced",
           "tags": [
