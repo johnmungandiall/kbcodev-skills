@@ -1,0 +1,106 @@
+# Skill: Memory Reflexion & Episodic Self-Correction
+`id`: `kbcodedev/memory-reflexion-engine`  
+`category`: `01-agentic-orchestration`  
+`version`: `2.0.0`  
+`type`: `advanced-simplified`
+
+---
+
+## 1. Intent & Trigger Conditions
+- **When to Use**: Trapping execution errors, learning from unexpected tool failures, and preventing repetitive mistakes across long sessions and future runs.
+- **Triggers**: Command failure, syntax error on edit, failed test assertion, user correction, schema validation failure.
+- **Prerequisites**: Mistake recording tool (`note_mistake`), long-term memory engine (`remember`), session cleanup (`clear_mistakes`).
+
+---
+
+## 2. Core Mental Model & Invariant Principles
+1. **Immediate Reflexion**: Note a mistake the exact moment it occurs—do not wait for the entire task to fail before analyzing.
+2. **Binding Behavioral Rule**: A recorded mistake immediately injects a mandatory negative constraint for all subsequent steps in the session.
+3. **Episodic to Semantic Memory**: Transient session mistakes that reveal durable architectural or user-specific facts are promoted to long-term memory (`remember(kind='lesson')`).
+
+---
+
+## 3. High-Signal Execution Workflow
+
+```
+[Tool Execution Failure / User Correction]
+                     │
+                     ▼
+       ┌───────────────────────────┐
+       │ Step 1: Root Cause Probe  │ ── Identify exact mechanism of failure
+       └─────────────┬─────────────┘
+                     ▼
+       ┌───────────────────────────┐
+       │ Step 2: Immediate Mistake │ ── Call note_mistake(mistake, rule)
+       │         Binding           │    Rule becomes active constraint
+       └─────────────┬─────────────┘
+                     ▼
+       ┌───────────────────────────┐
+       │ Step 3: Corrective Action │ ── Execute alternative path adhering to rule
+       └─────────────┬─────────────┘
+                     ▼
+       ┌───────────────────────────┐
+       │ Step 4: Durable Promotion │ ── Promote to remember(kind='lesson')
+       │         & Cleanup         │    Clear transient mistake list
+       └───────────────────────────┘
+```
+
+### Phase 1: Failure Diagnosis & Attribution
+- Analyze the exact stderr, traceback, or correction.
+- Distinguish between transient external errors (network glitch) and procedural/logic errors (wrong API usage, broken selector, missing import).
+
+### Phase 2: Ingestion & Active Rule Synthesis
+- Frame the mistake in one factual sentence: *"What went wrong"*.
+- Formulate a precise, actionable imperative rule: *"What to do instead"*.
+- Inject rule into active agent context.
+
+### Phase 3: Durable Memory Consolidation
+- Upon successful task delivery, evaluate if the lesson applies across sessions.
+- If durable, record via `remember(kind="lesson", content="...")`.
+- Clean transient session state via `clear_mistakes()`.
+
+---
+
+## 4. Input / Output Contracts
+
+### Input Contract
+```json
+{
+  "failure_event": {
+    "action": "run_command('pytest tests/test_payment.py')",
+    "error_output": "ModuleNotFoundError: No module named 'stripe'",
+    "context": "Virtualenv was not activated in shell subshell"
+  }
+}
+```
+
+### Output Contract
+```json
+{
+  "mistake": "Ran pytest directly without activating the virtual environment in .venv",
+  "rule": "Always invoke Python tools via .venv/bin/pytest or source .venv/bin/activate first",
+  "durable_lesson_saved": true,
+  "transient_cleared": true
+}
+```
+
+---
+
+## 5. Anti-Patterns & Critical Traps
+- ❌ **Ignoring Failures**: Proceeding to subsequent steps after a command failed, pretending it succeeded.
+- ❌ **Vague Rules**: Creating useless rules like *"Be more careful with Python"* instead of concrete rules like *"Invoke .venv/bin/python"*.
+- ❌ **Mistake Accumulation**: Never clearing resolved transient mistakes, cluttering the prompt context.
+
+---
+
+## 6. Real-World Production Example
+
+```markdown
+**Failure**: An edit replaced an import in `api.py` but missed a secondary usage in `middleware.py`, causing `NameError: decode_token is not defined`.
+
+**Immediate Reflexion**:
+- Call: `note_mistake(mistake="Edited decode_token in api.py without checking callers in middleware.py", rule="Always search for all external symbol callers across the workspace before renaming or moving a function")`
+- Action: Fixed import in `middleware.py` and ran test suite.
+- Verification: Tests 100% green.
+- Resolution: Promoted to `remember(kind='lesson', key='refactor_caller_check', ...)` and called `clear_mistakes()`.
+```

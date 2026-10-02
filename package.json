@@ -1,0 +1,24 @@
+{
+  "name": "kbcodedev-skills",
+  "version": "2.0.0",
+  "description": "The Advanced AI Developer Skills Master Library for kbcode, Claude Code, and modern autonomous coding agents",
+  "main": "SKILLS_MANIFEST.json",
+  "scripts": {
+    "validate": "node -e \"const m=require('./SKILLS_MANIFEST.json'); console.log('Skills count:', m.total_skills);\""
+  },
+  "keywords": [
+    "ai-agent",
+    "developer-skills",
+    "kbcode",
+    "claude-code",
+    "prompt-engineering",
+    "agentic-workflows",
+    "system-architecture"
+  ],
+  "author": "kbcodedev-skills Authors & Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kbcodedev/kbcodedev-skills"
+  }
+}
