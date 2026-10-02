@@ -101,6 +101,7 @@ Complete mapping of all 115 skills across 21 categories in `categories/`:
 - `ios-swift-modern-concurrency.md` — iOS Swift 6 concurrency, Actors, `@Observable` ViewModels.
 - `android-kotlin-jetpack-compose.md` — Jetpack Compose, Kotlin StateFlow, Hilt, Room DB.
 - `mobile-offline-sync-engine.md` — Offline-first SQLite persistence, outbox queues, LWW sync.
+- `flutter-production-architecture.md` — Flutter 4-layer clean architecture, freezed sealed unions, get_it DI, Dio retry, platform channels, CI/CD release pipelines.
 
 ### 13. Data Engineering & MLOps (`categories/13-data-engineering-mlops/`)
 - `feature-store-pipeline.md` — Feast feature stores, dual Redis/Snowflake storage.

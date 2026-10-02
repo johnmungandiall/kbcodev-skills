@@ -1,7 +1,7 @@
 # 📁 Category: Mobile & Cross-Platform Engineering (`12-mobile-cross-platform`)
 
 > **React Native New Architecture, Flutter BLoC, iOS Swift 6 concurrency, Android Jetpack Compose, and offline sync**
-> Total Skills: **5** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
+> Total Skills: **6** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
 
 ---
 
@@ -14,6 +14,7 @@
 | **iOS Swift Modern Concurrency & SwiftUI Architecture** | `kbcodedev/ios-swift-modern-concurrency` | `swift` | `advanced` | [📄 Open ios-swift-modern-concurrency.md](ios-swift-modern-concurrency.md) |
 | **Android Kotlin Jetpack Compose & Clean Architecture** | `kbcodedev/android-kotlin-jetpack-compose` | `kotlin` | `advanced` | [📄 Open android-kotlin-jetpack-compose.md](android-kotlin-jetpack-compose.md) |
 | **Mobile Offline-First & Conflict Sync Engine** | `kbcodedev/mobile-offline-sync-engine` | `agnostic` | `advanced` | [📄 Open mobile-offline-sync-engine.md](mobile-offline-sync-engine.md) |
+| **Flutter Production Architecture & Enterprise Clean Code** | `kbcodedev/flutter-production-architecture` | `dart` | `advanced` | [📄 Open flutter-production-architecture.md](flutter-production-architecture.md) |
 
 ---
 

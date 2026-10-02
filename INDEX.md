@@ -77,6 +77,7 @@ Find the exact skill file for your development task instantly:
 | **SciPy Mathematical Optimization**| `kbcodedev/mathematical-optimization-scipy` | `categories/11-scientific-quantitative-ai/mathematical-optimization-scipy.md` |
 | **React Native New Architecture** | `kbcodedev/react-native-architecture` | `categories/12-mobile-cross-platform/react-native-architecture.md` |
 | **Flutter BLoC State Management** | `kbcodedev/flutter-state-management` | `categories/12-mobile-cross-platform/flutter-state-management.md` |
+| **Flutter Production Architecture** | `kbcodedev/flutter-production-architecture` | `categories/12-mobile-cross-platform/flutter-production-architecture.md` |
 | **iOS Swift 6 Strict Concurrency**| `kbcodedev/ios-swift-modern-concurrency` | `categories/12-mobile-cross-platform/ios-swift-modern-concurrency.md` |
 | **Android Jetpack Compose & Hilt** | `kbcodedev/android-kotlin-jetpack-compose` | `categories/12-mobile-cross-platform/android-kotlin-jetpack-compose.md` |
 | **Mobile Offline-First SQLite Sync**| `kbcodedev/mobile-offline-sync-engine` | `categories/12-mobile-cross-platform/mobile-offline-sync-engine.md` |
