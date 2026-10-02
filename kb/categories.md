@@ -102,6 +102,7 @@ Complete mapping of all 115 skills across 21 categories in `categories/`:
 - `android-kotlin-jetpack-compose.md` — Jetpack Compose, Kotlin StateFlow, Hilt, Room DB.
 - `mobile-offline-sync-engine.md` — Offline-first SQLite persistence, outbox queues, LWW sync.
 - `flutter-production-architecture.md` — Flutter 4-layer clean architecture, freezed sealed unions, get_it DI, Dio retry, platform channels, CI/CD release pipelines.
+- `flutter-adaptive-ui-engine.md` — Flutter responsive UI (mobile/tablet/desktop/web/foldable), Material 3 dynamic theming, animations, custom painting, WCAG accessibility.
 
 ### 13. Data Engineering & MLOps (`categories/13-data-engineering-mlops/`)
 - `feature-store-pipeline.md` — Feast feature stores, dual Redis/Snowflake storage.

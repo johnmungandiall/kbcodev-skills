@@ -3,7 +3,7 @@
   "name": "kbcodedev-skills",
   "version": "2.0.0",
   "description": "The Complete Advanced AI Developer Skills Master Library for kbcode and modern coding agents",
-  "total_skills": 116,
+  "total_skills": 117,
   "total_categories": 21,
   "categories": [
     {
@@ -1304,7 +1304,7 @@
       "id": "12-mobile-cross-platform",
       "name": "Mobile & Cross-Platform Engineering",
       "description": "React Native New Architecture, Flutter BLoC, iOS Swift 6 concurrency, Android Jetpack Compose, and offline sync",
-      "skills_count": 6,
+      "skills_count": 7,
       "skills": [
         {
           "id": "kbcodedev/react-native-architecture",
@@ -1408,6 +1408,28 @@
             "freezed",
             "get_it",
             "ci-cd"
+          ]
+        },
+        {
+          "id": "kbcodedev/flutter-adaptive-ui-engine",
+          "path": "categories/12-mobile-cross-platform/flutter-adaptive-ui-engine.md",
+          "title": "Flutter Adaptive UI, Animation & Theming Engine",
+          "runtime": "dart",
+          "difficulty": "advanced",
+          "tags": [
+            "12",
+            "mobile",
+            "cross-platform",
+            "flutter",
+            "ui",
+            "adaptive",
+            "animation",
+            "theming",
+            "material3",
+            "responsive",
+            "desktop",
+            "web",
+            "foldable"
           ]
         }
       ]
