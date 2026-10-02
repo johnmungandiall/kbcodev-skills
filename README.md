@@ -19,38 +19,65 @@ Unlike raw prompt dumps filled with conversational filler, repetitive clichés, 
 
 ## 📁 Category Taxonomy & Master Directory Structure
 
-```
-C:\dev\kbcodev-skills/
-├── README.md                                  # Master Library Documentation & Catalog (With 'When to Use' Guide)
-├── SKILLS_MANIFEST.json                       # Machine-Readable JSON Skills Registry (115 Skills)
-├── INDEX.md                                   # Task-to-Skill Fast Lookup Table (115 Mappings)
-├── AGENT.md                                   # Agent Navigation & Project Guide
-│
-├── categories/
-│   ├── 01-agentic-orchestration/             # Autonomous ReAct, Swarms, DAGs, Reflexion, Guards (8 Skills)
-│   ├── 02-system-architecture/               # C4, Distributed Microservices, DB Schemas, IaC, Kafka (6 Skills)
-│   ├── 03-software-engineering/              # Scaffolding, Refactoring, Big-O, Concurrency, Regex (7 Skills)
-│   ├── 04-testing-qa-debugging/              # Root Cause, Test Generators, E2E, Profilers, Bisect (7 Skills)
-│   ├── 05-frontend-ui-ux/                    # Next.js, Design Tokens, Artifacts, A11y, Vision (7 Skills)
-│   ├── 06-devops-sre-release/                # Zero-Downtime Ship, CI/CD, K8s, Docker, OTel (6 Skills)
-│   ├── 07-ai-mcp-prompt-engineering/         # Claude API, MCP Servers, Metaprompts, Checkpoints (7 Skills)
-│   ├── 08-strategic-product-leadership/      # CEO/Staff Reviews, YC Playbook, PRDs, Retros (7 Skills)
-│   ├── 09-document-media-synthesis/          # Programmatic DOCX, PDF, PPTX, XLSX, RFCs (5 Skills)
-│   ├── 10-communication-humanizer-career/    # De-AI Voice, ATS Resumes, XYZ Bullets, Memos (5 Skills)
-│   ├── 11-scientific-quantitative-ai/        # Research Synthesis, Stats, Polars, Genomics, SciPy (6 Skills)
-│   ├── 12-mobile-cross-platform/             # React Native, Flutter, Swift 6, Kotlin Compose, Offline Sync (5 Skills)
-│   ├── 13-data-engineering-mlops/            # Feature Stores, Qdrant RAG, Triton, Airflow, Iceberg (5 Skills)
-│   ├── 14-security-compliance-governance/    # SOC2/GDPR, SAML SSO, AWS KMS, STRIDE, WAF, Injection Guard (6 Skills)
-│   ├── 15-c-suite-executive-advisory/        # CTO Radar, CFO SaaS Unit Economics, CPO JTBD, Product Hunt, Cap Tables (8 Skills)
-│   ├── 16-tool-integrations-connectors/      # GitHub Octokit, Slack Bolt, Stripe, Supabase Prisma, Linear (5 Skills)
-│   ├── 17-visual-architecture-diagrams/      # Sequence Flows, ERD, Multi-AZ VPC, FSM Diagrams (4 Skills)
-│   ├── 18-yc-tech-leaders-frameworks/        # Altman Velocity, Amodei Safety, Karpathy OS, Andrew Ng, Paul Graham (5 Skills)
-│   ├── 19-game-dev-3d-graphics/              # Three.js WebGL Shaders, Game Loop Physics Engines (2 Skills)
-│   ├── 20-web-scraping-browser-automation/   # Anti-Detect Stealth Scraping, High-Concurrency Crawlers (2 Skills)
-│   └── 21-systems-embedded-programming/      # Bare-Metal no_std Rust, C/C++ Valgrind ASan Leak Sanitizers (2 Skills)
-│
-└── kb/                                        # Knowledge Base Index & Cheatsheet
-```
+Click any file or category folder below to navigate directly to it:
+
+- 📄 **[`README.md`](README.md)** — Master Library Documentation & Catalog (With 'When to Use' Guide)
+- 📄 **[`SKILLS_MANIFEST.json`](SKILLS_MANIFEST.json)** — Machine-Readable JSON Skills Registry (115 Skills)
+- 📄 **[`INDEX.md`](INDEX.md)** — Task-to-Skill Fast Lookup Table (115 Mappings)
+- 📄 **[`AGENT.md`](AGENT.md)** — Agent Navigation & Project Guide
+- 📄 **[`LICENSE`](LICENSE)** — Open-Source MIT License
+- 📄 **[`LEGAL.md`](LEGAL.md)** — Intellectual Property, Clean-Room Synthesis & Fair Use Compliance
+- 📁 **[`categories/`](categories/)** — Master Skills Directory (115 Skills across 21 Categories)
+  - 📂 **[`01-agentic-orchestration/`](categories/01-agentic-orchestration/)** — Autonomous ReAct, Swarms, DAGs, Reflexion, Guards (8 Skills)
+  - 📂 **[`02-system-architecture/`](categories/02-system-architecture/)** — C4, Distributed Microservices, DB Schemas, IaC, Kafka (6 Skills)
+  - 📂 **[`03-software-engineering/`](categories/03-software-engineering/)** — Scaffolding, Refactoring, Big-O, Concurrency, Regex (7 Skills)
+  - 📂 **[`04-testing-qa-debugging/`](categories/04-testing-qa-debugging/)** — Root Cause, Test Generators, E2E, Profilers, Bisect (7 Skills)
+  - 📂 **[`05-frontend-ui-ux/`](categories/05-frontend-ui-ux/)** — Next.js, Design Tokens, Artifacts, A11y, Vision (7 Skills)
+  - 📂 **[`06-devops-sre-release/`](categories/06-devops-sre-release/)** — Zero-Downtime Ship, CI/CD, K8s, Docker, OTel (6 Skills)
+  - 📂 **[`07-ai-mcp-prompt-engineering/`](categories/07-ai-mcp-prompt-engineering/)** — Claude API, MCP Servers, Metaprompts, Checkpoints (7 Skills)
+  - 📂 **[`08-strategic-product-leadership/`](categories/08-strategic-product-leadership/)** — CEO/Staff Reviews, YC Playbook, PRDs, Retros (7 Skills)
+  - 📂 **[`09-document-media-synthesis/`](categories/09-document-media-synthesis/)** — Programmatic DOCX, PDF, PPTX, XLSX, RFCs (5 Skills)
+  - 📂 **[`10-communication-humanizer-career/`](categories/10-communication-humanizer-career/)** — De-AI Voice, ATS Resumes, XYZ Bullets, Memos (5 Skills)
+  - 📂 **[`11-scientific-quantitative-ai/`](categories/11-scientific-quantitative-ai/)** — Research Synthesis, Stats, Polars, Genomics, SciPy (6 Skills)
+  - 📂 **[`12-mobile-cross-platform/`](categories/12-mobile-cross-platform/)** — React Native, Flutter, Swift 6, Kotlin Compose, Offline Sync (5 Skills)
+  - 📂 **[`13-data-engineering-mlops/`](categories/13-data-engineering-mlops/)** — Feature Stores, Qdrant RAG, Triton, Airflow, Iceberg (5 Skills)
+  - 📂 **[`14-security-compliance-governance/`](categories/14-security-compliance-governance/)** — SOC2/GDPR, SAML SSO, AWS KMS, STRIDE, WAF, Injection Guard (6 Skills)
+  - 📂 **[`15-c-suite-executive-advisory/`](categories/15-c-suite-executive-advisory/)** — CTO Radar, CFO SaaS Unit Economics, CPO JTBD, Product Hunt, Cap Tables (8 Skills)
+  - 📂 **[`16-tool-integrations-connectors/`](categories/16-tool-integrations-connectors/)** — GitHub Octokit, Slack Bolt, Stripe, Supabase Prisma, Linear (5 Skills)
+  - 📂 **[`17-visual-architecture-diagrams/`](categories/17-visual-architecture-diagrams/)** — Sequence Flows, ERD, Multi-AZ VPC, FSM Diagrams (4 Skills)
+  - 📂 **[`18-yc-tech-leaders-frameworks/`](categories/18-yc-tech-leaders-frameworks/)** — Altman Velocity, Amodei Safety, Karpathy OS, Andrew Ng, Paul Graham (5 Skills)
+  - 📂 **[`19-game-dev-3d-graphics/`](categories/19-game-dev-3d-graphics/)** — Three.js WebGL Shaders, Game Loop Physics Engines (2 Skills)
+  - 📂 **[`20-web-scraping-browser-automation/`](categories/20-web-scraping-browser-automation/)** — Anti-Detect Stealth Scraping, High-Concurrency Crawlers (2 Skills)
+  - 📂 **[`21-systems-embedded-programming/`](categories/21-systems-embedded-programming/)** — Bare-Metal no_std Rust, C/C++ Valgrind ASan Leak Sanitizers (2 Skills)
+- 📁 **[`kb/`](kb/)** — Knowledge Base Index & Cheatsheet
+
+---
+
+### 🗂️ Clickable Category Quick-Access Hub
+
+| Category Folder | Domain Name | Skills Count | One-Click Direct Folder Link |
+|---|---|---|---|
+| `categories/01-agentic-orchestration/` | Agentic Orchestration & Autonomous Systems | 8 Skills | [📂 Open 01-agentic-orchestration](categories/01-agentic-orchestration/) |
+| `categories/02-system-architecture/` | System Architecture & Distributed Systems | 6 Skills | [📂 Open 02-system-architecture](categories/02-system-architecture/) |
+| `categories/03-software-engineering/` | Software Engineering & Code Mastery | 7 Skills | [📂 Open 03-software-engineering](categories/03-software-engineering/) |
+| `categories/04-testing-qa-debugging/` | Testing, QA & Deep Debugging | 7 Skills | [📂 Open 04-testing-qa-debugging](categories/04-testing-qa-debugging/) |
+| `categories/05-frontend-ui-ux/` | Frontend UI/UX & Design Systems | 7 Skills | [📂 Open 05-frontend-ui-ux](categories/05-frontend-ui-ux/) |
+| `categories/06-devops-sre-release/` | DevOps, SRE & Release Engineering | 6 Skills | [📂 Open 06-devops-sre-release](categories/06-devops-sre-release/) |
+| `categories/07-ai-mcp-prompt-engineering/` | AI, MCP & Prompt Engineering | 7 Skills | [📂 Open 07-ai-mcp-prompt-engineering](categories/07-ai-mcp-prompt-engineering/) |
+| `categories/08-strategic-product-leadership/` | Strategic & Product Leadership | 7 Skills | [📂 Open 08-strategic-product-leadership](categories/08-strategic-product-leadership/) |
+| `categories/09-document-media-synthesis/` | Document & Media Synthesis | 5 Skills | [📂 Open 09-document-media-synthesis](categories/09-document-media-synthesis/) |
+| `categories/10-communication-humanizer-career/` | Communication, Humanizer & Career Engineering | 5 Skills | [📂 Open 10-communication-humanizer-career](categories/10-communication-humanizer-career/) |
+| `categories/11-scientific-quantitative-ai/` | Scientific & Quantitative AI | 6 Skills | [📂 Open 11-scientific-quantitative-ai](categories/11-scientific-quantitative-ai/) |
+| `categories/12-mobile-cross-platform/` | Mobile & Cross-Platform Engineering | 5 Skills | [📂 Open 12-mobile-cross-platform](categories/12-mobile-cross-platform/) |
+| `categories/13-data-engineering-mlops/` | Data Engineering & MLOps Infrastructure | 5 Skills | [📂 Open 13-data-engineering-mlops](categories/13-data-engineering-mlops/) |
+| `categories/14-security-compliance-governance/` | Security, Compliance & Governance | 6 Skills | [📂 Open 14-security-compliance-governance](categories/14-security-compliance-governance/) |
+| `categories/15-c-suite-executive-advisory/` | C-Suite Executive Advisory & Founder Operations | 8 Skills | [📂 Open 15-c-suite-executive-advisory](categories/15-c-suite-executive-advisory/) |
+| `categories/16-tool-integrations-connectors/` | Tool Integrations & Third-Party Connectors | 5 Skills | [📂 Open 16-tool-integrations-connectors](categories/16-tool-integrations-connectors/) |
+| `categories/17-visual-architecture-diagrams/` | Visual Architecture & Technical Diagrams | 4 Skills | [📂 Open 17-visual-architecture-diagrams](categories/17-visual-architecture-diagrams/) |
+| `categories/18-yc-tech-leaders-frameworks/` | YC & Tech Leaders Strategic Frameworks | 5 Skills | [📂 Open 18-yc-tech-leaders-frameworks](categories/18-yc-tech-leaders-frameworks/) |
+| `categories/19-game-dev-3d-graphics/` | Game Development & 3D Graphics | 2 Skills | [📂 Open 19-game-dev-3d-graphics](categories/19-game-dev-3d-graphics/) |
+| `categories/20-web-scraping-browser-automation/` | Web Scraping & Stealth Browser Automation | 2 Skills | [📂 Open 20-web-scraping-browser-automation](categories/20-web-scraping-browser-automation/) |
+| `categories/21-systems-embedded-programming/` | Systems & Embedded Programming | 2 Skills | [📂 Open 21-systems-embedded-programming](categories/21-systems-embedded-programming/) |
 
 ---
 
