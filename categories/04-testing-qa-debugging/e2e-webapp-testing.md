@@ -18,6 +18,8 @@
 2. **Auto-Waiting Over Hard Sleeps**: Never use `sleep(5000)`. Rely on deterministic auto-waiting for element visibility, network idle, and DOM stability.
 3. **Test Isolation & Hermetic State**: Every E2E test must create its own isolated user credentials or test workspace to ensure independent parallel execution.
 
+4. **Project-Grounding Invariant (MANDATORY)**: Every version number, package name, API signature, CLI flag, file path, numeric threshold and code sample in this skill is an **illustrative reference pattern from a known-good configuration — never a literal instruction to paste**. Before changing the target codebase: (a) inspect the real project (dependency manifest and lockfile, installed toolchain, existing module layout, current implementations of anything you are about to modify — grep and symbol hits are discovery, only the actual function body is proof of behaviour); (b) reconcile each example here against what you find and adapt its specifics (versions, names, paths, thresholds) while keeping the principle intact; (c) where this skill and the real code disagree, **the real code wins** — follow it and say so plainly. Any numeric bound stated here (step budget, timeout, pool size, retry count, coverage %, latency target) is a **starting heuristic to be re-derived from the project's own evidence**, not a fixed constant. Nothing may be reported as verified until it has been checked against the running implementation; an unverified claim is delivered as unverified, never as fact.
+
 ---
 
 ## 3. High-Signal Execution Workflow

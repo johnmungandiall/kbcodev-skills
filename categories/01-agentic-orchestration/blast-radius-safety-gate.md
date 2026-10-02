@@ -18,6 +18,8 @@
 2. **Least Destructive First**: Always attempt non-destructive alternatives (e.g. archiving to `.bak`, creating a new branch, soft-deleting) before hard mutations.
 3. **Single-Level Enumerated Approval**: When asking the user for confirmation on Tier 3 actions, present a flat, single-level numbered roster with your recommended option highlighted.
 
+4. **Project-Grounding Invariant (MANDATORY)**: Every version number, package name, API signature, CLI flag, file path, numeric threshold and code sample in this skill is an **illustrative reference pattern from a known-good configuration — never a literal instruction to paste**. Before changing the target codebase: (a) inspect the real project (dependency manifest and lockfile, installed toolchain, existing module layout, current implementations of anything you are about to modify — grep and symbol hits are discovery, only the actual function body is proof of behaviour); (b) reconcile each example here against what you find and adapt its specifics (versions, names, paths, thresholds) while keeping the principle intact; (c) where this skill and the real code disagree, **the real code wins** — follow it and say so plainly. Any numeric bound stated here (step budget, timeout, pool size, retry count, coverage %, latency target) is a **starting heuristic to be re-derived from the project's own evidence**, not a fixed constant. Nothing may be reported as verified until it has been checked against the running implementation; an unverified claim is delivered as unverified, never as fact.
+
 ---
 
 ## 3. High-Signal Execution Workflow

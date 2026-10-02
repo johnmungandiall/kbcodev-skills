@@ -19,6 +19,8 @@
 3. **Explicit Database Transactions**: Wrap multi-step mutations in `transaction.atomic()`. Never perform slow external network calls (e.g., Stripe, SendGrid, S3 uploads) inside a database transaction block — use `transaction.on_commit()` to trigger background Celery tasks only after the transaction is successfully committed.
 4. **Signals Discipline**: Limit Django Signals (`post_save`, `pre_delete`) to cross-app caching or search indexing triggers. Never use signals for core business workflows or recursive model updates where call flow becomes untraceable.
 
+5. **Project-Grounding Invariant (MANDATORY)**: Every version number, package name, API signature, CLI flag, file path, numeric threshold and code sample in this skill is an **illustrative reference pattern from a known-good configuration — never a literal instruction to paste**. Before changing the target codebase: (a) inspect the real project (dependency manifest and lockfile, installed toolchain, existing module layout, current implementations of anything you are about to modify — grep and symbol hits are discovery, only the actual function body is proof of behaviour); (b) reconcile each example here against what you find and adapt its specifics (versions, names, paths, thresholds) while keeping the principle intact; (c) where this skill and the real code disagree, **the real code wins** — follow it and say so plainly. Any numeric bound stated here (step budget, timeout, pool size, retry count, coverage %, latency target) is a **starting heuristic to be re-derived from the project's own evidence**, not a fixed constant. Nothing may be reported as verified until it has been checked against the running implementation; an unverified claim is delivered as unverified, never as fact.
+
 ---
 
 ## 3. High-Signal Execution Workflow
@@ -144,7 +146,9 @@ class OrderOut(Schema):
 def create_order_endpoint(request: HttpRequest, payload: OrderCreateIn):
     order = create_order_service(
         customer=request.user.customer,
-        items_data=[item.dict() for item in payload.items],
+        # Pydantic v2: model_dump() replaces the v1 .dict(). Confirm the installed
+        # Pydantic major version before choosing — the v1 name raises on v2 models.
+        items_data=[item.model_dump() for item in payload.items],
         payment_token=payload.payment_token,
     )
     return 201, order

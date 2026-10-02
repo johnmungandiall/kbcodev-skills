@@ -3,7 +3,7 @@
 kbcodedev-skills is a comprehensive, production-grade library of 129 advanced yet simplified AI developer skills, agentic orchestration engines, and engineering playbooks designed for kbcode, Claude Code, and autonomous coding agents.
 
 ## Structure
-- `categories/` — 21 structured domain categories containing 115 standalone `.md` skill files.
+- `categories/` — 21 structured domain categories containing 129 standalone `.md` skill files.
 - `SKILLS_MANIFEST.json` — Machine-readable registry mapping categories, skill IDs, paths, runtimes, difficulty tiers, and searchable tags.
 - `INDEX.md` — Fast lookup index mapping user prompts to skills.
 - `README.md` — Full master catalog, "When to Use" guide, and CLI tooling docs.

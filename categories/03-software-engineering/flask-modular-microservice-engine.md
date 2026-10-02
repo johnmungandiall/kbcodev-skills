@@ -34,14 +34,16 @@
 1. **Application Factory as the Sole Entrypoint**: Never instantiate `app = Flask(__name__)` at module top-level. Always encapsulate instantiation inside a `create_app(config_object)` factory. This eliminates circular import deadlocks, enables isolated test runners with ephemeral database fixtures, and allows multi-instance execution in the same process space.
 2. **Dual Context Discipline**: Strictly distinguish between **Application Context** (`current_app`, `g`) and **Request Context** (`request`, `session`). Never pass `request` into domain services, database models, or asynchronous background threads. Extract validated primitives or Pydantic models at the route layer and pass pure data into business services.
 3. **Database Session Scoping & Explicit Transactions**: Flask-SQLAlchemy binds a scoped session to the active request context and automatically calls `db.session.remove()` during request teardown. All state mutations must use explicit transaction boundaries (`db.session.begin()`, or explicit `commit()` / `rollback()`). In the event of any unhandled exception, `db.session.rollback()` must be executed before returning an error response.
-4. **Gunicorn Multi-Worker Forking & Connection Pool Invariant**: When Gunicorn forks worker processes, any pre-existing database connection pool file descriptors inherited from the parent master process become corrupted and cause socket concurrency collisions. If using Gunicorn pre-loading (`--preload`), you **must** invoke `db.engine.dispose()` inside Gunicorn's `post_fork(server, worker)` hook so every worker establishes its own isolated connection pool.
+4. **Gunicorn Multi-Worker Forking & Connection Pool Invariant**: When Gunicorn forks a worker, any pooled database connection inherited from the master is shared across process boundaries — SQLAlchemy's documented behaviour is that this lets two independent interpreters use the same socket concurrently, producing broken protocol streams and connection resets. This applies **only when the application is loaded in the master process** (`gunicorn --preload`); without `--preload` each worker imports the app itself and there is nothing to abandon. Under `--preload`, the fork-safe form is `db.engine.dispose(close=False)` inside the `post_fork(server, worker)` hook — `close=False` abandons the inherited pool rather than emitting `close()` on file descriptors the master and sibling workers still own, which a plain `dispose()` would close out from under them.
 5. **Declarative Ingress & Egress with Pydantic v2**: Never read raw, untyped dictionaries from `request.get_json()`. Validate all request bodies, query strings, and path parameters through Pydantic v2 models (`BaseModel.model_validate(payload)`). Rejection of invalid payloads must return HTTP 422 Unprocessable Entity with detailed field-level error pointers.
 6. **RFC 7807 Problem Details for HTTP APIs**: All non-2xx responses must strictly emit the standard `application/problem+json` media type with keys: `type`, `title`, `status`, `detail`, `instance`, and optional `invalid_params`. Never return generic HTML error pages or inconsistent JSON shapes (`{"error": "msg"}` vs `{"message": "err"}`).
-7. **Production Security Baseline**: Enforce strict security headers (HSTS, CSP, X-Frame-Options, X-Content-Type-Options) via `Flask-Talisman` or custom middleware; configure CORS to least-privilege explicit origins; set `JSON_SORT_KEYS = False`; ensure `DEBUG = False` and `TESTING = False` in production configs.
+7. **Production Security Baseline**: Enforce strict security headers (HSTS, CSP, X-Frame-Options, X-Content-Type-Options) via `Flask-Talisman` or custom middleware; configure CORS to least-privilege explicit origins; ensure `DEBUG = False` and `TESTING = False` in production configs. JSON output is controlled through the provider API (`app.json.sort_keys = False`) — the old `JSON_SORT_KEYS` config key was removed in Flask 2.3.
 8. **Structured Logging & Distributed Tracing Context**: Every request must be assigned a unique `X-Request-ID` (extracted from inbound headers or generated via UUID4), stored in `g.request_id`, injected into response headers, and bound to every structured JSON log entry alongside `method`, `path`, `status_code`, and `duration_ms`.
 9. **Liveness vs. Readiness Probes**:
    - `/healthz/live`: Lightweight probe returning HTTP 200 indicating the WSGI process is alive and responsive.
    - `/healthz/ready`: Comprehensive probe verifying active database connectivity (`SELECT 1`), cache availability (Redis ping), and critical downstream service health before Kubernetes traffic routing.
+
+10. **Project-Grounding Invariant (MANDATORY)**: Every version number, package name, API signature, CLI flag, file path, numeric threshold and code sample in this skill is an **illustrative reference pattern from a known-good configuration — never a literal instruction to paste**. Before changing the target codebase: (a) inspect the real project (dependency manifest and lockfile, installed toolchain, existing module layout, current implementations of anything you are about to modify — grep and symbol hits are discovery, only the actual function body is proof of behaviour); (b) reconcile each example here against what you find and adapt its specifics (versions, names, paths, thresholds) while keeping the principle intact; (c) where this skill and the real code disagree, **the real code wins** — follow it and say so plainly. Any numeric bound stated here (step budget, timeout, pool size, retry count, coverage %, latency target) is a **starting heuristic to be re-derived from the project's own evidence**, not a fixed constant. Nothing may be reported as verified until it has been checked against the running implementation; an unverified claim is delivered as unverified, never as fact.
 
 ---
 
@@ -123,7 +125,8 @@ class Config:
         "pool_pre_ping": True,
         "pool_recycle": 1800,
     }
-    JSON_SORT_KEYS = False
+    # Flask 2.3 removed the JSON_SORT_KEYS config key; JSON behaviour now lives on the
+    # provider, set as app.json.sort_keys = False inside create_app().
     REQUEST_TIMEOUT_SECONDS = 30
 
 class DevelopmentConfig(Config):
@@ -510,7 +513,7 @@ src/
 ## 5. Anti-Patterns & Critical Traps
 
 - ❌ **Global App Instantiation (`app = Flask(__name__)`)**: Instantiating the app in the global module namespace causes circular import deadlocks when importing models, breaks test isolation, and prevents running multiple test configurations concurrently.
-- ❌ **Inheriting Open DB Sockets Across Gunicorn Worker Forks**: If the SQLAlchemy engine connects to the database before Gunicorn forks worker processes (e.g. when using `--preload`), child processes share the same file descriptors and TCP sockets, leading to intermittent query corruptions (`SSL error: decryption failed` or connection resets). Always run `db.engine.dispose()` in Gunicorn's `post_fork` hook.
+- ❌ **Inheriting Open DB Sockets Across Gunicorn Worker Forks**: With `--preload` the engine is created in the master before the fork, so every child inherits the same pooled connections and TCP file descriptors, producing intermittent corruption (`SSL error: decryption failed`, connection resets, cross-talk). The fork-safe remedy is `db.engine.dispose(close=False)` in `post_fork` — **not** a bare `dispose()`, which closes the inherited descriptors the master and sibling workers are still using. Without `--preload` no hook is needed; if you cannot use the hook, the alternative is `poolclass=NullPool`.
 - ❌ **Passing Flask's `request` Object into Service Classes**: Coupling domain logic directly to Flask HTTP context prevents services from being reused in CLI commands, Celery tasks, or background workers. Always extract and validate data in the Blueprint route, then pass clean primitives or schemas to services.
 - ❌ **Swallowing Database Exceptions Without `db.session.rollback()`**: Catching an error and returning a response without executing a rollback leaves the scoped session in a corrupted state for subsequent requests reusing that worker thread.
 - ❌ **Returning Raw HTML or Inconsistent Error Envelopes**: Letting unhandled exceptions produce default HTML 500 error pages. All API responses must adhere to RFC 7807 `application/problem+json`.
@@ -540,13 +543,22 @@ def app():
 
 @pytest.fixture(scope="function")
 def client(app):
-    """HTTP test client with an isolated, rolled-back database transaction per test."""
+    """HTTP test client whose database work is rolled back after every test.
+
+    The scoped session is bound to an external connection-level transaction via
+    join_transaction_mode="create_savepoint" — the recipe SQLAlchemy runs in its
+    own CI. A bare db.session.begin_nested() does NOT give this guarantee:
+    Session.commit() in SQLAlchemy 2.0 always commits the OUTERMOST transaction,
+    so application code that commits would durably persist test data.
+    """
     with app.app_context():
         connection = db.engine.connect()
         transaction = connection.begin()
         
-        # Bind the scoped session to this individual transaction
-        db.session.begin_nested()
+        # Bind the scoped session to the external transaction so a route-level
+        # commit() only releases a SAVEPOINT and teardown's rollback() discards
+        # the whole test. Confirm this API against the installed Flask-SQLAlchemy.
+        db.session.configure(bind=connection, join_transaction_mode="create_savepoint")
         
         with app.test_client() as test_client:
             yield test_client
@@ -598,7 +610,7 @@ COPY --chown=appuser:appgroup . .
 ENV PATH=/home/appuser/.local/bin:$PATH \
     PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    FLASK_ENV=production
+    APP_CONFIG=production
 
 USER appuser
 EXPOSE 8000
@@ -632,14 +644,22 @@ loglevel = "info"
 
 def post_fork(server, worker):
     """
-    CRITICAL: Dispose the SQLAlchemy engine inherited from the master process.
-    Forces each worker to establish its own fresh DB connection pool sockets.
+    Fork-safety hook. Required ONLY with --preload: that is the only mode where
+    the engine is built in the master process and inherited by every worker.
+
+    dispose(close=False) is the documented fork-safe form. A plain dispose()
+    closes the inherited file descriptors, which the master and the other
+    workers still hold — reintroducing the very cross-process socket sharing
+    this hook exists to prevent.
     """
     from src.extensions import db
     try:
-        with server.app.callable.app_context():
-            db.engine.dispose()
-            server.log.info("SQLAlchemy connection pool successfully disposed post-fork for worker %s", worker.pid)
+        # server.app is the Gunicorn WSGIApplication; .wsgi() returns the loaded
+        # Flask app, importing it when --preload was not used.
+        app = server.app.wsgi()
+        with app.app_context():
+            db.engine.dispose(close=False)
+            server.log.info("SQLAlchemy pool abandoned post-fork for worker %s", worker.pid)
     except Exception as e:
         server.log.warning("Post-fork engine disposal skipped or failed: %s", e)
 ```
@@ -650,7 +670,9 @@ def post_fork(server, worker):
 import os
 from src import create_app
 
-env = os.environ.get("FLASK_ENV", "production")
+# Flask 2.3 removed the FLASK_ENV environment variable; the environment selector is
+# entirely application-defined — this name is this project's own convention.
+env = os.environ.get("APP_CONFIG", "production")
 app = create_app(env)
 
 if __name__ == "__main__":
@@ -674,11 +696,11 @@ Before marking any Flask microservice or Application Factory implementation comp
 - [ ] **9. Request ID Propagation**: Inbound `X-Request-ID` is captured, assigned to `g.request_id`, returned in response headers, and logged.
 - [ ] **10. Structured JSON Logging**: Request completions are logged with method, path, status_code, and latency in milliseconds.
 - [ ] **11. Dual Health Probes**: `/healthz/live` returns 200 without touching DB; `/healthz/ready` verifies database query `SELECT 1`.
-- [ ] **12. Gunicorn Post-Fork Disposal**: `gunicorn.conf.py` implements `post_fork` with `db.engine.dispose()`.
+- [ ] **12. Gunicorn Post-Fork Safety**: if and only if the app is loaded with `--preload`, `gunicorn.conf.py` implements `post_fork` calling `db.engine.dispose(close=False)`. Confirm which load mode is actually in use before adding or demanding this hook.
 - [ ] **13. Connection Pre-Ping**: Database configuration includes `pool_pre_ping: True` and `pool_recycle: 1800`.
 - [ ] **14. Environment Configuration Validation**: `ProductionConfig` validates mandatory environment variables at factory startup.
 - [ ] **15. Security Baseline**: Security headers configured; CORS restricted to explicit origin whitelists.
-- [ ] **16. Isolated Test Client**: Pytest fixtures execute inside an isolated transaction and rollback cleanly per test.
+- [ ] **16. Isolated Test Client**: Pytest fixtures bind the session to an external transaction with `join_transaction_mode="create_savepoint"` (not a bare `begin_nested()`), so committed test data is discarded on teardown.
 - [ ] **17. Non-Root Containerization**: Dockerfile uses multi-stage builds and drops privileges to a non-root `appuser`.
 - [ ] **18. Zero Missing Migrations**: Database migration scripts are generated and verified against the models with `flask db check`.
 

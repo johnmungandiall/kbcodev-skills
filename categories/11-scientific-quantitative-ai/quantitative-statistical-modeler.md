@@ -18,6 +18,8 @@
 2. **Effect Size Over Raw $p$-Values**: A statistically significant $p < 0.001$ on $N = 1,000,000$ may represent a trivial $0.01\%$ real-world effect. Always report Cohen's $d$ or confidence intervals.
 3. **Outlier & Multicollinearity Discipline**: Check Variance Inflation Factor (VIF < 5) to ensure independent variables are not collinear.
 
+4. **Project-Grounding Invariant (MANDATORY)**: Every version number, package name, API signature, CLI flag, file path, numeric threshold and code sample in this skill is an **illustrative reference pattern from a known-good configuration — never a literal instruction to paste**. Before changing the target codebase: (a) inspect the real project (dependency manifest and lockfile, installed toolchain, existing module layout, current implementations of anything you are about to modify — grep and symbol hits are discovery, only the actual function body is proof of behaviour); (b) reconcile each example here against what you find and adapt its specifics (versions, names, paths, thresholds) while keeping the principle intact; (c) where this skill and the real code disagree, **the real code wins** — follow it and say so plainly. Any numeric bound stated here (step budget, timeout, pool size, retry count, coverage %, latency target) is a **starting heuristic to be re-derived from the project's own evidence**, not a fixed constant. Nothing may be reported as verified until it has been checked against the running implementation; an unverified claim is delivered as unverified, never as fact.
+
 ---
 
 ## 3. High-Signal Execution Workflow

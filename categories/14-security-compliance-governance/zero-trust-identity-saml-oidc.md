@@ -18,6 +18,8 @@
 2. **Automated SCIM Directory Sync**: Listen for SCIM 2.0 Webhooks to automatically provision users when added to an Okta group and instantly revoke access when removed.
 3. **Cryptographic SAML Signature Verification**: Always validate XML signatures against the IdP X.509 public certificate, asserting `NotBefore` and `NotOnOrAfter` timestamp validity.
 
+4. **Project-Grounding Invariant (MANDATORY)**: Every version number, package name, API signature, CLI flag, file path, numeric threshold and code sample in this skill is an **illustrative reference pattern from a known-good configuration — never a literal instruction to paste**. Before changing the target codebase: (a) inspect the real project (dependency manifest and lockfile, installed toolchain, existing module layout, current implementations of anything you are about to modify — grep and symbol hits are discovery, only the actual function body is proof of behaviour); (b) reconcile each example here against what you find and adapt its specifics (versions, names, paths, thresholds) while keeping the principle intact; (c) where this skill and the real code disagree, **the real code wins** — follow it and say so plainly. Any numeric bound stated here (step budget, timeout, pool size, retry count, coverage %, latency target) is a **starting heuristic to be re-derived from the project's own evidence**, not a fixed constant. Nothing may be reported as verified until it has been checked against the running implementation; an unverified claim is delivered as unverified, never as fact.
+
 ---
 
 ## 3. High-Signal Execution Workflow
