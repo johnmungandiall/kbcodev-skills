@@ -1,12 +1,14 @@
 # Overview: kbcodedev-skills
 
-kbcodedev-skills is a comprehensive, production-grade library of 115 advanced yet simplified AI developer skills, agentic orchestration engines, and engineering playbooks across 21 categories designed for kbcode, Claude Code, and autonomous coding agents.
+kbcodedev-skills is a comprehensive, production-grade library of 115 advanced yet simplified AI developer skills, agentic orchestration engines, and engineering playbooks designed for kbcode, Claude Code, and autonomous coding agents.
 
 ## Structure
 - `categories/` — 21 structured domain categories containing 115 standalone `.md` skill files.
-- `README.md` — Full master catalog with exhaustive "When to Use / Edhi Eppudu Use Cheyyali" triggers for all 115 skills.
-- `SKILLS_MANIFEST.json` — Machine-readable registry mapping categories, skill IDs, and paths.
+- `SKILLS_MANIFEST.json` — Machine-readable registry mapping categories, skill IDs, paths, runtimes, difficulty tiers, and searchable tags.
 - `INDEX.md` — Fast lookup index mapping user prompts to skills.
+- `README.md` — Full master catalog, "When to Use" guide, and CLI tooling docs.
 - `AGENT.md` — Root agent steering guide.
+- `bin/skill-runner.mjs` — Interactive CLI runner, search engine, and canonical schema validator.
+- `tools/export-prompt.mjs` — Automated prompt exporter for Claude XML, Cursor rules, JSON, and Markdown.
 
-See [[architecture]] for design standards and [[categories]] for the full 21-category index.
+See [[architecture]] for the design standards, [[categories]] for the full category index, and [[cheatsheet]] for CLI commands.

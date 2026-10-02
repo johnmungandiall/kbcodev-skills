@@ -49,8 +49,10 @@ function searchSkills(query) {
       const matchTitle = skill.title.toLowerCase().includes(q);
       const matchCat = cat.name.toLowerCase().includes(q) || cat.id.toLowerCase().includes(q);
       const matchTags = skill.tags && skill.tags.some(t => t.toLowerCase().includes(q));
+      const matchRuntime = skill.runtime && skill.runtime.toLowerCase().includes(q);
+      const matchDifficulty = skill.difficulty && skill.difficulty.toLowerCase().includes(q);
 
-      if (matchId || matchTitle || matchCat || matchTags) {
+      if (matchId || matchTitle || matchCat || matchTags || matchRuntime || matchDifficulty) {
         results.push({ ...skill, category: cat.name });
       }
     }

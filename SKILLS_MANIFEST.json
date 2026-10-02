@@ -12,14 +12,142 @@
       "description": "ReAct execution loops, multi-agent swarms, DAG planners, episodic reflexion, mutation guards, and safety gates",
       "skills_count": 8,
       "skills": [
-        { "id": "kbcodedev/autonomous-react-loop", "path": "categories/01-agentic-orchestration/autonomous-react-loop.md", "title": "Autonomous ReAct Loop & Decision Engine" },
-        { "id": "kbcodedev/multi-agent-swarm", "path": "categories/01-agentic-orchestration/multi-agent-swarm.md", "title": "Multi-Agent Swarm & Supervisor Orchestration" },
-        { "id": "kbcodedev/dag-task-planner", "path": "categories/01-agentic-orchestration/dag-task-planner.md", "title": "Dynamic DAG Task Planner & Executor" },
-        { "id": "kbcodedev/memory-reflexion-engine", "path": "categories/01-agentic-orchestration/memory-reflexion-engine.md", "title": "Memory Reflexion & Episodic Self-Correction" },
-        { "id": "kbcodedev/tool-use-orchestrator", "path": "categories/01-agentic-orchestration/tool-use-orchestrator.md", "title": "Tool Use & API Integration Orchestrator" },
-        { "id": "kbcodedev/blast-radius-safety-gate", "path": "categories/01-agentic-orchestration/blast-radius-safety-gate.md", "title": "Blast Radius Safety Gate & Permission Auditor" },
-        { "id": "kbcodedev/agent-trajectory-evaluator", "path": "categories/01-agentic-orchestration/agent-trajectory-evaluator.md", "title": "Agent Trajectory Evaluator & Benchmark Grader" },
-        { "id": "kbcodedev/codebase-freeze-unfreeze-guard", "path": "categories/01-agentic-orchestration/codebase-freeze-unfreeze-guard.md", "title": "Codebase Freeze & Mutation Safety Guard" }
+        {
+          "id": "kbcodedev/autonomous-react-loop",
+          "path": "categories/01-agentic-orchestration/autonomous-react-loop.md",
+          "title": "Autonomous ReAct Loop & Decision Engine",
+          "runtime": "typescript",
+          "difficulty": "advanced",
+          "tags": [
+            "01",
+            "agentic",
+            "orchestration",
+            "autonomous",
+            "react",
+            "loop",
+            "decision",
+            "engine"
+          ]
+        },
+        {
+          "id": "kbcodedev/multi-agent-swarm",
+          "path": "categories/01-agentic-orchestration/multi-agent-swarm.md",
+          "title": "Multi-Agent Swarm & Supervisor Orchestration",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "01",
+            "agentic",
+            "orchestration",
+            "multi",
+            "agent",
+            "swarm",
+            "multi-agent",
+            "supervisor"
+          ]
+        },
+        {
+          "id": "kbcodedev/dag-task-planner",
+          "path": "categories/01-agentic-orchestration/dag-task-planner.md",
+          "title": "Dynamic DAG Task Planner & Executor",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "01",
+            "agentic",
+            "orchestration",
+            "dag",
+            "task",
+            "planner",
+            "dynamic",
+            "executor"
+          ]
+        },
+        {
+          "id": "kbcodedev/memory-reflexion-engine",
+          "path": "categories/01-agentic-orchestration/memory-reflexion-engine.md",
+          "title": "Memory Reflexion & Episodic Self-Correction",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "01",
+            "agentic",
+            "orchestration",
+            "memory",
+            "reflexion",
+            "engine",
+            "episodic",
+            "self-correction"
+          ]
+        },
+        {
+          "id": "kbcodedev/tool-use-orchestrator",
+          "path": "categories/01-agentic-orchestration/tool-use-orchestrator.md",
+          "title": "Tool Use & API Integration Orchestrator",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "01",
+            "agentic",
+            "orchestration",
+            "tool",
+            "use",
+            "orchestrator",
+            "api",
+            "integration"
+          ]
+        },
+        {
+          "id": "kbcodedev/blast-radius-safety-gate",
+          "path": "categories/01-agentic-orchestration/blast-radius-safety-gate.md",
+          "title": "Blast Radius Safety Gate & Permission Auditor",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "01",
+            "agentic",
+            "orchestration",
+            "blast",
+            "radius",
+            "safety",
+            "gate",
+            "permission"
+          ]
+        },
+        {
+          "id": "kbcodedev/agent-trajectory-evaluator",
+          "path": "categories/01-agentic-orchestration/agent-trajectory-evaluator.md",
+          "title": "Agent Trajectory Evaluator & Benchmark Grader",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "01",
+            "agentic",
+            "orchestration",
+            "agent",
+            "trajectory",
+            "evaluator",
+            "benchmark",
+            "grader"
+          ]
+        },
+        {
+          "id": "kbcodedev/codebase-freeze-unfreeze-guard",
+          "path": "categories/01-agentic-orchestration/codebase-freeze-unfreeze-guard.md",
+          "title": "Codebase Freeze & Mutation Safety Guard",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "01",
+            "agentic",
+            "orchestration",
+            "codebase",
+            "freeze",
+            "unfreeze",
+            "guard",
+            "mutation"
+          ]
+        }
       ]
     },
     {
@@ -28,12 +156,107 @@
       "description": "C4 system modeling, resilient microservices, DB schemas, API protocols, and cloud IaC",
       "skills_count": 6,
       "skills": [
-        { "id": "kbcodedev/c4-system-architecture", "path": "categories/02-system-architecture/c4-system-architecture.md", "title": "C4 System Architecture & Visualization" },
-        { "id": "kbcodedev/distributed-microservices", "path": "categories/02-system-architecture/distributed-microservices.md", "title": "Distributed Microservices & Resilience Patterns" },
-        { "id": "kbcodedev/database-schema-modeling", "path": "categories/02-system-architecture/database-schema-modeling.md", "title": "Database Schema Modeling & Performance DBA" },
-        { "id": "kbcodedev/api-design-rest-graphql-grpc", "path": "categories/02-system-architecture/api-design-rest-graphql-grpc.md", "title": "API Design (REST, GraphQL, gRPC)" },
-        { "id": "kbcodedev/cloud-infrastructure-iac", "path": "categories/02-system-architecture/cloud-infrastructure-iac.md", "title": "Cloud Infrastructure as Code (IaC) & Zero-Trust Architecture" },
-        { "id": "kbcodedev/event-driven-streaming", "path": "categories/02-system-architecture/event-driven-streaming.md", "title": "Event-Driven Architecture & Message Streaming" }
+        {
+          "id": "kbcodedev/c4-system-architecture",
+          "path": "categories/02-system-architecture/c4-system-architecture.md",
+          "title": "C4 System Architecture & Visualization",
+          "runtime": "agnostic",
+          "difficulty": "expert",
+          "tags": [
+            "02",
+            "system",
+            "architecture",
+            "c4",
+            "visualization",
+            "agnostic",
+            "expert"
+          ]
+        },
+        {
+          "id": "kbcodedev/distributed-microservices",
+          "path": "categories/02-system-architecture/distributed-microservices.md",
+          "title": "Distributed Microservices & Resilience Patterns",
+          "runtime": "agnostic",
+          "difficulty": "expert",
+          "tags": [
+            "02",
+            "system",
+            "architecture",
+            "distributed",
+            "microservices",
+            "resilience",
+            "patterns",
+            "agnostic"
+          ]
+        },
+        {
+          "id": "kbcodedev/database-schema-modeling",
+          "path": "categories/02-system-architecture/database-schema-modeling.md",
+          "title": "Database Schema Modeling & Performance DBA",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "02",
+            "system",
+            "architecture",
+            "database",
+            "schema",
+            "modeling",
+            "performance",
+            "dba"
+          ]
+        },
+        {
+          "id": "kbcodedev/api-design-rest-graphql-grpc",
+          "path": "categories/02-system-architecture/api-design-rest-graphql-grpc.md",
+          "title": "API Design (REST, GraphQL, gRPC)",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "02",
+            "system",
+            "architecture",
+            "api",
+            "design",
+            "rest",
+            "graphql",
+            "grpc"
+          ]
+        },
+        {
+          "id": "kbcodedev/cloud-infrastructure-iac",
+          "path": "categories/02-system-architecture/cloud-infrastructure-iac.md",
+          "title": "Cloud Infrastructure as Code (IaC) & Zero-Trust Architecture",
+          "runtime": "devops",
+          "difficulty": "advanced",
+          "tags": [
+            "02",
+            "system",
+            "architecture",
+            "cloud",
+            "infrastructure",
+            "iac",
+            "code",
+            "(iac)"
+          ]
+        },
+        {
+          "id": "kbcodedev/event-driven-streaming",
+          "path": "categories/02-system-architecture/event-driven-streaming.md",
+          "title": "Event-Driven Architecture & Message Streaming",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "02",
+            "system",
+            "architecture",
+            "event",
+            "driven",
+            "streaming",
+            "event-driven",
+            "message"
+          ]
+        }
       ]
     },
     {
@@ -42,13 +265,125 @@
       "description": "Code scaffolding, refactoring, complexity optimization, language migration, regex, and concurrency",
       "skills_count": 7,
       "skills": [
-        { "id": "kbcodedev/code-scaffolding-synthesis", "path": "categories/03-software-engineering/code-scaffolding-synthesis.md", "title": "Code Scaffolding & Synthesis Architect" },
-        { "id": "kbcodedev/deep-code-refactoring", "path": "categories/03-software-engineering/deep-code-refactoring.md", "title": "Deep Code Refactoring & Monolith Decoupling" },
-        { "id": "kbcodedev/algorithmic-optimization", "path": "categories/03-software-engineering/algorithmic-optimization.md", "title": "Algorithmic Optimization & Complexity Profiler" },
-        { "id": "kbcodedev/language-migration-modernizer", "path": "categories/03-software-engineering/language-migration-modernizer.md", "title": "Language Migration & Idiomatic Modernizer" },
-        { "id": "kbcodedev/regex-parser-engineering", "path": "categories/03-software-engineering/regex-parser-engineering.md", "title": "Regular Expressions & Parser Engineering" },
-        { "id": "kbcodedev/clean-code-solid-principles", "path": "categories/03-software-engineering/clean-code-solid-principles.md", "title": "Clean Code & SOLID Architectural Principles" },
-        { "id": "kbcodedev/concurrency-async-patterns", "path": "categories/03-software-engineering/concurrency-async-patterns.md", "title": "Concurrency & Asynchronous Patterns" }
+        {
+          "id": "kbcodedev/code-scaffolding-synthesis",
+          "path": "categories/03-software-engineering/code-scaffolding-synthesis.md",
+          "title": "Code Scaffolding & Synthesis Architect",
+          "runtime": "agnostic",
+          "difficulty": "intermediate",
+          "tags": [
+            "03",
+            "software",
+            "engineering",
+            "code",
+            "scaffolding",
+            "synthesis",
+            "architect",
+            "agnostic"
+          ]
+        },
+        {
+          "id": "kbcodedev/deep-code-refactoring",
+          "path": "categories/03-software-engineering/deep-code-refactoring.md",
+          "title": "Deep Code Refactoring & Monolith Decoupling",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "03",
+            "software",
+            "engineering",
+            "deep",
+            "code",
+            "refactoring",
+            "monolith",
+            "decoupling"
+          ]
+        },
+        {
+          "id": "kbcodedev/algorithmic-optimization",
+          "path": "categories/03-software-engineering/algorithmic-optimization.md",
+          "title": "Algorithmic Optimization & Complexity Profiler",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "03",
+            "software",
+            "engineering",
+            "algorithmic",
+            "optimization",
+            "complexity",
+            "profiler",
+            "agnostic"
+          ]
+        },
+        {
+          "id": "kbcodedev/language-migration-modernizer",
+          "path": "categories/03-software-engineering/language-migration-modernizer.md",
+          "title": "Language Migration & Idiomatic Modernizer",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "03",
+            "software",
+            "engineering",
+            "language",
+            "migration",
+            "modernizer",
+            "idiomatic",
+            "agnostic"
+          ]
+        },
+        {
+          "id": "kbcodedev/regex-parser-engineering",
+          "path": "categories/03-software-engineering/regex-parser-engineering.md",
+          "title": "Regular Expressions & Parser Engineering",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "03",
+            "software",
+            "engineering",
+            "regex",
+            "parser",
+            "regular",
+            "expressions",
+            "agnostic"
+          ]
+        },
+        {
+          "id": "kbcodedev/clean-code-solid-principles",
+          "path": "categories/03-software-engineering/clean-code-solid-principles.md",
+          "title": "Clean Code & SOLID Architectural Principles",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "03",
+            "software",
+            "engineering",
+            "clean",
+            "code",
+            "solid",
+            "principles",
+            "architectural"
+          ]
+        },
+        {
+          "id": "kbcodedev/concurrency-async-patterns",
+          "path": "categories/03-software-engineering/concurrency-async-patterns.md",
+          "title": "Concurrency & Asynchronous Patterns",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "03",
+            "software",
+            "engineering",
+            "concurrency",
+            "async",
+            "patterns",
+            "asynchronous",
+            "agnostic"
+          ]
+        }
       ]
     },
     {
@@ -57,13 +392,125 @@
       "description": "5-Whys root cause investigation, test generators, E2E browser tests, load profilers, security SAST, canary verifiers, and git bisect",
       "skills_count": 7,
       "skills": [
-        { "id": "kbcodedev/root-cause-investigator", "path": "categories/04-testing-qa-debugging/root-cause-investigator.md", "title": "Root Cause Investigator & Deep Debugger" },
-        { "id": "kbcodedev/unit-integration-test-generator", "path": "categories/04-testing-qa-debugging/unit-integration-test-generator.md", "title": "Unit & Integration Test Generator" },
-        { "id": "kbcodedev/e2e-webapp-testing", "path": "categories/04-testing-qa-debugging/e2e-webapp-testing.md", "title": "End-to-End Web App Testing & Automation" },
-        { "id": "kbcodedev/performance-profiler-benchmark", "path": "categories/04-testing-qa-debugging/performance-profiler-benchmark.md", "title": "Performance Profiler & Load Benchmark" },
-        { "id": "kbcodedev/security-vulnerability-auditor", "path": "categories/04-testing-qa-debugging/security-vulnerability-auditor.md", "title": "Security Vulnerability & Dependency Auditor" },
-        { "id": "kbcodedev/canary-regression-verifier", "path": "categories/04-testing-qa-debugging/canary-regression-verifier.md", "title": "Canary Regression Verifier & Health Auditor" },
-        { "id": "kbcodedev/automated-git-bisect-debugger", "path": "categories/04-testing-qa-debugging/automated-git-bisect-debugger.md", "title": "Automated Git Bisect & Regression Debugger" }
+        {
+          "id": "kbcodedev/root-cause-investigator",
+          "path": "categories/04-testing-qa-debugging/root-cause-investigator.md",
+          "title": "Root Cause Investigator & Deep Debugger",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "04",
+            "testing",
+            "qa",
+            "debugging",
+            "root",
+            "cause",
+            "investigator",
+            "deep"
+          ]
+        },
+        {
+          "id": "kbcodedev/unit-integration-test-generator",
+          "path": "categories/04-testing-qa-debugging/unit-integration-test-generator.md",
+          "title": "Unit & Integration Test Generator",
+          "runtime": "agnostic",
+          "difficulty": "intermediate",
+          "tags": [
+            "04",
+            "testing",
+            "qa",
+            "debugging",
+            "unit",
+            "integration",
+            "test",
+            "generator"
+          ]
+        },
+        {
+          "id": "kbcodedev/e2e-webapp-testing",
+          "path": "categories/04-testing-qa-debugging/e2e-webapp-testing.md",
+          "title": "End-to-End Web App Testing & Automation",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "04",
+            "testing",
+            "qa",
+            "debugging",
+            "e2e",
+            "webapp",
+            "end-to-end",
+            "web"
+          ]
+        },
+        {
+          "id": "kbcodedev/performance-profiler-benchmark",
+          "path": "categories/04-testing-qa-debugging/performance-profiler-benchmark.md",
+          "title": "Performance Profiler & Load Benchmark",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "04",
+            "testing",
+            "qa",
+            "debugging",
+            "performance",
+            "profiler",
+            "benchmark",
+            "load"
+          ]
+        },
+        {
+          "id": "kbcodedev/security-vulnerability-auditor",
+          "path": "categories/04-testing-qa-debugging/security-vulnerability-auditor.md",
+          "title": "Security Vulnerability & Dependency Auditor",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "04",
+            "testing",
+            "qa",
+            "debugging",
+            "security",
+            "vulnerability",
+            "auditor",
+            "dependency"
+          ]
+        },
+        {
+          "id": "kbcodedev/canary-regression-verifier",
+          "path": "categories/04-testing-qa-debugging/canary-regression-verifier.md",
+          "title": "Canary Regression Verifier & Health Auditor",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "04",
+            "testing",
+            "qa",
+            "debugging",
+            "canary",
+            "regression",
+            "verifier",
+            "health"
+          ]
+        },
+        {
+          "id": "kbcodedev/automated-git-bisect-debugger",
+          "path": "categories/04-testing-qa-debugging/automated-git-bisect-debugger.md",
+          "title": "Automated Git Bisect & Regression Debugger",
+          "runtime": "agnostic",
+          "difficulty": "expert",
+          "tags": [
+            "04",
+            "testing",
+            "qa",
+            "debugging",
+            "automated",
+            "git",
+            "bisect",
+            "debugger"
+          ]
+        }
       ]
     },
     {
@@ -72,13 +519,125 @@
       "description": "Modern frontend architectures, semantic design tokens, interactive artifacts, WCAG a11y, responsive grid, canvas graphics, and vision inspection",
       "skills_count": 7,
       "skills": [
-        { "id": "kbcodedev/modern-frontend-architecture", "path": "categories/05-frontend-ui-ux/modern-frontend-architecture.md", "title": "Modern Frontend Architecture & State Engineering" },
-        { "id": "kbcodedev/design-system-theme-tokens", "path": "categories/05-frontend-ui-ux/design-system-theme-tokens.md", "title": "Design System & Semantic Theme Tokens" },
-        { "id": "kbcodedev/interactive-artifacts-builder", "path": "categories/05-frontend-ui-ux/interactive-artifacts-builder.md", "title": "Interactive Artifacts & Single-File Prototypes" },
-        { "id": "kbcodedev/a11y-accessibility-spec", "path": "categories/05-frontend-ui-ux/a11y-accessibility-spec.md", "title": "Web Accessibility (A11y) & WCAG 2.1 AA Compliance" },
-        { "id": "kbcodedev/responsive-layout-engine", "path": "categories/05-frontend-ui-ux/responsive-layout-engine.md", "title": "Responsive Layout & Adaptive CSS Grid Engine" },
-        { "id": "kbcodedev/canvas-generative-visuals", "path": "categories/05-frontend-ui-ux/canvas-generative-visuals.md", "title": "Canvas & Generative Visuals Engine" },
-        { "id": "kbcodedev/multi-modal-vision-inspector", "path": "categories/05-frontend-ui-ux/multi-modal-vision-inspector.md", "title": "Multi-Modal Vision & UI Screenshot Inspector" }
+        {
+          "id": "kbcodedev/modern-frontend-architecture",
+          "path": "categories/05-frontend-ui-ux/modern-frontend-architecture.md",
+          "title": "Modern Frontend Architecture & State Engineering",
+          "runtime": "typescript",
+          "difficulty": "advanced",
+          "tags": [
+            "05",
+            "frontend",
+            "ui",
+            "ux",
+            "modern",
+            "architecture",
+            "state",
+            "engineering"
+          ]
+        },
+        {
+          "id": "kbcodedev/design-system-theme-tokens",
+          "path": "categories/05-frontend-ui-ux/design-system-theme-tokens.md",
+          "title": "Design System & Semantic Theme Tokens",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "05",
+            "frontend",
+            "ui",
+            "ux",
+            "design",
+            "system",
+            "theme",
+            "tokens"
+          ]
+        },
+        {
+          "id": "kbcodedev/interactive-artifacts-builder",
+          "path": "categories/05-frontend-ui-ux/interactive-artifacts-builder.md",
+          "title": "Interactive Artifacts & Single-File Prototypes",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "05",
+            "frontend",
+            "ui",
+            "ux",
+            "interactive",
+            "artifacts",
+            "builder",
+            "single-file"
+          ]
+        },
+        {
+          "id": "kbcodedev/a11y-accessibility-spec",
+          "path": "categories/05-frontend-ui-ux/a11y-accessibility-spec.md",
+          "title": "Web Accessibility (A11y) & WCAG 2.1 AA Compliance",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "05",
+            "frontend",
+            "ui",
+            "ux",
+            "a11y",
+            "accessibility",
+            "spec",
+            "web"
+          ]
+        },
+        {
+          "id": "kbcodedev/responsive-layout-engine",
+          "path": "categories/05-frontend-ui-ux/responsive-layout-engine.md",
+          "title": "Responsive Layout & Adaptive CSS Grid Engine",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "05",
+            "frontend",
+            "ui",
+            "ux",
+            "responsive",
+            "layout",
+            "engine",
+            "adaptive"
+          ]
+        },
+        {
+          "id": "kbcodedev/canvas-generative-visuals",
+          "path": "categories/05-frontend-ui-ux/canvas-generative-visuals.md",
+          "title": "Canvas & Generative Visuals Engine",
+          "runtime": "typescript",
+          "difficulty": "advanced",
+          "tags": [
+            "05",
+            "frontend",
+            "ui",
+            "ux",
+            "canvas",
+            "generative",
+            "visuals",
+            "engine"
+          ]
+        },
+        {
+          "id": "kbcodedev/multi-modal-vision-inspector",
+          "path": "categories/05-frontend-ui-ux/multi-modal-vision-inspector.md",
+          "title": "Multi-Modal Vision & UI Screenshot Inspector",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "05",
+            "frontend",
+            "ui",
+            "ux",
+            "multi",
+            "modal",
+            "vision",
+            "inspector"
+          ]
+        }
       ]
     },
     {
@@ -87,12 +646,108 @@
       "description": "Zero-downtime blue-green deployments, CI/CD matrix pipelines, multi-stage Docker, K8s configs, OTel observability, and security hardening",
       "skills_count": 6,
       "skills": [
-        { "id": "kbcodedev/zero-downtime-ship-pipeline", "path": "categories/06-devops-sre-release/zero-downtime-ship-pipeline.md", "title": "Zero-Downtime Ship Pipeline & Release Gate" },
-        { "id": "kbcodedev/ci-cd-workflow-automation", "path": "categories/06-devops-sre-release/ci-cd-workflow-automation.md", "title": "CI/CD Workflow & Matrix Pipeline Automation" },
-        { "id": "kbcodedev/docker-container-orchestration", "path": "categories/06-devops-sre-release/docker-container-orchestration.md", "title": "Docker & Container Orchestration" },
-        { "id": "kbcodedev/kubernetes-deployment-configs", "path": "categories/06-devops-sre-release/kubernetes-deployment-configs.md", "title": "Kubernetes Deployment & Cloud-Native Manifests" },
-        { "id": "kbcodedev/observability-logging-telemetry", "path": "categories/06-devops-sre-release/observability-logging-telemetry.md", "title": "Observability, OpenTelemetry & Structured Telemetry" },
-        { "id": "kbcodedev/infrastructure-security-hardening", "path": "categories/06-devops-sre-release/infrastructure-security-hardening.md", "title": "Infrastructure Security & Hardening Standards" }
+        {
+          "id": "kbcodedev/zero-downtime-ship-pipeline",
+          "path": "categories/06-devops-sre-release/zero-downtime-ship-pipeline.md",
+          "title": "Zero-Downtime Ship Pipeline & Release Gate",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "06",
+            "devops",
+            "sre",
+            "release",
+            "zero",
+            "downtime",
+            "ship",
+            "pipeline"
+          ]
+        },
+        {
+          "id": "kbcodedev/ci-cd-workflow-automation",
+          "path": "categories/06-devops-sre-release/ci-cd-workflow-automation.md",
+          "title": "CI/CD Workflow & Matrix Pipeline Automation",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "06",
+            "devops",
+            "sre",
+            "release",
+            "ci",
+            "cd",
+            "workflow",
+            "automation"
+          ]
+        },
+        {
+          "id": "kbcodedev/docker-container-orchestration",
+          "path": "categories/06-devops-sre-release/docker-container-orchestration.md",
+          "title": "Docker & Container Orchestration",
+          "runtime": "devops",
+          "difficulty": "advanced",
+          "tags": [
+            "06",
+            "devops",
+            "sre",
+            "release",
+            "docker",
+            "container",
+            "orchestration",
+            "advanced"
+          ]
+        },
+        {
+          "id": "kbcodedev/kubernetes-deployment-configs",
+          "path": "categories/06-devops-sre-release/kubernetes-deployment-configs.md",
+          "title": "Kubernetes Deployment & Cloud-Native Manifests",
+          "runtime": "devops",
+          "difficulty": "advanced",
+          "tags": [
+            "06",
+            "devops",
+            "sre",
+            "release",
+            "kubernetes",
+            "deployment",
+            "configs",
+            "cloud-native"
+          ]
+        },
+        {
+          "id": "kbcodedev/observability-logging-telemetry",
+          "path": "categories/06-devops-sre-release/observability-logging-telemetry.md",
+          "title": "Observability, OpenTelemetry & Structured Telemetry",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "06",
+            "devops",
+            "sre",
+            "release",
+            "observability",
+            "logging",
+            "telemetry",
+            "observability,"
+          ]
+        },
+        {
+          "id": "kbcodedev/infrastructure-security-hardening",
+          "path": "categories/06-devops-sre-release/infrastructure-security-hardening.md",
+          "title": "Infrastructure Security & Hardening Standards",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "06",
+            "devops",
+            "sre",
+            "release",
+            "infrastructure",
+            "security",
+            "hardening",
+            "standards"
+          ]
+        }
       ]
     },
     {
@@ -101,13 +756,125 @@
       "description": "Claude API caching & thinking, MCP server building in TS/Py, metaprompts, skill authoring, KV-cache optimization, JSON Schema, and checkpoints",
       "skills_count": 7,
       "skills": [
-        { "id": "kbcodedev/claude-api-advanced-patterns", "path": "categories/07-ai-mcp-prompt-engineering/claude-api-advanced-patterns.md", "title": "Anthropic Claude API Advanced Patterns & Prompt Caching" },
-        { "id": "kbcodedev/mcp-server-builder", "path": "categories/07-ai-mcp-prompt-engineering/mcp-server-builder.md", "title": "Model Context Protocol (MCP) Server Builder" },
-        { "id": "kbcodedev/metaprompt-chain-of-thought", "path": "categories/07-ai-mcp-prompt-engineering/metaprompt-chain-of-thought.md", "title": "Metaprompting & Chain-of-Thought Engineering" },
-        { "id": "kbcodedev/skill-authoring-framework", "path": "categories/07-ai-mcp-prompt-engineering/skill-authoring-framework.md", "title": "Agent Skill Authoring & Benchmarking Framework" },
-        { "id": "kbcodedev/context-window-optimization", "path": "categories/07-ai-mcp-prompt-engineering/context-window-optimization.md", "title": "Context Window Optimization & KV-Cache Compaction" },
-        { "id": "kbcodedev/structured-output-json-schema", "path": "categories/07-ai-mcp-prompt-engineering/structured-output-json-schema.md", "title": "Structured Output & JSON Schema Validation Engine" },
-        { "id": "kbcodedev/context-save-restore-checkpoint", "path": "categories/07-ai-mcp-prompt-engineering/context-save-restore-checkpoint.md", "title": "Context Save & State Checkpoint Serializer" }
+        {
+          "id": "kbcodedev/claude-api-advanced-patterns",
+          "path": "categories/07-ai-mcp-prompt-engineering/claude-api-advanced-patterns.md",
+          "title": "Anthropic Claude API Advanced Patterns & Prompt Caching",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "07",
+            "ai",
+            "mcp",
+            "prompt",
+            "engineering",
+            "claude",
+            "api",
+            "advanced"
+          ]
+        },
+        {
+          "id": "kbcodedev/mcp-server-builder",
+          "path": "categories/07-ai-mcp-prompt-engineering/mcp-server-builder.md",
+          "title": "Model Context Protocol (MCP) Server Builder",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "07",
+            "ai",
+            "mcp",
+            "prompt",
+            "engineering",
+            "server",
+            "builder",
+            "model"
+          ]
+        },
+        {
+          "id": "kbcodedev/metaprompt-chain-of-thought",
+          "path": "categories/07-ai-mcp-prompt-engineering/metaprompt-chain-of-thought.md",
+          "title": "Metaprompting & Chain-of-Thought Engineering",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "07",
+            "ai",
+            "mcp",
+            "prompt",
+            "engineering",
+            "metaprompt",
+            "chain",
+            "of"
+          ]
+        },
+        {
+          "id": "kbcodedev/skill-authoring-framework",
+          "path": "categories/07-ai-mcp-prompt-engineering/skill-authoring-framework.md",
+          "title": "Agent Skill Authoring & Benchmarking Framework",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "07",
+            "ai",
+            "mcp",
+            "prompt",
+            "engineering",
+            "skill",
+            "authoring",
+            "framework"
+          ]
+        },
+        {
+          "id": "kbcodedev/context-window-optimization",
+          "path": "categories/07-ai-mcp-prompt-engineering/context-window-optimization.md",
+          "title": "Context Window Optimization & KV-Cache Compaction",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "07",
+            "ai",
+            "mcp",
+            "prompt",
+            "engineering",
+            "context",
+            "window",
+            "optimization"
+          ]
+        },
+        {
+          "id": "kbcodedev/structured-output-json-schema",
+          "path": "categories/07-ai-mcp-prompt-engineering/structured-output-json-schema.md",
+          "title": "Structured Output & JSON Schema Validation Engine",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "07",
+            "ai",
+            "mcp",
+            "prompt",
+            "engineering",
+            "structured",
+            "output",
+            "json"
+          ]
+        },
+        {
+          "id": "kbcodedev/context-save-restore-checkpoint",
+          "path": "categories/07-ai-mcp-prompt-engineering/context-save-restore-checkpoint.md",
+          "title": "Context Save & State Checkpoint Serializer",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "07",
+            "ai",
+            "mcp",
+            "prompt",
+            "engineering",
+            "context",
+            "save",
+            "restore"
+          ]
+        }
       ]
     },
     {
@@ -116,13 +883,125 @@
       "description": "CEO reviews, Staff Engineer reviews, UX audits, DevEx evaluations, YC startup playbooks, PRD engineering, and incident retrospectives",
       "skills_count": 7,
       "skills": [
-        { "id": "kbcodedev/ceo-strategic-plan-review", "path": "categories/08-strategic-product-leadership/ceo-strategic-plan-review.md", "title": "CEO Strategic Plan & Product-Market Fit Review" },
-        { "id": "kbcodedev/staff-eng-architect-review", "path": "categories/08-strategic-product-leadership/staff-eng-architect-review.md", "title": "Staff Engineer Architectural Review & Risk Audit" },
-        { "id": "kbcodedev/product-design-ux-review", "path": "categories/08-strategic-product-leadership/product-design-ux-review.md", "title": "Product Design & User Experience (UX) Friction Auditor" },
-        { "id": "kbcodedev/developer-experience-devex-review", "path": "categories/08-strategic-product-leadership/developer-experience-devex-review.md", "title": "Developer Experience (DevEx) & API Ergonomics Reviewer" },
-        { "id": "kbcodedev/yc-startup-playbook", "path": "categories/08-strategic-product-leadership/yc-startup-playbook.md", "title": "YC Startup Execution Playbook & Growth Velocity" },
-        { "id": "kbcodedev/prd-roadmap-engineering", "path": "categories/08-strategic-product-leadership/prd-roadmap-engineering.md", "title": "PRD & Technical Roadmap Engineering" },
-        { "id": "kbcodedev/post-mortem-incident-retro", "path": "categories/08-strategic-product-leadership/post-mortem-incident-retro.md", "title": "Blameless Post-Mortem & Incident Retrospective" }
+        {
+          "id": "kbcodedev/ceo-strategic-plan-review",
+          "path": "categories/08-strategic-product-leadership/ceo-strategic-plan-review.md",
+          "title": "CEO Strategic Plan & Product-Market Fit Review",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "08",
+            "strategic",
+            "product",
+            "leadership",
+            "ceo",
+            "plan",
+            "review",
+            "product-market"
+          ]
+        },
+        {
+          "id": "kbcodedev/staff-eng-architect-review",
+          "path": "categories/08-strategic-product-leadership/staff-eng-architect-review.md",
+          "title": "Staff Engineer Architectural Review & Risk Audit",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "08",
+            "strategic",
+            "product",
+            "leadership",
+            "staff",
+            "eng",
+            "architect",
+            "review"
+          ]
+        },
+        {
+          "id": "kbcodedev/product-design-ux-review",
+          "path": "categories/08-strategic-product-leadership/product-design-ux-review.md",
+          "title": "Product Design & User Experience (UX) Friction Auditor",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "08",
+            "strategic",
+            "product",
+            "leadership",
+            "design",
+            "ux",
+            "review",
+            "user"
+          ]
+        },
+        {
+          "id": "kbcodedev/developer-experience-devex-review",
+          "path": "categories/08-strategic-product-leadership/developer-experience-devex-review.md",
+          "title": "Developer Experience (DevEx) & API Ergonomics Reviewer",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "08",
+            "strategic",
+            "product",
+            "leadership",
+            "developer",
+            "experience",
+            "devex",
+            "review"
+          ]
+        },
+        {
+          "id": "kbcodedev/yc-startup-playbook",
+          "path": "categories/08-strategic-product-leadership/yc-startup-playbook.md",
+          "title": "YC Startup Execution Playbook & Growth Velocity",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "08",
+            "strategic",
+            "product",
+            "leadership",
+            "yc",
+            "startup",
+            "playbook",
+            "execution"
+          ]
+        },
+        {
+          "id": "kbcodedev/prd-roadmap-engineering",
+          "path": "categories/08-strategic-product-leadership/prd-roadmap-engineering.md",
+          "title": "PRD & Technical Roadmap Engineering",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "08",
+            "strategic",
+            "product",
+            "leadership",
+            "prd",
+            "roadmap",
+            "engineering",
+            "technical"
+          ]
+        },
+        {
+          "id": "kbcodedev/post-mortem-incident-retro",
+          "path": "categories/08-strategic-product-leadership/post-mortem-incident-retro.md",
+          "title": "Blameless Post-Mortem & Incident Retrospective",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "08",
+            "strategic",
+            "product",
+            "leadership",
+            "post",
+            "mortem",
+            "incident",
+            "retro"
+          ]
+        }
       ]
     },
     {
@@ -131,11 +1010,91 @@
       "description": "Programmatic Word DOCX, print-ready typographic PDF, 16:9 widescreen PPTX decks, dynamic formula XLSX, and technical RFC ADRs",
       "skills_count": 5,
       "skills": [
-        { "id": "kbcodedev/programmatic-docx-generator", "path": "categories/09-document-media-synthesis/programmatic-docx-generator.md", "title": "Programmatic DOCX Document Synthesis" },
-        { "id": "kbcodedev/typographic-pdf-generator", "path": "categories/09-document-media-synthesis/typographic-pdf-generator.md", "title": "Typographic PDF Generation & Print Layout" },
-        { "id": "kbcodedev/executive-slide-pptx-generator", "path": "categories/09-document-media-synthesis/executive-slide-pptx-generator.md", "title": "Executive Presentation Slide Deck (PPTX) Synthesis" },
-        { "id": "kbcodedev/financial-model-xlsx-generator", "path": "categories/09-document-media-synthesis/financial-model-xlsx-generator.md", "title": "Financial Modeling & XLSX Spreadsheet Synthesis" },
-        { "id": "kbcodedev/technical-rfc-doc-coauthor", "path": "categories/09-document-media-synthesis/technical-rfc-doc-coauthor.md", "title": "Technical RFC & Architectural Decision Record (ADR) Co-Author" }
+        {
+          "id": "kbcodedev/programmatic-docx-generator",
+          "path": "categories/09-document-media-synthesis/programmatic-docx-generator.md",
+          "title": "Programmatic DOCX Document Synthesis",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "09",
+            "document",
+            "media",
+            "synthesis",
+            "programmatic",
+            "docx",
+            "generator",
+            "agnostic"
+          ]
+        },
+        {
+          "id": "kbcodedev/typographic-pdf-generator",
+          "path": "categories/09-document-media-synthesis/typographic-pdf-generator.md",
+          "title": "Typographic PDF Generation & Print Layout",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "09",
+            "document",
+            "media",
+            "synthesis",
+            "typographic",
+            "pdf",
+            "generator",
+            "generation"
+          ]
+        },
+        {
+          "id": "kbcodedev/executive-slide-pptx-generator",
+          "path": "categories/09-document-media-synthesis/executive-slide-pptx-generator.md",
+          "title": "Executive Presentation Slide Deck (PPTX) Synthesis",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "09",
+            "document",
+            "media",
+            "synthesis",
+            "executive",
+            "slide",
+            "pptx",
+            "generator"
+          ]
+        },
+        {
+          "id": "kbcodedev/financial-model-xlsx-generator",
+          "path": "categories/09-document-media-synthesis/financial-model-xlsx-generator.md",
+          "title": "Financial Modeling & XLSX Spreadsheet Synthesis",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "09",
+            "document",
+            "media",
+            "synthesis",
+            "financial",
+            "model",
+            "xlsx",
+            "generator"
+          ]
+        },
+        {
+          "id": "kbcodedev/technical-rfc-doc-coauthor",
+          "path": "categories/09-document-media-synthesis/technical-rfc-doc-coauthor.md",
+          "title": "Technical RFC & Architectural Decision Record (ADR) Co-Author",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "09",
+            "document",
+            "media",
+            "synthesis",
+            "technical",
+            "rfc",
+            "doc",
+            "coauthor"
+          ]
+        }
       ]
     },
     {
@@ -144,11 +1103,91 @@
       "description": "De-AI authentic voice crafting, ATS single-column resumes, Google XYZ impact bullets, executive BLUF memos, and system design grilling",
       "skills_count": 5,
       "skills": [
-        { "id": "kbcodedev/humanizer-de-ai-voice", "path": "categories/10-communication-humanizer-career/humanizer-de-ai-voice.md", "title": "Humanizer Voice & De-AI Writing Engine" },
-        { "id": "kbcodedev/ats-resume-career-engineer", "path": "categories/10-communication-humanizer-career/ats-resume-career-engineer.md", "title": "ATS Resume & Technical Career Engineer" },
-        { "id": "kbcodedev/google-xyz-impact-bullets", "path": "categories/10-communication-humanizer-career/google-xyz-impact-bullets.md", "title": "Google XYZ Impact Bullet Formulator" },
-        { "id": "kbcodedev/executive-internal-comms", "path": "categories/10-communication-humanizer-career/executive-internal-comms.md", "title": "Executive Internal Communications & Status Memos" },
-        { "id": "kbcodedev/tech-interview-grilling-prep", "path": "categories/10-communication-humanizer-career/tech-interview-grilling-prep.md", "title": "Technical Interview Defense & System Design Grilling Prep" }
+        {
+          "id": "kbcodedev/humanizer-de-ai-voice",
+          "path": "categories/10-communication-humanizer-career/humanizer-de-ai-voice.md",
+          "title": "Humanizer Voice & De-AI Writing Engine",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "10",
+            "communication",
+            "humanizer",
+            "career",
+            "de",
+            "ai",
+            "voice",
+            "de-ai"
+          ]
+        },
+        {
+          "id": "kbcodedev/ats-resume-career-engineer",
+          "path": "categories/10-communication-humanizer-career/ats-resume-career-engineer.md",
+          "title": "ATS Resume & Technical Career Engineer",
+          "runtime": "agnostic",
+          "difficulty": "intermediate",
+          "tags": [
+            "10",
+            "communication",
+            "humanizer",
+            "career",
+            "ats",
+            "resume",
+            "engineer",
+            "technical"
+          ]
+        },
+        {
+          "id": "kbcodedev/google-xyz-impact-bullets",
+          "path": "categories/10-communication-humanizer-career/google-xyz-impact-bullets.md",
+          "title": "Google XYZ Impact Bullet Formulator",
+          "runtime": "agnostic",
+          "difficulty": "intermediate",
+          "tags": [
+            "10",
+            "communication",
+            "humanizer",
+            "career",
+            "google",
+            "xyz",
+            "impact",
+            "bullets"
+          ]
+        },
+        {
+          "id": "kbcodedev/executive-internal-comms",
+          "path": "categories/10-communication-humanizer-career/executive-internal-comms.md",
+          "title": "Executive Internal Communications & Status Memos",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "10",
+            "communication",
+            "humanizer",
+            "career",
+            "executive",
+            "internal",
+            "comms",
+            "communications"
+          ]
+        },
+        {
+          "id": "kbcodedev/tech-interview-grilling-prep",
+          "path": "categories/10-communication-humanizer-career/tech-interview-grilling-prep.md",
+          "title": "Technical Interview Defense & System Design Grilling Prep",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "10",
+            "communication",
+            "humanizer",
+            "career",
+            "tech",
+            "interview",
+            "grilling",
+            "prep"
+          ]
+        }
       ]
     },
     {
@@ -157,12 +1196,108 @@
       "description": "Systematic scientific literature reviews, statistical Z/t-tests, Polars streaming ETL pipelines, reproducible research protocols, genomics, and optimization",
       "skills_count": 6,
       "skills": [
-        { "id": "kbcodedev/scientific-literature-synthesis", "path": "categories/11-scientific-quantitative-ai/scientific-literature-synthesis.md", "title": "Scientific Literature Synthesis & Evidence Extraction" },
-        { "id": "kbcodedev/quantitative-statistical-modeler", "path": "categories/11-scientific-quantitative-ai/quantitative-statistical-modeler.md", "title": "Quantitative & Statistical Modeler" },
-        { "id": "kbcodedev/data-pipeline-etl-synthesis", "path": "categories/11-scientific-quantitative-ai/data-pipeline-etl-synthesis.md", "title": "Data Pipeline & High-Performance ETL Synthesis" },
-        { "id": "kbcodedev/reproducible-research-protocol", "path": "categories/11-scientific-quantitative-ai/reproducible-research-protocol.md", "title": "Reproducible Research & Experiment Protocol" },
-        { "id": "kbcodedev/bioinformatics-genomic-pipeline", "path": "categories/11-scientific-quantitative-ai/bioinformatics-genomic-pipeline.md", "title": "Bioinformatics & Genomic Data Pipeline Synthesis" },
-        { "id": "kbcodedev/mathematical-optimization-scipy", "path": "categories/11-scientific-quantitative-ai/mathematical-optimization-scipy.md", "title": "Mathematical Optimization & SciPy Modeling" }
+        {
+          "id": "kbcodedev/scientific-literature-synthesis",
+          "path": "categories/11-scientific-quantitative-ai/scientific-literature-synthesis.md",
+          "title": "Scientific Literature Synthesis & Evidence Extraction",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "11",
+            "scientific",
+            "quantitative",
+            "ai",
+            "literature",
+            "synthesis",
+            "evidence",
+            "extraction"
+          ]
+        },
+        {
+          "id": "kbcodedev/quantitative-statistical-modeler",
+          "path": "categories/11-scientific-quantitative-ai/quantitative-statistical-modeler.md",
+          "title": "Quantitative & Statistical Modeler",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "11",
+            "scientific",
+            "quantitative",
+            "ai",
+            "statistical",
+            "modeler",
+            "agnostic",
+            "advanced"
+          ]
+        },
+        {
+          "id": "kbcodedev/data-pipeline-etl-synthesis",
+          "path": "categories/11-scientific-quantitative-ai/data-pipeline-etl-synthesis.md",
+          "title": "Data Pipeline & High-Performance ETL Synthesis",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "11",
+            "scientific",
+            "quantitative",
+            "ai",
+            "data",
+            "pipeline",
+            "etl",
+            "synthesis"
+          ]
+        },
+        {
+          "id": "kbcodedev/reproducible-research-protocol",
+          "path": "categories/11-scientific-quantitative-ai/reproducible-research-protocol.md",
+          "title": "Reproducible Research & Experiment Protocol",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "11",
+            "scientific",
+            "quantitative",
+            "ai",
+            "reproducible",
+            "research",
+            "protocol",
+            "experiment"
+          ]
+        },
+        {
+          "id": "kbcodedev/bioinformatics-genomic-pipeline",
+          "path": "categories/11-scientific-quantitative-ai/bioinformatics-genomic-pipeline.md",
+          "title": "Bioinformatics & Genomic Data Pipeline Synthesis",
+          "runtime": "python",
+          "difficulty": "advanced",
+          "tags": [
+            "11",
+            "scientific",
+            "quantitative",
+            "ai",
+            "bioinformatics",
+            "genomic",
+            "pipeline",
+            "data"
+          ]
+        },
+        {
+          "id": "kbcodedev/mathematical-optimization-scipy",
+          "path": "categories/11-scientific-quantitative-ai/mathematical-optimization-scipy.md",
+          "title": "Mathematical Optimization & SciPy Modeling",
+          "runtime": "python",
+          "difficulty": "advanced",
+          "tags": [
+            "11",
+            "scientific",
+            "quantitative",
+            "ai",
+            "mathematical",
+            "optimization",
+            "scipy",
+            "modeling"
+          ]
+        }
       ]
     },
     {
@@ -171,11 +1306,91 @@
       "description": "React Native New Architecture, Flutter BLoC, iOS Swift 6 concurrency, Android Jetpack Compose, and offline sync",
       "skills_count": 5,
       "skills": [
-        { "id": "kbcodedev/react-native-architecture", "path": "categories/12-mobile-cross-platform/react-native-architecture.md", "title": "React Native & Cross-Platform Mobile Architecture" },
-        { "id": "kbcodedev/flutter-state-management", "path": "categories/12-mobile-cross-platform/flutter-state-management.md", "title": "Flutter Reactive State & Widget Tree Architecture" },
-        { "id": "kbcodedev/ios-swift-modern-concurrency", "path": "categories/12-mobile-cross-platform/ios-swift-modern-concurrency.md", "title": "iOS Swift Modern Concurrency & SwiftUI Architecture" },
-        { "id": "kbcodedev/android-kotlin-jetpack-compose", "path": "categories/12-mobile-cross-platform/android-kotlin-jetpack-compose.md", "title": "Android Kotlin Jetpack Compose & Clean Architecture" },
-        { "id": "kbcodedev/mobile-offline-sync-engine", "path": "categories/12-mobile-cross-platform/mobile-offline-sync-engine.md", "title": "Mobile Offline-First & Conflict Sync Engine" }
+        {
+          "id": "kbcodedev/react-native-architecture",
+          "path": "categories/12-mobile-cross-platform/react-native-architecture.md",
+          "title": "React Native & Cross-Platform Mobile Architecture",
+          "runtime": "typescript",
+          "difficulty": "advanced",
+          "tags": [
+            "12",
+            "mobile",
+            "cross",
+            "platform",
+            "react",
+            "native",
+            "architecture",
+            "cross-platform"
+          ]
+        },
+        {
+          "id": "kbcodedev/flutter-state-management",
+          "path": "categories/12-mobile-cross-platform/flutter-state-management.md",
+          "title": "Flutter Reactive State & Widget Tree Architecture",
+          "runtime": "dart",
+          "difficulty": "advanced",
+          "tags": [
+            "12",
+            "mobile",
+            "cross",
+            "platform",
+            "flutter",
+            "state",
+            "management",
+            "reactive"
+          ]
+        },
+        {
+          "id": "kbcodedev/ios-swift-modern-concurrency",
+          "path": "categories/12-mobile-cross-platform/ios-swift-modern-concurrency.md",
+          "title": "iOS Swift Modern Concurrency & SwiftUI Architecture",
+          "runtime": "swift",
+          "difficulty": "advanced",
+          "tags": [
+            "12",
+            "mobile",
+            "cross",
+            "platform",
+            "ios",
+            "swift",
+            "modern",
+            "concurrency"
+          ]
+        },
+        {
+          "id": "kbcodedev/android-kotlin-jetpack-compose",
+          "path": "categories/12-mobile-cross-platform/android-kotlin-jetpack-compose.md",
+          "title": "Android Kotlin Jetpack Compose & Clean Architecture",
+          "runtime": "kotlin",
+          "difficulty": "advanced",
+          "tags": [
+            "12",
+            "mobile",
+            "cross",
+            "platform",
+            "android",
+            "kotlin",
+            "jetpack",
+            "compose"
+          ]
+        },
+        {
+          "id": "kbcodedev/mobile-offline-sync-engine",
+          "path": "categories/12-mobile-cross-platform/mobile-offline-sync-engine.md",
+          "title": "Mobile Offline-First & Conflict Sync Engine",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "12",
+            "mobile",
+            "cross",
+            "platform",
+            "offline",
+            "sync",
+            "engine",
+            "offline-first"
+          ]
+        }
       ]
     },
     {
@@ -184,11 +1399,91 @@
       "description": "Feast feature stores, Qdrant hybrid RAG, Triton inference serving, Airflow DAGs, and Iceberg lakehouses",
       "skills_count": 5,
       "skills": [
-        { "id": "kbcodedev/feature-store-pipeline", "path": "categories/13-data-engineering-mlops/feature-store-pipeline.md", "title": "Feature Store & Streaming Feature Pipeline" },
-        { "id": "kbcodedev/vector-database-rag-engine", "path": "categories/13-data-engineering-mlops/vector-database-rag-engine.md", "title": "Vector Database & Hybrid RAG Retrieval Engine" },
-        { "id": "kbcodedev/mlops-model-serving-triton", "path": "categories/13-data-engineering-mlops/mlops-model-serving-triton.md", "title": "MLOps Model Serving & Triton Inference Engine" },
-        { "id": "kbcodedev/airflow-dag-orchestration", "path": "categories/13-data-engineering-mlops/airflow-dag-orchestration.md", "title": "Apache Airflow DAG & Orchestration Engineering" },
-        { "id": "kbcodedev/data-lakehouse-delta-iceberg", "path": "categories/13-data-engineering-mlops/data-lakehouse-delta-iceberg.md", "title": "Data Lakehouse Architecture (Delta Lake & Apache Iceberg)" }
+        {
+          "id": "kbcodedev/feature-store-pipeline",
+          "path": "categories/13-data-engineering-mlops/feature-store-pipeline.md",
+          "title": "Feature Store & Streaming Feature Pipeline",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "13",
+            "data",
+            "engineering",
+            "mlops",
+            "feature",
+            "store",
+            "pipeline",
+            "streaming"
+          ]
+        },
+        {
+          "id": "kbcodedev/vector-database-rag-engine",
+          "path": "categories/13-data-engineering-mlops/vector-database-rag-engine.md",
+          "title": "Vector Database & Hybrid RAG Retrieval Engine",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "13",
+            "data",
+            "engineering",
+            "mlops",
+            "vector",
+            "database",
+            "rag",
+            "engine"
+          ]
+        },
+        {
+          "id": "kbcodedev/mlops-model-serving-triton",
+          "path": "categories/13-data-engineering-mlops/mlops-model-serving-triton.md",
+          "title": "MLOps Model Serving & Triton Inference Engine",
+          "runtime": "python",
+          "difficulty": "expert",
+          "tags": [
+            "13",
+            "data",
+            "engineering",
+            "mlops",
+            "model",
+            "serving",
+            "triton",
+            "inference"
+          ]
+        },
+        {
+          "id": "kbcodedev/airflow-dag-orchestration",
+          "path": "categories/13-data-engineering-mlops/airflow-dag-orchestration.md",
+          "title": "Apache Airflow DAG & Orchestration Engineering",
+          "runtime": "python",
+          "difficulty": "advanced",
+          "tags": [
+            "13",
+            "data",
+            "engineering",
+            "mlops",
+            "airflow",
+            "dag",
+            "orchestration",
+            "apache"
+          ]
+        },
+        {
+          "id": "kbcodedev/data-lakehouse-delta-iceberg",
+          "path": "categories/13-data-engineering-mlops/data-lakehouse-delta-iceberg.md",
+          "title": "Data Lakehouse Architecture (Delta Lake & Apache Iceberg)",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "13",
+            "data",
+            "engineering",
+            "mlops",
+            "lakehouse",
+            "delta",
+            "iceberg",
+            "architecture"
+          ]
+        }
       ]
     },
     {
@@ -197,12 +1492,108 @@
       "description": "SOC2/GDPR compliance OS, Enterprise SAML SSO, AWS KMS encryption, STRIDE threat modeling, WAF, and prompt injection defense",
       "skills_count": 6,
       "skills": [
-        { "id": "kbcodedev/soc2-gdpr-compliance-os", "path": "categories/14-security-compliance-governance/soc2-gdpr-compliance-os.md", "title": "SOC2, GDPR & Enterprise Compliance OS" },
-        { "id": "kbcodedev/zero-trust-identity-saml-oidc", "path": "categories/14-security-compliance-governance/zero-trust-identity-saml-oidc.md", "title": "Zero-Trust Identity & Enterprise SSO (SAML / OIDC / SCIM)" },
-        { "id": "kbcodedev/cryptographic-key-management-kms", "path": "categories/14-security-compliance-governance/cryptographic-key-management-kms.md", "title": "Cryptographic Key Management & Envelope Encryption (KMS)" },
-        { "id": "kbcodedev/threat-modeling-stride", "path": "categories/14-security-compliance-governance/threat-modeling-stride.md", "title": "Threat Modeling & STRIDE Security Architecture" },
-        { "id": "kbcodedev/api-security-rate-limit-waf", "path": "categories/14-security-compliance-governance/api-security-rate-limit-waf.md", "title": "API Security, Rate Limiting & Cloudflare WAF Engineering" },
-        { "id": "kbcodedev/prompt-injection-defense-guard", "path": "categories/14-security-compliance-governance/prompt-injection-defense-guard.md", "title": "Indirect Prompt Injection Defense & Input Sanitizer Guard" }
+        {
+          "id": "kbcodedev/soc2-gdpr-compliance-os",
+          "path": "categories/14-security-compliance-governance/soc2-gdpr-compliance-os.md",
+          "title": "SOC2, GDPR & Enterprise Compliance OS",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "14",
+            "security",
+            "compliance",
+            "governance",
+            "soc2",
+            "gdpr",
+            "os",
+            "soc2,"
+          ]
+        },
+        {
+          "id": "kbcodedev/zero-trust-identity-saml-oidc",
+          "path": "categories/14-security-compliance-governance/zero-trust-identity-saml-oidc.md",
+          "title": "Zero-Trust Identity & Enterprise SSO (SAML / OIDC / SCIM)",
+          "runtime": "rust",
+          "difficulty": "advanced",
+          "tags": [
+            "14",
+            "security",
+            "compliance",
+            "governance",
+            "zero",
+            "trust",
+            "identity",
+            "saml"
+          ]
+        },
+        {
+          "id": "kbcodedev/cryptographic-key-management-kms",
+          "path": "categories/14-security-compliance-governance/cryptographic-key-management-kms.md",
+          "title": "Cryptographic Key Management & Envelope Encryption (KMS)",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "14",
+            "security",
+            "compliance",
+            "governance",
+            "cryptographic",
+            "key",
+            "management",
+            "kms"
+          ]
+        },
+        {
+          "id": "kbcodedev/threat-modeling-stride",
+          "path": "categories/14-security-compliance-governance/threat-modeling-stride.md",
+          "title": "Threat Modeling & STRIDE Security Architecture",
+          "runtime": "agnostic",
+          "difficulty": "expert",
+          "tags": [
+            "14",
+            "security",
+            "compliance",
+            "governance",
+            "threat",
+            "modeling",
+            "stride",
+            "architecture"
+          ]
+        },
+        {
+          "id": "kbcodedev/api-security-rate-limit-waf",
+          "path": "categories/14-security-compliance-governance/api-security-rate-limit-waf.md",
+          "title": "API Security, Rate Limiting & Cloudflare WAF Engineering",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "14",
+            "security",
+            "compliance",
+            "governance",
+            "api",
+            "rate",
+            "limit",
+            "waf"
+          ]
+        },
+        {
+          "id": "kbcodedev/prompt-injection-defense-guard",
+          "path": "categories/14-security-compliance-governance/prompt-injection-defense-guard.md",
+          "title": "Indirect Prompt Injection Defense & Input Sanitizer Guard",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "14",
+            "security",
+            "compliance",
+            "governance",
+            "prompt",
+            "injection",
+            "defense",
+            "guard"
+          ]
+        }
       ]
     },
     {
@@ -211,14 +1602,142 @@
       "description": "CTO Tech Radar, CFO SaaS Unit Economics, CPO JTBD, CMO pSEO, Head of People Ladders, Product Hunt, Copywriting, and Cap Tables",
       "skills_count": 8,
       "skills": [
-        { "id": "kbcodedev/cto-technology-radar-evaluation", "path": "categories/15-c-suite-executive-advisory/cto-technology-radar-evaluation.md", "title": "CTO Technology Radar & Stack Evaluation" },
-        { "id": "kbcodedev/cfo-saas-metrics-unit-economics", "path": "categories/15-c-suite-executive-advisory/cfo-saas-metrics-unit-economics.md", "title": "CFO SaaS Metrics, Unit Economics & Runway Engine" },
-        { "id": "kbcodedev/cpo-product-discovery-jtbd", "path": "categories/15-c-suite-executive-advisory/cpo-product-discovery-jtbd.md", "title": "CPO Product Discovery & Jobs-To-Be-Done (JTBD)" },
-        { "id": "kbcodedev/cmo-growth-loops-technical-seo", "path": "categories/15-c-suite-executive-advisory/cmo-growth-loops-technical-seo.md", "title": "CMO Growth Loops, Programmatic SEO & Funnel Engine" },
-        { "id": "kbcodedev/head-of-people-eng-career-ladder", "path": "categories/15-c-suite-executive-advisory/head-of-people-eng-career-ladder.md", "title": "Engineering Career Ladder & Leveling Framework" },
-        { "id": "kbcodedev/product-hunt-launch-playbook", "path": "categories/15-c-suite-executive-advisory/product-hunt-launch-playbook.md", "title": "Product Hunt #1 Launch & Distribution Playbook" },
-        { "id": "kbcodedev/technical-copywriting-landing-page", "path": "categories/15-c-suite-executive-advisory/technical-copywriting-landing-page.md", "title": "Technical Copywriting & Developer Landing Page Engine" },
-        { "id": "kbcodedev/cap-table-equity-dilution-modeler", "path": "categories/15-c-suite-executive-advisory/cap-table-equity-dilution-modeler.md", "title": "Cap Table & Startup Equity Dilution Modeler" }
+        {
+          "id": "kbcodedev/cto-technology-radar-evaluation",
+          "path": "categories/15-c-suite-executive-advisory/cto-technology-radar-evaluation.md",
+          "title": "CTO Technology Radar & Stack Evaluation",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "15",
+            "c",
+            "suite",
+            "executive",
+            "advisory",
+            "cto",
+            "technology",
+            "radar"
+          ]
+        },
+        {
+          "id": "kbcodedev/cfo-saas-metrics-unit-economics",
+          "path": "categories/15-c-suite-executive-advisory/cfo-saas-metrics-unit-economics.md",
+          "title": "CFO SaaS Metrics, Unit Economics & Runway Engine",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "15",
+            "c",
+            "suite",
+            "executive",
+            "advisory",
+            "cfo",
+            "saas",
+            "metrics"
+          ]
+        },
+        {
+          "id": "kbcodedev/cpo-product-discovery-jtbd",
+          "path": "categories/15-c-suite-executive-advisory/cpo-product-discovery-jtbd.md",
+          "title": "CPO Product Discovery & Jobs-To-Be-Done (JTBD)",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "15",
+            "c",
+            "suite",
+            "executive",
+            "advisory",
+            "cpo",
+            "product",
+            "discovery"
+          ]
+        },
+        {
+          "id": "kbcodedev/cmo-growth-loops-technical-seo",
+          "path": "categories/15-c-suite-executive-advisory/cmo-growth-loops-technical-seo.md",
+          "title": "CMO Growth Loops, Programmatic SEO & Funnel Engine",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "15",
+            "c",
+            "suite",
+            "executive",
+            "advisory",
+            "cmo",
+            "growth",
+            "loops"
+          ]
+        },
+        {
+          "id": "kbcodedev/head-of-people-eng-career-ladder",
+          "path": "categories/15-c-suite-executive-advisory/head-of-people-eng-career-ladder.md",
+          "title": "Engineering Career Ladder & Leveling Framework",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "15",
+            "c",
+            "suite",
+            "executive",
+            "advisory",
+            "head",
+            "of",
+            "people"
+          ]
+        },
+        {
+          "id": "kbcodedev/product-hunt-launch-playbook",
+          "path": "categories/15-c-suite-executive-advisory/product-hunt-launch-playbook.md",
+          "title": "Product Hunt #1 Launch & Distribution Playbook",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "15",
+            "c",
+            "suite",
+            "executive",
+            "advisory",
+            "product",
+            "hunt",
+            "launch"
+          ]
+        },
+        {
+          "id": "kbcodedev/technical-copywriting-landing-page",
+          "path": "categories/15-c-suite-executive-advisory/technical-copywriting-landing-page.md",
+          "title": "Technical Copywriting & Developer Landing Page Engine",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "15",
+            "c",
+            "suite",
+            "executive",
+            "advisory",
+            "technical",
+            "copywriting",
+            "landing"
+          ]
+        },
+        {
+          "id": "kbcodedev/cap-table-equity-dilution-modeler",
+          "path": "categories/15-c-suite-executive-advisory/cap-table-equity-dilution-modeler.md",
+          "title": "Cap Table & Startup Equity Dilution Modeler",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "15",
+            "c",
+            "suite",
+            "executive",
+            "advisory",
+            "cap",
+            "table",
+            "equity"
+          ]
+        }
       ]
     },
     {
@@ -227,11 +1746,91 @@
       "description": "GitHub Octokit automation, Slack Bolt interactive bots, Stripe billing webhooks, Supabase RLS Prisma, and Linear API",
       "skills_count": 5,
       "skills": [
-        { "id": "kbcodedev/github-actions-api-automation", "path": "categories/16-tool-integrations-connectors/github-actions-api-automation.md", "title": "GitHub Actions API & Automated Release Bot" },
-        { "id": "kbcodedev/slack-bot-interactive-workflows", "path": "categories/16-tool-integrations-connectors/slack-bot-interactive-workflows.md", "title": "Slack Bot & Interactive Block Kit Workflows" },
-        { "id": "kbcodedev/stripe-billing-webhook-engine", "path": "categories/16-tool-integrations-connectors/stripe-billing-webhook-engine.md", "title": "Stripe Billing & Webhook Idempotency Engine" },
-        { "id": "kbcodedev/database-connector-supabase-prisma", "path": "categories/16-tool-integrations-connectors/database-connector-supabase-prisma.md", "title": "Supabase, Prisma & PostgreSQL ORM Connector" },
-        { "id": "kbcodedev/linear-jira-issue-orchestrator", "path": "categories/16-tool-integrations-connectors/linear-jira-issue-orchestrator.md", "title": "Linear & Jira Issue Orchestration Engine" }
+        {
+          "id": "kbcodedev/github-actions-api-automation",
+          "path": "categories/16-tool-integrations-connectors/github-actions-api-automation.md",
+          "title": "GitHub Actions API & Automated Release Bot",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "16",
+            "tool",
+            "integrations",
+            "connectors",
+            "github",
+            "actions",
+            "api",
+            "automation"
+          ]
+        },
+        {
+          "id": "kbcodedev/slack-bot-interactive-workflows",
+          "path": "categories/16-tool-integrations-connectors/slack-bot-interactive-workflows.md",
+          "title": "Slack Bot & Interactive Block Kit Workflows",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "16",
+            "tool",
+            "integrations",
+            "connectors",
+            "slack",
+            "bot",
+            "interactive",
+            "workflows"
+          ]
+        },
+        {
+          "id": "kbcodedev/stripe-billing-webhook-engine",
+          "path": "categories/16-tool-integrations-connectors/stripe-billing-webhook-engine.md",
+          "title": "Stripe Billing & Webhook Idempotency Engine",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "16",
+            "tool",
+            "integrations",
+            "connectors",
+            "stripe",
+            "billing",
+            "webhook",
+            "engine"
+          ]
+        },
+        {
+          "id": "kbcodedev/database-connector-supabase-prisma",
+          "path": "categories/16-tool-integrations-connectors/database-connector-supabase-prisma.md",
+          "title": "Supabase, Prisma & PostgreSQL ORM Connector",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "16",
+            "tool",
+            "integrations",
+            "connectors",
+            "database",
+            "connector",
+            "supabase",
+            "prisma"
+          ]
+        },
+        {
+          "id": "kbcodedev/linear-jira-issue-orchestrator",
+          "path": "categories/16-tool-integrations-connectors/linear-jira-issue-orchestrator.md",
+          "title": "Linear & Jira Issue Orchestration Engine",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "16",
+            "tool",
+            "integrations",
+            "connectors",
+            "linear",
+            "jira",
+            "issue",
+            "orchestrator"
+          ]
+        }
       ]
     },
     {
@@ -240,10 +1839,74 @@
       "description": "Mermaid/PlantUML sequence flows, Crow's foot ERD diagrams, Multi-AZ cloud topologies, and state machine lifecycles",
       "skills_count": 4,
       "skills": [
-        { "id": "kbcodedev/sequence-flow-diagram-synthesis", "path": "categories/17-visual-architecture-diagrams/sequence-flow-diagram-synthesis.md", "title": "Sequence Flow & Protocol Diagram Synthesis" },
-        { "id": "kbcodedev/entity-relationship-erd-synthesis", "path": "categories/17-visual-architecture-diagrams/entity-relationship-erd-synthesis.md", "title": "Entity Relationship (ERD) & Data Model Diagram Synthesis" },
-        { "id": "kbcodedev/cloud-topology-network-diagram", "path": "categories/17-visual-architecture-diagrams/cloud-topology-network-diagram.md", "title": "Cloud Topology & Multi-AZ Network Diagram Synthesis" },
-        { "id": "kbcodedev/state-machine-transition-diagram", "path": "categories/17-visual-architecture-diagrams/state-machine-transition-diagram.md", "title": "State Machine & Lifecycle Transition Diagram Synthesis" }
+        {
+          "id": "kbcodedev/sequence-flow-diagram-synthesis",
+          "path": "categories/17-visual-architecture-diagrams/sequence-flow-diagram-synthesis.md",
+          "title": "Sequence Flow & Protocol Diagram Synthesis",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "17",
+            "visual",
+            "architecture",
+            "diagrams",
+            "sequence",
+            "flow",
+            "diagram",
+            "synthesis"
+          ]
+        },
+        {
+          "id": "kbcodedev/entity-relationship-erd-synthesis",
+          "path": "categories/17-visual-architecture-diagrams/entity-relationship-erd-synthesis.md",
+          "title": "Entity Relationship (ERD) & Data Model Diagram Synthesis",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "17",
+            "visual",
+            "architecture",
+            "diagrams",
+            "entity",
+            "relationship",
+            "erd",
+            "synthesis"
+          ]
+        },
+        {
+          "id": "kbcodedev/cloud-topology-network-diagram",
+          "path": "categories/17-visual-architecture-diagrams/cloud-topology-network-diagram.md",
+          "title": "Cloud Topology & Multi-AZ Network Diagram Synthesis",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "17",
+            "visual",
+            "architecture",
+            "diagrams",
+            "cloud",
+            "topology",
+            "network",
+            "diagram"
+          ]
+        },
+        {
+          "id": "kbcodedev/state-machine-transition-diagram",
+          "path": "categories/17-visual-architecture-diagrams/state-machine-transition-diagram.md",
+          "title": "State Machine & Lifecycle Transition Diagram Synthesis",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "17",
+            "visual",
+            "architecture",
+            "diagrams",
+            "state",
+            "machine",
+            "transition",
+            "diagram"
+          ]
+        }
       ]
     },
     {
@@ -252,11 +1915,91 @@
       "description": "Sam Altman execution velocity, Dario Amodei AI scaling laws, Andrej Karpathy LLM OS Software 3.0, Andrew Ng Data-Centric AI, and Paul Graham founder intuition",
       "skills_count": 5,
       "skills": [
-        { "id": "kbcodedev/sam-altman-execution-velocity", "path": "categories/18-yc-tech-leaders-frameworks/sam-altman-execution-velocity.md", "title": "Sam Altman Execution Velocity & High-Agency Playbook" },
-        { "id": "kbcodedev/dario-amodei-scaling-safety", "path": "categories/18-yc-tech-leaders-frameworks/dario-amodei-scaling-safety.md", "title": "Dario Amodei Scaling Laws & AI Safety Architecture" },
-        { "id": "kbcodedev/andrej-karpathy-software-3.0", "path": "categories/18-yc-tech-leaders-frameworks/andrej-karpathy-software-3.0.md", "title": "Andrej Karpathy Software 3.0 & LLM OS Architecture" },
-        { "id": "kbcodedev/andrew-ng-data-centric-ai", "path": "categories/18-yc-tech-leaders-frameworks/andrew-ng-data-centric-ai.md", "title": "Andrew Ng Data-Centric AI & Error Analysis" },
-        { "id": "kbcodedev/paul-graham-founder-intuition", "path": "categories/18-yc-tech-leaders-frameworks/paul-graham-founder-intuition.md", "title": "Paul Graham Founder Intuition & Startup Invariants" }
+        {
+          "id": "kbcodedev/sam-altman-execution-velocity",
+          "path": "categories/18-yc-tech-leaders-frameworks/sam-altman-execution-velocity.md",
+          "title": "Sam Altman Execution Velocity & High-Agency Playbook",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "18",
+            "yc",
+            "tech",
+            "leaders",
+            "frameworks",
+            "sam",
+            "altman",
+            "execution"
+          ]
+        },
+        {
+          "id": "kbcodedev/dario-amodei-scaling-safety",
+          "path": "categories/18-yc-tech-leaders-frameworks/dario-amodei-scaling-safety.md",
+          "title": "Dario Amodei Scaling Laws & AI Safety Architecture",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "18",
+            "yc",
+            "tech",
+            "leaders",
+            "frameworks",
+            "dario",
+            "amodei",
+            "scaling"
+          ]
+        },
+        {
+          "id": "kbcodedev/andrej-karpathy-software-3.0",
+          "path": "categories/18-yc-tech-leaders-frameworks/andrej-karpathy-software-3.0.md",
+          "title": "Andrej Karpathy Software 3.0 & LLM OS Architecture",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "18",
+            "yc",
+            "tech",
+            "leaders",
+            "frameworks",
+            "andrej",
+            "karpathy",
+            "software"
+          ]
+        },
+        {
+          "id": "kbcodedev/andrew-ng-data-centric-ai",
+          "path": "categories/18-yc-tech-leaders-frameworks/andrew-ng-data-centric-ai.md",
+          "title": "Andrew Ng Data-Centric AI & Error Analysis",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "18",
+            "yc",
+            "tech",
+            "leaders",
+            "frameworks",
+            "andrew",
+            "ng",
+            "data"
+          ]
+        },
+        {
+          "id": "kbcodedev/paul-graham-founder-intuition",
+          "path": "categories/18-yc-tech-leaders-frameworks/paul-graham-founder-intuition.md",
+          "title": "Paul Graham Founder Intuition & Startup Invariants",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "18",
+            "yc",
+            "tech",
+            "leaders",
+            "frameworks",
+            "paul",
+            "graham",
+            "founder"
+          ]
+        }
       ]
     },
     {
@@ -265,8 +2008,40 @@
       "description": "Three.js WebGL rendering, custom GLSL shaders, 60fps fixed-timestep game loops, and spatial partitioning quadtrees",
       "skills_count": 2,
       "skills": [
-        { "id": "kbcodedev/webgl-threejs-shaders", "path": "categories/19-game-dev-3d-graphics/webgl-threejs-shaders.md", "title": "WebGL, Three.js & Custom GLSL Shaders" },
-        { "id": "kbcodedev/game-loop-physics-engine", "path": "categories/19-game-dev-3d-graphics/game-loop-physics-engine.md", "title": "Game Loop Architecture & Physics Engine Integration" }
+        {
+          "id": "kbcodedev/webgl-threejs-shaders",
+          "path": "categories/19-game-dev-3d-graphics/webgl-threejs-shaders.md",
+          "title": "WebGL, Three.js & Custom GLSL Shaders",
+          "runtime": "typescript",
+          "difficulty": "advanced",
+          "tags": [
+            "19",
+            "game",
+            "dev",
+            "3d",
+            "graphics",
+            "webgl",
+            "threejs",
+            "shaders"
+          ]
+        },
+        {
+          "id": "kbcodedev/game-loop-physics-engine",
+          "path": "categories/19-game-dev-3d-graphics/game-loop-physics-engine.md",
+          "title": "Game Loop Architecture & Physics Engine Integration",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "19",
+            "game",
+            "dev",
+            "3d",
+            "graphics",
+            "loop",
+            "physics",
+            "engine"
+          ]
+        }
       ]
     },
     {
@@ -275,8 +2050,40 @@
       "description": "Anti-detect stealth automation, Cloudflare Turnstile bypass, and high-concurrency Cheerio/Playwright crawler pipelines",
       "skills_count": 2,
       "skills": [
-        { "id": "kbcodedev/anti-detect-browser-automation", "path": "categories/20-web-scraping-browser-automation/anti-detect-browser-automation.md", "title": "Anti-Detect Browser Automation & Cloudflare Bypass" },
-        { "id": "kbcodedev/headless-crawler-data-extractor", "path": "categories/20-web-scraping-browser-automation/headless-crawler-data-extractor.md", "title": "High-Concurrency Web Crawler & Data Extractor" }
+        {
+          "id": "kbcodedev/anti-detect-browser-automation",
+          "path": "categories/20-web-scraping-browser-automation/anti-detect-browser-automation.md",
+          "title": "Anti-Detect Browser Automation & Cloudflare Bypass",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "20",
+            "web",
+            "scraping",
+            "browser",
+            "automation",
+            "anti",
+            "detect",
+            "anti-detect"
+          ]
+        },
+        {
+          "id": "kbcodedev/headless-crawler-data-extractor",
+          "path": "categories/20-web-scraping-browser-automation/headless-crawler-data-extractor.md",
+          "title": "High-Concurrency Web Crawler & Data Extractor",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "20",
+            "web",
+            "scraping",
+            "browser",
+            "automation",
+            "headless",
+            "crawler",
+            "data"
+          ]
+        }
       ]
     },
     {
@@ -285,8 +2092,39 @@
       "description": "Bare-metal no_std Rust firmware, microcontroller HALs, and C/C++ Valgrind/ASan memory leak sanitizers",
       "skills_count": 2,
       "skills": [
-        { "id": "kbcodedev/rust-embedded-systems", "path": "categories/21-systems-embedded-programming/rust-embedded-systems.md", "title": "Rust Embedded Systems & Bare-Metal Programming" },
-        { "id": "kbcodedev/c-cpp-memory-leak-sanitizer", "path": "categories/21-systems-embedded-programming/c-cpp-memory-leak-sanitizer.md", "title": "C/C++ Memory Leak Sanitizer & Valgrind Auditor" }
+        {
+          "id": "kbcodedev/rust-embedded-systems",
+          "path": "categories/21-systems-embedded-programming/rust-embedded-systems.md",
+          "title": "Rust Embedded Systems & Bare-Metal Programming",
+          "runtime": "rust",
+          "difficulty": "expert",
+          "tags": [
+            "21",
+            "systems",
+            "embedded",
+            "programming",
+            "rust",
+            "bare-metal",
+            "expert"
+          ]
+        },
+        {
+          "id": "kbcodedev/c-cpp-memory-leak-sanitizer",
+          "path": "categories/21-systems-embedded-programming/c-cpp-memory-leak-sanitizer.md",
+          "title": "C/C++ Memory Leak Sanitizer & Valgrind Auditor",
+          "runtime": "c/cpp",
+          "difficulty": "advanced",
+          "tags": [
+            "21",
+            "systems",
+            "embedded",
+            "programming",
+            "c",
+            "cpp",
+            "memory",
+            "leak"
+          ]
+        }
       ]
     }
   ]
