@@ -55,7 +55,7 @@
 
 ---
 
-## 4. Standard Skill Template (Canonical Spec)
+## 4. Input / Output Contracts (Canonical Skill Template)
 
 ```markdown
 # Skill: <Title>

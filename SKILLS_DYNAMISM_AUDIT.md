@@ -1,6 +1,6 @@
 # kbcodedev-skills: Comprehensive Dynamism & Adaptivity Audit
 
-**Audit Target**: All 115 Skills across 21 Categories  
+**Audit Target**: All 115 Skills across 21 Categories — **historical snapshot**; the library has since grown to 130 skills (see `SKILLS_MANIFEST.json`), so the counts below describe the 115-skill snapshot, not the current tree.  
 **Execution Date**: October 2026  
 **Auditor**: Antigravity / kbcode  
 

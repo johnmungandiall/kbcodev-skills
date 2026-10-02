@@ -212,7 +212,7 @@ Commands:
   list                 List all categories and skills
   search <query>       Search skills by keyword, title, tag, or category
   show <id>            Display the complete markdown content of a skill
-  validate             Validate all 115 skills against the canonical structure
+  validate             Validate all 130 skills against the canonical structure
   export <id> [format] Export skill formatted for Claude XML (<skill>), JSON, or Markdown
   help                 Display this help menu
 

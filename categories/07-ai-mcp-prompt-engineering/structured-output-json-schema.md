@@ -29,7 +29,7 @@
             │
             ▼
 ┌───────────────────────────┐
-│ Step 1: Strip Prose &     │ ── Remove ```json fences and conversational prefixes
+│ Step 1: Strip Prose &     │ ── Remove markdown fences and conversational prefixes
 │         Markdown Fences   │
 └───────────┬───────────────┘
             ▼

@@ -2,7 +2,7 @@
 
 **Repository**: `kbcodedev-skills`  
 **Version**: `2.0.0`  
-**Current Baseline**: 115 Skills across 21 Categories  
+**Current Baseline**: 115 Skills across 21 Categories — **historical snapshot**; the library now holds 130 skills (`SKILLS_MANIFEST.json`), so the inventory and gap tables below describe the 115-skill baseline.  
 **Date**: October 2026  
 
 ---
