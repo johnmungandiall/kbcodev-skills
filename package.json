@@ -3,8 +3,15 @@
   "version": "2.0.0",
   "description": "The Advanced AI Developer Skills Master Library for kbcode, Claude Code, and modern autonomous coding agents",
   "main": "SKILLS_MANIFEST.json",
+  "bin": {
+    "skill": "./bin/skill-runner.mjs"
+  },
+  "type": "module",
   "scripts": {
-    "validate": "node -e \"const m=require('./SKILLS_MANIFEST.json'); console.log('Skills count:', m.total_skills);\""
+    "skill": "node bin/skill-runner.mjs",
+    "validate": "node bin/skill-runner.mjs validate",
+    "export": "node tools/export-prompt.mjs",
+    "search": "node bin/skill-runner.mjs search"
   },
   "keywords": [
     "ai-agent",

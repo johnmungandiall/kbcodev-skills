@@ -73,7 +73,9 @@
 }
 ```
 
-### Output Contract
+### Output Contract (With Production Token Bucket Rate Limiter)
+
+#### 1. Structured Tool Output Spec
 ```json
 {
   "batch_size": 2,
@@ -82,6 +84,43 @@
     { "tool": "search_code", "matches": 3, "summary": "Found JWT_SECRET in config.py:12, auth.py:4" },
     { "tool": "search_code", "matches": 1, "summary": "Found TOKEN_EXPIRY in config.py:15" }
   ]
+}
+```
+
+#### 2. Production Token Bucket Rate Limiting Engine (TypeScript)
+```typescript
+export class TokenBucketLimiter {
+  private tokens: number;
+  private lastRefillTimestamp: number;
+
+  constructor(
+    private readonly capacity: number,       // Max burst requests allowed
+    private readonly refillRatePerSecond: number // Token refill rate
+  ) {
+    this.tokens = capacity;
+    this.lastRefillTimestamp = Date.now();
+  }
+
+  public async acquire(cost: number = 1): Promise<void> {
+    while (true) {
+      this.refill();
+      if (this.tokens >= cost) {
+        this.tokens -= cost;
+        return;
+      }
+      const needed = cost - this.tokens;
+      const waitTimeMs = Math.ceil((needed / this.refillRatePerSecond) * 1000);
+      await new Promise((resolve) => setTimeout(resolve, Math.max(waitTimeMs, 50)));
+    }
+  }
+
+  private refill(): void {
+    const now = Date.now();
+    const elapsedSeconds = (now - this.lastRefillTimestamp) / 1000;
+    const addedTokens = elapsedSeconds * this.refillRatePerSecond;
+    this.tokens = Math.min(this.capacity, this.tokens + addedTokens);
+    this.lastRefillTimestamp = now;
+  }
 }
 ```
 

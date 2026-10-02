@@ -56,7 +56,9 @@
 }
 ```
 
-### Output Contract
+### Output Contract (TypeScript & Python SDKs)
+
+#### 1. TypeScript Implementation with Ephemeral Caching
 ```typescript
 import Anthropic from '@anthropic-ai/sdk';
 
@@ -95,6 +97,42 @@ export async function runAgentStep(userMessage: string, history: Anthropic.Messa
 
   return response;
 }
+```
+
+#### 2. Python Implementation with Streaming & Prompt Caching
+```python
+import os
+import anthropic
+
+client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+
+def run_agent_step_python(user_prompt: str, messages: list):
+    response = client.messages.create(
+        model="claude-3-5-sonnet-20241022",
+        max_tokens=4096,
+        system=[
+            {
+                "type": "text",
+                "text": "You are a senior system architect agent.",
+                "cache_control": {"type": "ephemeral"}
+            }
+        ],
+        tools=[
+            {
+                "name": "read_file",
+                "description": "Read file contents from workspace.",
+                "input_schema": {
+                    "type": "object",
+                    "properties": {
+                        "path": {"type": "string", "description": "Relative file path"}
+                    },
+                    "required": ["path"]
+                }
+            }
+        ],
+        messages=messages + [{"role": "user", "content": user_prompt}]
+    )
+    return response
 ```
 
 ---

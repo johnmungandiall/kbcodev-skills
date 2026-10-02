@@ -63,7 +63,9 @@
 }
 ```
 
-### Output Contract
+### Output Contract (TypeScript & Python Implementations)
+
+#### 1. TypeScript Production Implementation
 ```typescript
 // Production TypeScript MCP Server Implementation
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
@@ -133,6 +135,36 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 // 3. Connect via Stdio Transport
 const transport = new StdioServerTransport();
 await server.connect(transport);
+```
+
+#### 2. Python FastMCP Implementation
+```python
+# Production Python FastMCP Implementation
+from mcp.server.fastmcp import FastMCP
+import subprocess
+
+mcp = FastMCP("git-repo-mcp")
+
+@mcp.tool()
+def get_git_status() -> str:
+    """Returns current git working tree status."""
+    result = subprocess.run(["git", "status", "--short"], capture_output=True, text=True)
+    return result.stdout.strip() or "Working tree clean"
+
+@mcp.tool()
+def create_commit(message: str) -> str:
+    """Commit staged git changes with a structured message.
+    
+    Args:
+        message: The descriptive commit message
+    """
+    if not message.strip():
+        raise ValueError("Commit message cannot be empty")
+    result = subprocess.run(["git", "commit", "-m", message], capture_output=True, text=True, check=True)
+    return result.stdout.strip()
+
+if __name__ == "__main__":
+    mcp.run()
 ```
 
 ---

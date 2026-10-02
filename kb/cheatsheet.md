@@ -1,12 +1,18 @@
 # Cheatsheet: kbcodedev-skills
 
-Fast reference for working with and referencing skills in this repository.
+Fast reference for CLI commands, testing, and agent integration patterns in this repository.
 
-## Lookup Commands
-- **Master Index**: See `INDEX.md` for task-to-file lookup.
-- **Manifest JSON**: Query `SKILLS_MANIFEST.json` for structured tools.
-- **Full Catalog**: Browse `README.md`.
+## CLI Runner Commands
+- `npm run skill list` — Display all 115 skills across 21 categories.
+- `npm run search <query>` — Search skills by keyword, title, or category.
+- `npm run skill show <id>` — View complete skill markdown in terminal.
+- `npm run validate` — Automated test suite validating all 115 skills against canonical schema.
 
-## Integration Examples
-- **In kbcode**: Load skill via `get_skill("kbcodedev/<id>")` or read directly from `categories/<category>/<skill>.md`.
-- **In Claude Code / Cursor**: Pass the file path into prompt or session context.
+## Agent Prompt Exporter Tool
+- `node tools/export-prompt.mjs <skill-id> claude` — Export into Claude XML `<skill>` block.
+- `node tools/export-prompt.mjs <skill-id> cursor` — Export into Cursor `.cursorrules` format.
+- `node tools/export-prompt.mjs <skill-id> json` — Export into structured JSON object.
+
+## In kbcode & Claude Code
+- Load dynamically via `get_skill("kbcodedev/<id>")`.
+- Reference directly from `categories/<category>/<skill>.md`.

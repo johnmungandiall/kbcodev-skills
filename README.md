@@ -320,6 +320,42 @@ C:\dev\kbcodev-skills/
 
 ---
 
+## 🛠️ CLI Runner, Validator & Prompt Export Tooling
+
+`kbcodedev-skills` includes built-in developer CLI tools for running, searching, validating, and exporting skills:
+
+### 1. Interactive Terminal Commands
+```bash
+# List all 115 skills across 21 categories
+npm run skill list
+
+# Fast keyword search across IDs, titles, and categories
+npm run search docker
+npm run search react
+
+# Read any skill directly in terminal
+npm run skill show zero-downtime-ship-pipeline
+
+# Validate all 115 skills against the canonical production schema
+npm run validate
+```
+
+### 2. Exporting Skills into Agent Prompts (Claude, Cursor, kbcode)
+Export any skill formatted for immediate injection into AI agent system prompts:
+```bash
+# Export into Claude XML prompt tag (<skill name="...">...</skill>)
+node tools/export-prompt.mjs autonomous-react-loop claude
+
+# Export into Cursor .cursorrules / .mdc format
+node tools/export-prompt.mjs zero-downtime-ship-pipeline cursor
+
+# Export as clean JSON or Markdown block
+node tools/export-prompt.mjs mcp-server-builder json
+node tools/export-prompt.mjs database-schema-modeling markdown
+```
+
+---
+
 ## 🛠️ How to Use kbcodedev-skills
 
 ### In kbcode
