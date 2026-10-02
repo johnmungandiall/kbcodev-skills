@@ -1,4 +1,4 @@
-# 🗺️ Task-to-Skill Fast Lookup Index (115 Skills Master Map)
+# 🗺️ Task-to-Skill Fast Lookup Index (129 Skills Master Map)
 
 Find the exact skill file for your development task instantly:
 
@@ -29,6 +29,8 @@ Find the exact skill file for your development task instantly:
 | **Django Enterprise Architecture** | `kbcodedev/django-enterprise-architecture` | `categories/03-software-engineering/django-enterprise-architecture.md` |
 | **Flask Modular Microservices** | `kbcodedev/flask-modular-microservice-engine` | `categories/03-software-engineering/flask-modular-microservice-engine.md` |
 | **Celery Distributed Task Queue** | `kbcodedev/celery-distributed-task-queue` | `categories/03-software-engineering/celery-distributed-task-queue.md` |
+| **Litestar Async ASGI Engine** | `kbcodedev/litestar-async-api-engine` | `categories/03-software-engineering/litestar-async-api-engine.md` |
+| **Typer, Click & Rich CLI Engine** | `kbcodedev/typer-click-rich-cli-engine` | `categories/03-software-engineering/typer-click-rich-cli-engine.md` |
 | **5-Whys Deep Debugging** | `kbcodedev/root-cause-investigator` | `categories/04-testing-qa-debugging/root-cause-investigator.md` |
 | **Unit & Integration Test Suites** | `kbcodedev/unit-integration-test-generator` | `categories/04-testing-qa-debugging/unit-integration-test-generator.md` |
 | **Playwright Browser E2E Tests** | `kbcodedev/e2e-webapp-testing` | `categories/04-testing-qa-debugging/e2e-webapp-testing.md` |
@@ -36,6 +38,7 @@ Find the exact skill file for your development task instantly:
 | **OWASP SAST Security Scan** | `kbcodedev/security-vulnerability-auditor` | `categories/04-testing-qa-debugging/security-vulnerability-auditor.md` |
 | **Canary Release Verification** | `kbcodedev/canary-regression-verifier` | `categories/04-testing-qa-debugging/canary-regression-verifier.md` |
 | **Automated Git Bisect Regression** | `kbcodedev/automated-git-bisect-debugger` | `categories/04-testing-qa-debugging/automated-git-bisect-debugger.md` |
+| **Pytest & Hypothesis Testing** | `kbcodedev/pytest-advanced-test-engineering` | `categories/04-testing-qa-debugging/pytest-advanced-test-engineering.md` |
 | **Next.js & React Server Components**| `kbcodedev/modern-frontend-architecture` | `categories/05-frontend-ui-ux/modern-frontend-architecture.md` |
 | **Design System Tokens & Dark Mode**| `kbcodedev/design-system-theme-tokens` | `categories/05-frontend-ui-ux/design-system-theme-tokens.md` |
 | **Interactive Standalone Prototypes**| `kbcodedev/interactive-artifacts-builder` | `categories/05-frontend-ui-ux/interactive-artifacts-builder.md` |
@@ -95,6 +98,7 @@ Find the exact skill file for your development task instantly:
 | **Apache Iceberg Lakehouse** | `kbcodedev/data-lakehouse-delta-iceberg` | `categories/13-data-engineering-mlops/data-lakehouse-delta-iceberg.md` |
 | **PyTorch Deep Learning Pipeline** | `kbcodedev/pytorch-deep-learning-pipeline` | `categories/13-data-engineering-mlops/pytorch-deep-learning-pipeline.md` |
 | **Polars & Pandas DataFrame Engine**| `kbcodedev/polars-pandas-dataframe-engine` | `categories/13-data-engineering-mlops/polars-pandas-dataframe-engine.md` |
+| **Hugging Face LLM Pipeline** | `kbcodedev/huggingface-transformers-pipeline` | `categories/13-data-engineering-mlops/huggingface-transformers-pipeline.md` |
 | **SOC2 / GDPR Compliance Controls** | `kbcodedev/soc2-gdpr-compliance-os` | `categories/14-security-compliance-governance/soc2-gdpr-compliance-os.md` |
 | **SAML 2.0 / SCIM Enterprise SSO** | `kbcodedev/zero-trust-identity-saml-oidc` | `categories/14-security-compliance-governance/zero-trust-identity-saml-oidc.md` |
 | **AWS KMS Envelope Encryption** | `kbcodedev/cryptographic-key-management-kms` | `categories/14-security-compliance-governance/cryptographic-key-management-kms.md` |

@@ -1,6 +1,6 @@
-# Categories & Skill Index (125 Skills Master Map)
+# Categories & Skill Index (129 Skills Master Map)
 
-Complete mapping of all 125 skills across 21 categories in `categories/`:
+Complete mapping of all 129 skills across 21 categories in `categories/`:
 
 ### 01. Agentic Orchestration (`categories/01-agentic-orchestration/`)
 - `autonomous-react-loop.md` — ReAct loops, dynamic step budgets, oscillation detection.

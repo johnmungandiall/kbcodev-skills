@@ -1,7 +1,7 @@
 # 📁 Category: Software Engineering & Code Mastery (`03-software-engineering`)
 
 > **Code scaffolding, refactoring, complexity optimization, language migration, regex, and concurrency**
-> Total Skills: **11** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
+> Total Skills: **13** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
 
 ---
 
@@ -20,6 +20,8 @@
 | **Django Enterprise Architecture & High-Scale Optimization Engine** | `kbcodedev/django-enterprise-architecture` | `python` | `advanced` | [📄 Open django-enterprise-architecture.md](django-enterprise-architecture.md) |
 | **Flask Modular Microservices & Application Factory Architecture** | `kbcodedev/flask-modular-microservice-engine` | `python` | `advanced` | [📄 Open flask-modular-microservice-engine.md](flask-modular-microservice-engine.md) |
 | **Celery Distributed Task Queue & Asynchronous Architecture Engine** | `kbcodedev/celery-distributed-task-queue` | `python` | `advanced` | [📄 Open celery-distributed-task-queue.md](celery-distributed-task-queue.md) |
+| **Typer, Click & Rich CLI Terminal Application Engine** | `kbcodedev/typer-click-rich-cli-engine` | `python` | `advanced` | [📄 Open typer-click-rich-cli-engine.md](typer-click-rich-cli-engine.md) |
+| **Litestar High-Performance Modern ASGI Engine** | `kbcodedev/litestar-async-api-engine` | `python` | `expert` | [📄 Open litestar-async-api-engine.md](litestar-async-api-engine.md) |
 
 ---
 

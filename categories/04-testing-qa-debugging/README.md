@@ -1,7 +1,7 @@
 # 📁 Category: Testing, QA & Deep Debugging (`04-testing-qa-debugging`)
 
 > **5-Whys root cause investigation, test generators, E2E browser tests, load profilers, security SAST, canary verifiers, and git bisect**
-> Total Skills: **7** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
+> Total Skills: **8** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
 
 ---
 
@@ -16,6 +16,7 @@
 | **Security Vulnerability & Dependency Auditor** | `kbcodedev/security-vulnerability-auditor` | `agnostic` | `advanced` | [📄 Open security-vulnerability-auditor.md](security-vulnerability-auditor.md) |
 | **Canary Regression Verifier & Health Auditor** | `kbcodedev/canary-regression-verifier` | `agnostic` | `advanced` | [📄 Open canary-regression-verifier.md](canary-regression-verifier.md) |
 | **Automated Git Bisect & Regression Debugger** | `kbcodedev/automated-git-bisect-debugger` | `agnostic` | `expert` | [📄 Open automated-git-bisect-debugger.md](automated-git-bisect-debugger.md) |
+| **Pytest Advanced Test Engineering & Property-Based Verification** | `kbcodedev/pytest-advanced-test-engineering` | `python` | `expert` | [📄 Open pytest-advanced-test-engineering.md](pytest-advanced-test-engineering.md) |
 
 ---
 

@@ -3,7 +3,7 @@
   "name": "kbcodedev-skills",
   "version": "2.0.0",
   "description": "The Complete Advanced AI Developer Skills Master Library for kbcode and modern coding agents",
-  "total_skills": 125,
+  "total_skills": 129,
   "total_categories": 21,
   "categories": [
     {
@@ -263,7 +263,7 @@
       "id": "03-software-engineering",
       "name": "Software Engineering & Code Mastery",
       "description": "Code scaffolding, refactoring, complexity optimization, language migration, regex, and concurrency",
-      "skills_count": 11,
+      "skills_count": 13,
       "skills": [
         {
           "id": "kbcodedev/code-scaffolding-synthesis",
@@ -451,6 +451,39 @@
             "rabbitmq",
             "async"
           ]
+        },
+        {
+          "id": "kbcodedev/typer-click-rich-cli-engine",
+          "tags": [
+            "typer",
+            "click",
+            "rich",
+            "cli",
+            "python",
+            "terminal",
+            "developer-tools"
+          ],
+          "difficulty": "advanced",
+          "runtime": "python",
+          "path": "categories/03-software-engineering/typer-click-rich-cli-engine.md",
+          "title": "Typer, Click & Rich CLI Terminal Application Engine"
+        },
+        {
+          "id": "kbcodedev/litestar-async-api-engine",
+          "tags": [
+            "litestar",
+            "starlite",
+            "asgi",
+            "python",
+            "msgspec",
+            "dto",
+            "api",
+            "openapi"
+          ],
+          "difficulty": "expert",
+          "runtime": "python",
+          "path": "categories/03-software-engineering/litestar-async-api-engine.md",
+          "title": "Litestar High-Performance Modern ASGI Engine"
         }
       ]
     },
@@ -458,7 +491,7 @@
       "id": "04-testing-qa-debugging",
       "name": "Testing, QA & Deep Debugging",
       "description": "5-Whys root cause investigation, test generators, E2E browser tests, load profilers, security SAST, canary verifiers, and git bisect",
-      "skills_count": 7,
+      "skills_count": 8,
       "skills": [
         {
           "id": "kbcodedev/root-cause-investigator",
@@ -578,6 +611,24 @@
             "bisect",
             "debugger"
           ]
+        },
+        {
+          "id": "kbcodedev/pytest-advanced-test-engineering",
+          "tags": [
+            "pytest",
+            "testing",
+            "python",
+            "hypothesis",
+            "property-testing",
+            "asyncio",
+            "fixtures",
+            "mocking",
+            "coverage"
+          ],
+          "difficulty": "expert",
+          "runtime": "python",
+          "path": "categories/04-testing-qa-debugging/pytest-advanced-test-engineering.md",
+          "title": "Pytest Advanced Test Engineering & Property-Based Verification"
         }
       ]
     },
@@ -1540,7 +1591,7 @@
       "id": "13-data-engineering-mlops",
       "name": "Data Engineering & MLOps",
       "description": "Feast feature stores, Qdrant hybrid RAG, Triton inference serving, Airflow DAGs, and Iceberg lakehouses",
-      "skills_count": 7,
+      "skills_count": 8,
       "skills": [
         {
           "id": "kbcodedev/feature-store-pipeline",
@@ -1660,6 +1711,25 @@
             "arrow",
             "parquet"
           ]
+        },
+        {
+          "id": "kbcodedev/huggingface-transformers-pipeline",
+          "tags": [
+            "huggingface",
+            "transformers",
+            "peft",
+            "qlora",
+            "llm",
+            "python",
+            "pytorch",
+            "gpu",
+            "trl",
+            "vllm"
+          ],
+          "difficulty": "expert",
+          "runtime": "python",
+          "path": "categories/13-data-engineering-mlops/huggingface-transformers-pipeline.md",
+          "title": "Hugging Face Transformers, PEFT & Open-Source LLM Pipeline"
         }
       ]
     },

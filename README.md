@@ -1,6 +1,6 @@
 # 🚀 kbcodedev-skills: The Advanced AI Developer Skills Master Library
 
-A production-grade, meticulously synthesized, category-wise library of **115 advanced yet simplified AI developer skills, agentic orchestration engines, architectural frameworks, and engineering playbooks** designed specifically for **kbcode**, Claude Code, and modern autonomous AI coding assistants.
+A production-grade, meticulously synthesized, category-wise library of **129 advanced yet simplified AI developer skills, agentic orchestration engines, architectural frameworks, and engineering playbooks** designed specifically for **kbcode**, Claude Code, and modern autonomous AI coding assistants.
 
 Synthesized and completely rewritten from over 50,000 raw prompts and prompt repositories into clean, contract-driven, high-signal skill modules.
 
@@ -22,12 +22,12 @@ Unlike raw prompt dumps filled with conversational filler, repetitive clichés, 
 Click any file or category folder below to navigate directly to it:
 
 - 📄 **[`README.md`](README.md)** — Master Library Documentation & Catalog (With 'When to Use' Guide)
-- 📄 **[`SKILLS_MANIFEST.json`](SKILLS_MANIFEST.json)** — Machine-Readable JSON Skills Registry (115 Skills)
-- 📄 **[`INDEX.md`](INDEX.md)** — Task-to-Skill Fast Lookup Table (115 Mappings)
+- 📄 **[`SKILLS_MANIFEST.json`](SKILLS_MANIFEST.json)** — Machine-Readable JSON Skills Registry (129 Skills)
+- 📄 **[`INDEX.md`](INDEX.md)** — Task-to-Skill Fast Lookup Table (129 Mappings)
 - 📄 **[`AGENT.md`](AGENT.md)** — Agent Navigation & Project Guide
 - 📄 **[`LICENSE`](LICENSE)** — Open-Source MIT License
 - 📄 **[`LEGAL.md`](LEGAL.md)** — Intellectual Property, Clean-Room Synthesis & Fair Use Compliance
-- 📁 **[`categories/`](categories/)** — Master Skills Directory (115 Skills across 21 Categories)
+- 📁 **[`categories/`](categories/)** — Master Skills Directory (129 Skills across 21 Categories)
   - 📂 **[`01-agentic-orchestration/`](categories/01-agentic-orchestration/)** — Autonomous ReAct, Swarms, DAGs, Reflexion, Guards (8 Skills)
   - 📂 **[`02-system-architecture/`](categories/02-system-architecture/)** — C4, Distributed Microservices, DB Schemas, IaC, Kafka (6 Skills)
   - 📂 **[`03-software-engineering/`](categories/03-software-engineering/)** — Scaffolding, Refactoring, Big-O, Concurrency, Regex (7 Skills)
@@ -81,7 +81,7 @@ Click any file or category folder below to navigate directly to it:
 
 ---
 
-## 🎯 Master Skills Catalog & "When to Use" Guide (115 Production Skills)
+## 🎯 Master Skills Catalog & "When to Use" Guide (129 Production Skills)
 
 ---
 
@@ -363,7 +363,7 @@ Click any file or category folder below to navigate directly to it:
 
 ### 1. Interactive Terminal Commands
 ```bash
-# List all 115 skills across 21 categories
+# List all 129 skills across 21 categories
 npm run skill list
 
 # Fast keyword search across IDs, titles, and categories
@@ -373,7 +373,7 @@ npm run search react
 # Read any skill directly in terminal
 npm run skill show zero-downtime-ship-pipeline
 
-# Validate all 115 skills against the canonical production schema
+# Validate all 129 skills against the canonical production schema
 npm run validate
 ```
 

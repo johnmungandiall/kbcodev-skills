@@ -1,7 +1,7 @@
 # 📁 Category: Data Engineering & MLOps (`13-data-engineering-mlops`)
 
 > **Feast feature stores, Qdrant hybrid RAG, Triton inference serving, Airflow DAGs, and Iceberg lakehouses**
-> Total Skills: **7** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
+> Total Skills: **8** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
 
 ---
 
@@ -16,6 +16,7 @@
 | **Data Lakehouse Architecture (Delta Lake & Apache Iceberg)** | `kbcodedev/data-lakehouse-delta-iceberg` | `agnostic` | `advanced` | [📄 Open data-lakehouse-delta-iceberg.md](data-lakehouse-delta-iceberg.md) |
 | **PyTorch Deep Learning Training Pipeline & Model Optimization Engine** | `kbcodedev/pytorch-deep-learning-pipeline` | `python` | `advanced` | [📄 Open pytorch-deep-learning-pipeline.md](pytorch-deep-learning-pipeline.md) |
 | **Polars & Pandas High-Performance DataFrame Processing Engine** | `kbcodedev/polars-pandas-dataframe-engine` | `python` | `advanced` | [📄 Open polars-pandas-dataframe-engine.md](polars-pandas-dataframe-engine.md) |
+| **Hugging Face Transformers, PEFT & Open-Source LLM Pipeline** | `kbcodedev/huggingface-transformers-pipeline` | `python` | `expert` | [📄 Open huggingface-transformers-pipeline.md](huggingface-transformers-pipeline.md) |
 
 ---
 

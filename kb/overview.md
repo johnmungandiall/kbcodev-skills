@@ -1,6 +1,6 @@
 # Overview: kbcodedev-skills
 
-kbcodedev-skills is a comprehensive, production-grade library of 125 advanced yet simplified AI developer skills, agentic orchestration engines, and engineering playbooks designed for kbcode, Claude Code, and autonomous coding agents.
+kbcodedev-skills is a comprehensive, production-grade library of 129 advanced yet simplified AI developer skills, agentic orchestration engines, and engineering playbooks designed for kbcode, Claude Code, and autonomous coding agents.
 
 ## Structure
 - `categories/` — 21 structured domain categories containing 115 standalone `.md` skill files.
