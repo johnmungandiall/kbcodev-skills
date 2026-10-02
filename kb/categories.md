@@ -30,7 +30,7 @@ Complete mapping of all 129 skills across 21 categories in `categories/`:
 - `concurrency-async-patterns.md` — Bounded worker pools, event loop concurrency, deadlock elimination.
 - `fastapi-async-production-architecture.md` — FastAPI async API engine, Pydantic v2, async SQLAlchemy 2.0, lifespan handlers, OAuth2 JWT.
 - `django-enterprise-architecture.md` — Django 5+, DRF/Ninja, zero N+1 ORM queries (select_related/prefetch_related), service/selector layers.
-- `flask-modular-microservice-engine.md` — Flask 3+, Application Factory pattern, Blueprints, Marshmallow/Pydantic validation, Flask-SQLAlchemy.
+- `flask-modular-microservice-engine.md` — Flask 3+, Application Factory pattern, Blueprints, Pydantic v2 validation, RFC 7807 problem details, Gunicorn post-fork engine disposal.
 - `celery-distributed-task-queue.md` — Celery 5+, Redis/RabbitMQ brokers, canvas workflows (group/chain/chord), exponential backoff retries.
 
 ### 04. Testing, QA & Debugging (`categories/04-testing-qa-debugging/`)
