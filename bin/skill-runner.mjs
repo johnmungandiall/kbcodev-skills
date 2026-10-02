@@ -104,6 +104,83 @@ function showSkill(target) {
   console.log(content);
 }
 
+// --- Fence-aware structural validation -------------------------------------------------
+// A required section counts as present ONLY when it appears as a real `## N. Title`
+// heading OUTSIDE any code fence. The previous implementation used content.includes(title),
+// so a title that existed only inside a fenced example or in prose passed as "verified".
+const REQUIRED_SECTIONS = [
+  'Intent & Trigger Conditions',
+  'Core Mental Model & Invariant Principles',
+  'High-Signal Execution Workflow',
+  'Input / Output Contracts',
+  'Anti-Patterns & Critical Traps',
+  'Real-World Production Example'
+];
+
+function normalizeHeading(title) {
+  return title.replace(/^\d+\.\s*/, '').trim().toLowerCase();
+}
+
+// Walk the file line-wise, tracking fence state. Returns the level-2 headings seen outside
+// fences plus each section's body (its lines up to the next heading). Inline backticks
+// mid-line are not fences; only a line that starts with three-or-more backticks opens/closes.
+function parseSkillStructure(content) {
+  const lines = content.split(/\r?\n/);
+  const headings = [];
+  const bodies = new Map();
+  let fence = null;
+  let current = null;
+
+  for (const line of lines) {
+    const fenceMatch = /^\s*(`{3,})(.*)$/.exec(line);
+    if (fenceMatch) {
+      const ticks = fenceMatch[1].length;
+      if (fence === null) fence = ticks;
+      else if (ticks >= fence) fence = null;
+      if (current) current.body.push(line);
+      continue;
+    }
+    const headingMatch = /^(#{2,6})\s+(.*)$/.exec(line);
+    if (fence === null && headingMatch) {
+      if (headingMatch[1].length === 2) {
+        if (current) bodies.set(normalizeHeading(current.title), current.body);
+        current = { title: headingMatch[2].trim(), body: [] };
+        headings.push(current.title);
+      } else if (current) {
+        current.body.push(line);
+      }
+      continue;
+    }
+    if (current) current.body.push(line);
+  }
+  if (current) bodies.set(normalizeHeading(current.title), current.body);
+  return { headings, bodies };
+}
+
+// Every ```json block inside the Input/Output Contracts section must parse.
+function validateContractJson(bodies) {
+  const body = bodies.get(normalizeHeading('Input / Output Contracts'));
+  if (!body) return { blocks: 0, failedBlocks: [] };
+  let blocks = 0;
+  const failedBlocks = [];
+  for (let i = 0; i < body.length; i++) {
+    if (!/^\s*```json\s*$/.test(body[i])) continue;
+    let close = -1;
+    for (let j = i + 1; j < body.length; j++) {
+      if (/^\s*```\s*$/.test(body[j])) { close = j; break; }
+    }
+    blocks++;
+    if (close === -1) { failedBlocks.push('unclosed ```json block'); break; }
+    try {
+      JSON.parse(body.slice(i + 1, close).join('\n'));
+    } catch (e) {
+      failedBlocks.push(e.message.slice(0, 60));
+    }
+    i = close;
+  }
+  return { blocks, failedBlocks };
+}
+
 function validateSkills() {
   const manifest = loadManifest();
   console.log(`\n🧪 Validating all ${manifest.total_skills} skills across ${manifest.total_categories} categories...\n`);
@@ -111,15 +188,6 @@ function validateSkills() {
   let passed = 0;
   let failed = 0;
   const errors = [];
-
-  const REQUIRED_SECTIONS = [
-    'Intent & Trigger Conditions',
-    'Core Mental Model & Invariant Principles',
-    'High-Signal Execution Workflow',
-    'Input / Output Contracts',
-    'Anti-Patterns & Critical Traps',
-    'Real-World Production Example'
-  ];
 
   for (const cat of manifest.categories) {
     for (const skill of cat.skills) {
@@ -131,16 +199,21 @@ function validateSkills() {
       }
 
       const content = fs.readFileSync(fullPath, 'utf-8');
-      const missingSections = [];
-
-      for (const section of REQUIRED_SECTIONS) {
-        if (!content.includes(section)) {
-          missingSections.push(section);
-        }
-      }
+      const { headings, bodies } = parseSkillStructure(content);
+      const present = new Set(headings.map(normalizeHeading));
+      const missingSections = REQUIRED_SECTIONS.filter((s) => !present.has(normalizeHeading(s)));
+      const { failedBlocks } = validateContractJson(bodies);
+      const problems = [];
 
       if (missingSections.length > 0) {
-        errors.push(`[SCHEMA_FAIL] ${skill.id}: Missing sections: ${missingSections.join(', ')}`);
+        problems.push(`Missing sections: ${missingSections.join(', ')}`);
+      }
+      if (failedBlocks.length > 0) {
+        problems.push(`Invalid contract JSON: ${failedBlocks.join('; ')}`);
+      }
+
+      if (problems.length > 0) {
+        errors.push(`[SCHEMA_FAIL] ${skill.id}: ${problems.join(' | ')}`);
         failed++;
       } else {
         passed++;
@@ -151,8 +224,8 @@ function validateSkills() {
   if (failed === 0) {
     console.log(`✅ 100% PASS: All ${passed}/${passed} skills successfully validated!`);
     console.log(`   - File existence: Verified`);
-    console.log(`   - Canonical structure: Verified`);
-    console.log(`   - Contracts & Guardrails: Verified\n`);
+    console.log(`   - Heading-anchored structure (outside code fences): Verified`);
+    console.log(`   - Input/Output contract JSON parses: Verified\n`);
   } else {
     console.error(`❌ Validation Failures (${failed} errors):\n`);
     for (const err of errors) console.error(`  • ${err}`);

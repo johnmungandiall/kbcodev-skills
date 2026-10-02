@@ -1,69 +1,137 @@
 # kbcodedev-skills: Comprehensive Dynamism & Adaptivity Audit
 
-**Audit Target**: All 115 Skills across 21 Categories — **historical snapshot**; the library has since grown to 130 skills (see `SKILLS_MANIFEST.json`), so the counts below describe the 115-skill snapshot, not the current tree.  
-**Execution Date**: October 2026  
+**Audit Target**: All **130** Skills across 21 Categories  
+**Baseline**: 115 skills (original audit) — **re-measured at 130 on 2026-10-02**  
+**Method**: deterministic script over every skill file (manifest-driven). The original audit's
+three-way split was an LLM judgement and was not reproducible; it is superseded by the
+script measurement below, and the original analysis is preserved in §4 as history.  
 **Auditor**: Antigravity / kbcode  
 
 ---
 
 ## 1. Executive Summary: Are the Skills Truly Dynamic?
 
-**Verdict**: **Anni skills 100% fully dynamic ga levu.**
-Prasthutam unna 115 skills lo:
-- **81 Skills (70.4%) — Fully Dynamic**: True runtime discovery, dynamic JSON input contracts, environment-adaptive heuristics, zero stack-locking.
-- **29 Skills (25.2%) — Dynamic Workflow with Stack-Biased / Static Examples**: Workflow logic dynamic ga unna, code examples mariyu anti-patterns lo specific opinionated frameworks (Next.js App Router, Tailwind CSS, PostgreSQL, Playwright) ni hardcode chesi unnaayi.
-- **5 Skills (4.4%) — Static Heuristics & Magic Numbers**: Hardcoded thresholds, rigid step counts, or fixed time windows ni invariant ga enforce chesthunnayi (e.g. "30-80 steps budget", "60-second onboarding", "7-day sprint", "< 5 min time-to-hello-world", "48-hour falsification").
+**Verdict**: **the library is not uniformly "fully dynamic", and that is by design.** Workflow and
+contracts are dynamic; what remains fixed is a small, bounded set of numeric bounds plus one
+deliberate library-wide invariant block.
+
+**Current measurement (all 130 skills)**
+
+- **6 skills carry a rule-shaped fixed numeric bound** — a step band, day window or enforced %
+  written as a rule rather than derived. Of these, **5 are already labelled as examples/heuristics**
+  ("e.g.", a named domain heuristic) and **1 was a genuine unsupported quantitative claim**, which
+  has been corrected. See §3.
+- **15 skills were added after the 115-skill baseline** (Python frameworks, Flutter, MLOps,
+  skill-quality). All 15 inherit the canonical structure and the Project-Grounding Invariant.
+- **130 of 130 skills now carry an explicit `### Verification Gate`** in their execution workflow
+  (added 2026-10-02). Before this pass, **none** of the 130 stated how to verify, and 59 stated
+  nothing about verification anywhere in their workflow section. See §5.
+- The **Project-Grounding Invariant** is present in all 130 skills, at the end of each skill's own
+  invariant list (item 4 in 117 skills, item 5 in 10, item 6 in 2, item 10 in 1). It is the **only**
+  prose block repeated across the library (≈156 KB of 884 KB total, ≈17.7%).
 
 ---
 
-## 2. Breakdown Across All 21 Categories
+## 2. Per-Category Inventory (current: 130 skills)
 
-| Category ID | Category Name | Total Skills | Fully Dynamic | Stack-Biased Examples | Static Heuristics |
-|---|---|---|---|---|---|
-| `01-agentic-orchestration` | Agentic Orchestration | 8 | 7 | 0 | 1 (`autonomous-react-loop`) |
-| `02-system-architecture` | System Architecture | 6 | 5 | 1 (`c4-system-architecture`) | 0 |
-| `03-software-engineering` | Software Engineering | 7 | 7 | 0 | 0 |
-| `04-testing-qa-debugging` | Testing & QA | 7 | 5 | 2 (`root-cause`, `e2e-webapp`) | 0 |
-| `05-frontend-ui-ux` | Frontend UI/UX | 7 | 2 | 5 (`modern-frontend`, `interactive-artifacts`, etc.) | 0 |
-| `06-devops-sre-release` | DevOps & SRE | 6 | 5 | 1 (`docker-container`) | 0 |
-| `07-ai-mcp-prompt-engineering`| AI & MCP Prompt Eng | 7 | 6 | 1 (`metaprompt-chain-of-thought`) | 0 |
-| `08-strategic-product-leadership`| Product Leadership | 7 | 3 | 2 (`staff-eng`, `yc-startup`) | 2 (`product-design-ux`, `developer-experience`) |
-| `09-document-media-synthesis` | Document Synthesis | 5 | 3 | 2 (`docx`, `pdf`) | 0 |
-| `10-communication-humanizer-career`| Communication | 5 | 3 | 2 (`ats-resume`, `executive-comms`) | 0 |
-| `11-scientific-quantitative-ai`| Scientific AI | 6 | 5 | 1 (`data-pipeline-etl`) | 0 |
-| `12-mobile-cross-platform` | Mobile Engineering | 5 | 5 | 0 | 0 |
-| `13-data-engineering-mlops` | Data Eng & MLOps | 5 | 3 | 2 (`feature-store`, `mlops-triton`) | 0 |
-| `14-security-compliance` | Security & Compliance | 6 | 5 | 1 (`api-security-rate-limit`) | 0 |
-| `15-c-suite-executive-advisory`| Executive Advisory | 8 | 4 | 3 (`cto-tech-radar`, `cmo-growth`, `copywriting`) | 1 (`cfo-saas-metrics`) |
-| `16-tool-integrations` | Tool Integrations | 5 | 4 | 1 (`database-connector-supabase`) | 0 |
-| `17-visual-architecture-diagrams`| Diagram Synthesis | 4 | 3 | 1 (`cloud-topology`) | 0 |
-| `18-yc-tech-leaders-frameworks`| YC Frameworks | 5 | 4 | 0 | 1 (`sam-altman-velocity`) |
-| `19-game-dev-3d-graphics` | Game Dev & 3D | 2 | 2 | 0 | 0 |
-| `20-web-scraping-browser` | Web Scraping | 2 | 0 | 2 (`anti-detect`, `headless-crawler`) | 0 |
-| `21-systems-embedded` | Systems Programming | 2 | 2 | 0 | 0 |
-| **Totals** | **21 Categories** | **115** | **81** | **29** | **5** |
+| Category ID | Category Name | Total Skills | Added since 115 |
+|---|---|---|---|
+| `01-agentic-orchestration` | Agentic Orchestration | 8 | 0 |
+| `02-system-architecture` | System Architecture | 6 | 0 |
+| `03-software-engineering` | Software Engineering | 13 | 6 |
+| `04-testing-qa-debugging` | Testing & QA | 8 | 1 |
+| `05-frontend-ui-ux` | Frontend UI/UX | 8 | 1 |
+| `06-devops-sre-release` | DevOps & SRE | 6 | 0 |
+| `07-ai-mcp-prompt-engineering`| AI & MCP Prompt Eng | 9 | 2 |
+| `08-strategic-product-leadership` | Product Leadership | 7 | 0 |
+| `09-document-media-synthesis` | Document Synthesis | 5 | 0 |
+| `10-communication-humanizer-career` | Communication | 5 | 0 |
+| `11-scientific-quantitative-ai` | Scientific AI | 6 | 0 |
+| `12-mobile-cross-platform` | Mobile Engineering | 7 | 2 |
+| `13-data-engineering-mlops` | Data Eng & MLOps | 8 | 3 |
+| `14-security-compliance-governance` | Security & Compliance | 6 | 0 |
+| `15-c-suite-executive-advisory` | Executive Advisory | 8 | 0 |
+| `16-tool-integrations-connectors` | Tool Integrations | 5 | 0 |
+| `17-visual-architecture-diagrams` | Diagram Synthesis | 4 | 0 |
+| `18-yc-tech-leaders-frameworks` | YC Frameworks | 5 | 0 |
+| `19-game-dev-3d-graphics` | Game Dev & 3D | 2 | 0 |
+| `20-web-scraping-browser-automation` | Web Scraping | 2 | 0 |
+| `21-systems-embedded-programming` | Systems Programming | 2 | 0 |
+| **Totals** | **21 Categories** | **130** | **15** |
 
----
-
-## 3. Deep Analysis of Static Traps & Hardcoded Patterns
-
-### Trap 1: Magic Numbers & Rigid Time Windows (5 Skills)
-1. `autonomous-react-loop.md`: Enforces "Maintain a strict step budget (e.g., 30-80 steps)" and fixed 20%/50%/30% discovery/execution/verification ratios instead of sizing dynamically to the task.
-2. `product-design-ux-review.md`: Enforces a rigid "60-second onboarding test" threshold regardless of B2B enterprise complexity.
-3. `developer-experience-devex-review.md`: Hardcodes "Time-to-Hello-World < 5 min" as a rigid metric.
-4. `yc-startup-playbook.md`: Enforces fixed "7-day MVP sprint" cycles.
-5. `sam-altman-execution-velocity.md`: Hardcodes "48-hour falsification test".
-6. `cfo-saas-metrics-unit-economics.md`: Fixates on a generic "3:1 LTV:CAC" rule.
-
-### Trap 2: Stack Bias in "Agnostic" Skills (29 Skills)
-- `modern-frontend-architecture.md`: Mentions agnostic UI principles, but hardcodes Next.js 14 App Router, React Server Components (RSC), and Tailwind CSS in execution and contract schemas.
-- `anti-detect-browser-automation.md` & `e2e-webapp-testing.md`: Strictly binds to Playwright and `@sparticuz/chromium`, conflicting with extension-driven or custom agent runtimes.
-- `c4-system-architecture.md` & `staff-eng-architect-review.md`: Default to PostgreSQL and Next.js as the canonical architectural example rather than extracting dynamic topology from project files.
+**The 15 skills added since the 115 baseline** (evidence: `git log --diff-filter=A`):
+`fastapi-async-production-architecture`, `django-enterprise-architecture`,
+`flask-modular-microservice-engine`, `celery-distributed-task-queue`, `typer-click-rich-cli-engine`,
+`litestar-async-api-engine`, `pytest-advanced-test-engineering`, `streamlit-reflex-python-ui-engine`,
+`langchain-llamaindex-agentic-framework`, `universal-skill-quality`, `flutter-production-architecture`,
+`flutter-adaptive-ui-engine`, `pytorch-deep-learning-pipeline`, `polars-pandas-dataframe-engine`,
+`huggingface-transformers-pipeline`.
 
 ---
 
-## 4. Remediation: How to Make All 115 Skills 100% Dynamic
+## 3. Remaining Static Heuristics — measured, classified
 
-1. **Parameterize Step Budgets**: In `autonomous-react-loop.md`, derive the step budget dynamically from the task complexity (`estimated_steps = f(blast_radius, file_count)`), never a fixed 30-80 band.
-2. **Dynamic Heuristics Over Magic Numbers**: Replace fixed "60-second" or "7-day" rules with relative SLA constraints supplied via the `Input Contract`.
-3. **Stack-Adaptive Contracts**: Ensure all schemas accept a `target_stack` or inspect the live repo rather than defaulting to Next.js/Tailwind/Playwright.
+Classified under the `universal-skill-quality` Phase-2 table (never delete an absolute or a number
+by reflex; never keep one unexamined):
+
+| # | Skill | Fixed bound found | Classification | Action |
+|---|---|---|---|---|
+| 1 | `multi-agent-swarm` | "step budgets per subagent (e.g., 10-30 steps)" | Heuristic, **already labelled** with "e.g." | Keep |
+| 2 | `context-save-restore-checkpoint` | "100% operational context" | Rhetoric, not a numeric bound | Keep |
+| 3 | `yc-startup-playbook` | "Concierge MVP Build (3-5 Days)" | Domain-standard sprint heuristic | Keep |
+| 4 | `tech-interview-grilling-prep` | "do not talk uninterrupted for 15 minutes; check in every 2-3 minutes" | Communication heuristic | Keep |
+| 5 | `technical-copywriting-landing-page` | "The 5-Second Hero Rule" | Named domain heuristic (the 5-second test) | Keep |
+| 6 | `headless-crawler-data-extractor` | "90% of web data … 50x faster" | **Unsupported quantitative claim** (no evidence) | **Corrected** → "most web data … far faster … measure the actual saving" |
+
+**Net**: of 6 candidates, 1 was a proven defect. The other 5 are domain heuristics or already
+labelled examples — removing them would have destroyed domain intelligence for no reliability gain.
+
+---
+
+## 4. Historical Analysis (115-skill snapshot) — preserved
+
+### Original Trap 1: Magic Numbers & Rigid Time Windows
+The original audit named 6 skills: `autonomous-react-loop` (a fixed "30-80 steps" band and fixed
+20/50/30 ratios), `product-design-ux-review` ("60-second onboarding test"), `developer-experience-devex-review`
+("Time-to-Hello-World < 5 min"), `yc-startup-playbook` ("7-day MVP sprint"), `sam-altman-execution-velocity`
+("48-hour falsification test"), `cfo-saas-metrics-unit-economics` ("3:1 LTV:CAC").
+
+**Re-measured at 130**: `autonomous-react-loop` no longer carries a fixed band — its step budget is
+now derived (`max_steps = f(blast_radius, affected_files, uncertainty)`). The remaining named cases are
+domain heuristics of the kind the library intends to keep, each now covered by the Project-Grounding
+Invariant's "re-derive from the project's own evidence" rule.
+
+### Original Trap 2: Stack Bias in "Agnostic" Skills
+The original audit named `modern-frontend-architecture` (Next.js 14 App Router, RSC, Tailwind),
+`anti-detect-browser-automation` / `e2e-webapp-testing` (Playwright, `@sparticuz/chromium`),
+and `c4-system-architecture` / `staff-eng-architect-review` (PostgreSQL/Next.js as canonical example).
+
+**Assessment**: this remains the library's main coupling. It is **stack bias in examples**, not in
+workflow logic — the workflows are parameterised, and the Project-Grounding Invariant now instructs the
+agent to reconcile each example against the real project and let the real code win. This is a **style
+choice of the library, not a defect**, and is not changed here.
+
+### Original Remediation Guidance (still valid)
+1. Parameterise step budgets from task complexity — **done** in `autonomous-react-loop`.
+2. Prefer dynamic heuristics over magic numbers, or take the bound from the Input Contract.
+3. Keep contracts stack-adaptive: accept a `target_stack` or inspect the live repo rather than
+   defaulting to Next.js/Tailwind/Playwright.
+
+---
+
+## 5. Library-Wide Invariants (added 2026-10-02)
+
+- **Project-Grounding Invariant** — every version, path, threshold and code sample is a reference
+  pattern; the agent inspects the real project first, adapts each specific while keeping the principle,
+  treats the real code as authoritative where the two disagree, and re-derives every numeric bound
+  from the project's own evidence. Carried by all 130 skills; `skill-authoring-framework.md` carries it
+  in the canonical template so new skills inherit it.
+- **Verification Gate** — a `### Verification Gate` at the end of section 3 in all 130 skills:
+  run the domain's own check against the real artefact before claiming success and report the exact
+  command and result; written/generated/executed is NOT verified; on failure stop, keep the diagnostic,
+  name the actual failure, retry only after something changed; never report a result the check did not
+  produce.
+
+Both are enforced by `bin/skill-runner.mjs validate`, which now checks (a) file existence,
+(b) heading-anchored structure with required sections present **outside** code fences, and
+(c) that every `json` block in the Input/Output Contracts section parses.

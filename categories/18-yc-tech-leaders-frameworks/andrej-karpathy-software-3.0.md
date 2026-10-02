@@ -19,7 +19,7 @@
    - **Software 2.0**: Neural network weights optimized by gradient descent (PyTorch, Machine Learning).
    - **Software 3.0**: Natural language prompts coordinating neural weights and Software 1.0 tools (LLM OS).
 2. **The LLM OS Architecture**:
-   - **CPU**: The LLM core (e.g. Claude 3.7 / GPT-4o).
+   - **CPU**: The LLM core (e.g. a frontier reasoning model — Claude, GPT or Gemini; named models are illustrative and date quickly).
    - **RAM**: The Context Window (Fast, working memory, bounded capacity).
    - **Disk Storage**: Embeddings / Vector Databases / File Systems.
    - **Peripherals (I/O)**: Tools, Browsers, Compilers, Terminal CLI, APIs.
@@ -48,6 +48,12 @@
 └────────────────────────────────────────────────────────────┘
 ```
 
+### Verification Gate
+- Run this domain's own check against the real artefact before claiming success — the project's test/build/lint command, a schema or spec validator, a render or screenshot/diff inspection, or a dry run — whichever the project actually provides. Report the exact command and its result.
+- Written, drafted, generated or merely executed is NOT verified; only the check passing is. If no such check exists or none can be run, say so plainly and deliver the claim as unverified.
+- On failure: stop, keep the diagnostic output, name the actual failure, and retry only after something changed.
+- Never report a result the check did not produce.
+
 ---
 
 ## 4. Input / Output Contracts
@@ -68,7 +74,7 @@
 
 | Traditional OS | LLM OS Equivalent | Implementation in kbcodedev |
 |---|---|---|
-| **CPU** | Large Language Model | Claude 3.7 Sonnet / GPT-4o reasoning core |
+| **CPU** | Large Language Model | A frontier reasoning model (Claude / GPT / Gemini — illustrative, not a pinned model) |
 | **RAM** | Working Context Window | Active conversation history (compacted via worklog) |
 | **L1/L2 Cache** | Prompt Caching | Ephemeral system prompt caching (90% cost reduction) |
 | **Hard Disk** | File System & Vector DB | Workspace directory (`C:\dev\`) + Qdrant vectors |

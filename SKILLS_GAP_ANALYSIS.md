@@ -2,14 +2,14 @@
 
 **Repository**: `kbcodedev-skills`  
 **Version**: `2.0.0`  
-**Current Baseline**: 115 Skills across 21 Categories — **historical snapshot**; the library now holds 130 skills (`SKILLS_MANIFEST.json`), so the inventory and gap tables below describe the 115-skill baseline.  
+**Current Baseline**: 130 Skills across 21 Categories  
 **Date**: October 2026  
 
 ---
 
 ## 1. Executive Summary & Inventory Insights
 
-The `kbcodedev-skills` repository is a curated, production-grade library of 115 agentic skills formatted according to the canonical `skill-authoring-framework.md` standard. Each skill incorporates:
+The `kbcodedev-skills` repository is a curated, production-grade library of 130 agentic skills formatted according to the canonical `skill-authoring-framework.md` standard. Each skill incorporates:
 - **Strict Trigger Conditions**: Precise activation criteria preventing hallucinations and scope creep.
 - **Invariant Principles**: 3 non-negotiable mental model rules.
 - **Deterministic Workflows**: Multi-phase sequential execution pipelines with step budgets.
@@ -22,17 +22,17 @@ The `kbcodedev-skills` repository is a curated, production-grade library of 115 
 |---|---|---|---|---|
 | 01 | `01-agentic-orchestration` | Agentic Orchestration & Autonomous Systems | 8 | Robust |
 | 02 | `02-system-architecture` | System Architecture & Distributed Systems | 6 | Balanced |
-| 03 | `03-software-engineering` | Software Engineering & Code Mastery | 7 | Robust |
-| 04 | `04-testing-qa-debugging` | Testing, QA & Deep Debugging | 7 | Robust |
-| 05 | `05-frontend-ui-ux` | Frontend UI/UX & Design Systems | 7 | Robust |
+| 03 | `03-software-engineering` | Software Engineering & Code Mastery | 13 | Robust |
+| 04 | `04-testing-qa-debugging` | Testing, QA & Deep Debugging | 8 | Robust |
+| 05 | `05-frontend-ui-ux` | Frontend UI/UX & Design Systems | 8 | Robust |
 | 06 | `06-devops-sre-release` | DevOps, SRE & Release Engineering | 6 | Balanced |
-| 07 | `07-ai-mcp-prompt-engineering`| AI, MCP & Prompt Engineering | 7 | Robust |
+| 07 | `07-ai-mcp-prompt-engineering`| AI, MCP & Prompt Engineering | 9 | Robust |
 | 08 | `08-strategic-product-leadership` | Strategic & Product Leadership | 7 | Robust |
 | 09 | `09-document-media-synthesis` | Document & Media Synthesis | 5 | Balanced |
 | 10 | `10-communication-humanizer-career` | Communication & Career Mastery | 5 | Balanced |
 | 11 | `11-scientific-quantitative-ai` | Scientific & Quantitative AI | 6 | Balanced |
-| 12 | `12-mobile-cross-platform` | Mobile & Cross-Platform Engineering | 5 | Balanced |
-| 13 | `13-data-engineering-mlops` | Data Engineering & MLOps | 5 | Balanced |
+| 12 | `12-mobile-cross-platform` | Mobile & Cross-Platform Engineering | 7 | Robust |
+| 13 | `13-data-engineering-mlops` | Data Engineering & MLOps | 8 | Robust |
 | 14 | `14-security-compliance-governance` | Enterprise Security, Compliance & Governance | 6 | Balanced |
 | 15 | `15-c-suite-executive-advisory` | C-Suite Executive Advisory | 8 | Robust |
 | 16 | `16-tool-integrations-connectors` | Tool Integrations & API Connectors | 5 | Balanced |
@@ -41,7 +41,7 @@ The `kbcodedev-skills` repository is a curated, production-grade library of 115 
 | 19 | `19-game-dev-3d-graphics` | Game Development & 3D Web Graphics | 2 | **Sparse (Under-represented)** |
 | 20 | `20-web-scraping-browser-automation` | Web Scraping & Browser Engineering | 2 | **Sparse (Under-represented)** |
 | 21 | `21-systems-embedded-programming` | Systems & Embedded Programming | 2 | **Sparse (Under-represented)** |
-| **Total** | **21 Categories** | **Master Library** | **115 Skills** | **100% Validated** |
+| **Total** | **21 Categories** | **Master Library** | **130 Skills** | **100% Validated** |
 
 ---
 
@@ -56,7 +56,7 @@ The `kbcodedev-skills` repository is a curated, production-grade library of 115 
 
 ## 3. Comprehensive Gap Analysis: What is Missing?
 
-While the existing 115 skills cover full-stack engineering and product strategy, rapid shifts in the 2026 AI and developer ecosystem have created notable gaps across 9 architectural domains:
+While the existing 130 skills cover full-stack engineering and product strategy, rapid shifts in the 2026 AI and developer ecosystem have created notable gaps across 9 architectural domains:
 
 ### Gap 1: Local LLMs, SLMs & On-Device Inference
 *Current state*: Heavy reliance on cloud APIs (Claude, OpenAI). Zero coverage for self-hosted, private, or edge LLM runtimes.

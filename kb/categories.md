@@ -32,6 +32,8 @@ Complete mapping of all 130 skills across 21 categories in `categories/`:
 - `django-enterprise-architecture.md` — Django 5+, DRF/Ninja, zero N+1 ORM queries (select_related/prefetch_related), service/selector layers.
 - `flask-modular-microservice-engine.md` — Flask 3+, Application Factory pattern, Blueprints, Pydantic v2 validation, RFC 7807 problem details, Gunicorn post-fork engine disposal.
 - `celery-distributed-task-queue.md` — Celery 5+, Redis/RabbitMQ brokers, canvas workflows (group/chain/chord), exponential backoff retries.
+- `typer-click-rich-cli-engine.md` — Typer/Click/Rich CLI engine, type-annotated command contracts, POSIX exit codes, graceful signal handling.
+- `litestar-async-api-engine.md` — Litestar async API, DTO-driven architecture, msgspec serialization, hierarchical DI guard layers, OpenAPI 3.1.
 
 ### 04. Testing, QA & Debugging (`categories/04-testing-qa-debugging/`)
 - `root-cause-investigator.md` — 5-Whys diagnostic protocol, stack frame inspection.
@@ -41,6 +43,7 @@ Complete mapping of all 130 skills across 21 categories in `categories/`:
 - `security-vulnerability-auditor.md` — OWASP Top 10 SAST scanning, SQLi/SSRF/XSS remediation.
 - `canary-regression-verifier.md` — Synthetic health probing, canary error rate gates.
 - `automated-git-bisect-debugger.md` — Automated git bisect binary search regression finder.
+- `pytest-advanced-test-engineering.md` — pytest fixture scope hierarchy, Hypothesis property-based verification, deterministic async mocking.
 
 ### 05. Frontend UI/UX (`categories/05-frontend-ui-ux/`)
 - `modern-frontend-architecture.md` — Next.js App Router, React Server Components (RSC).
@@ -119,6 +122,7 @@ Complete mapping of all 130 skills across 21 categories in `categories/`:
 - `data-lakehouse-delta-iceberg.md` — Apache Iceberg / Delta Lake, ACID object storage.
 - `pytorch-deep-learning-pipeline.md` — PyTorch 2.x, torch.compile, DDP/FSDP multi-GPU, custom DataLoader, mixed precision AMP fp16/bf16, ONNX export.
 - `polars-pandas-dataframe-engine.md` — Polars lazy execution, streaming out-of-core batches, Apache Arrow memory format, Pandas 2.x PyArrow backend.
+- `huggingface-transformers-pipeline.md` — HuggingFace Transformers, QLoRA parameter-efficient fine-tuning, FlashAttention-2 memory optimization, chat templates.
 
 ### 14. Security & Compliance (`categories/14-security-compliance-governance/`)
 - `soc2-gdpr-compliance-os.md` — SOC2 Type II controls, automated GDPR Right-to-be-Forgotten.

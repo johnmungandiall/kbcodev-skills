@@ -7,7 +7,7 @@
 ---
 
 ## 1. Intent & Trigger Conditions
-- **When to Use**: Building high-performance, cost-effective LLM integrations using the Anthropic Claude API (Claude 3.5 Sonnet, Claude 3.7 Sonnet, Claude 3 Opus, Claude 3 Haiku).
+- **When to Use**: Building high-performance, cost-effective LLM integrations using the Anthropic Claude API. Model families and snapshot IDs change often — resolve the current ID from Anthropic's models overview (or the project's own pinned config) before use, and treat the IDs in the examples below as placeholders rather than fixed values.
 - **Triggers**: Prompt caching optimization, tool-use schema authoring, streaming responses, token budget controls, extended thinking mode.
 - **Prerequisites**: Anthropic API Key (`@anthropic-ai/sdk` or Python `anthropic`), schema definitions.
 
@@ -45,6 +45,12 @@
 └─────────────────────────────────────────────┘
 ```
 
+### Verification Gate
+- Run this domain's own check against the real artefact before claiming success — the project's test/build/lint command, a schema or spec validator, a render or screenshot/diff inspection, or a dry run — whichever the project actually provides. Report the exact command and its result.
+- Written, drafted, generated or merely executed is NOT verified; only the check passing is. If no such check exists or none can be run, say so plainly and deliver the claim as unverified.
+- On failure: stop, keep the diagnostic output, name the actual failure, and retry only after something changed.
+- Never report a result the check did not produce.
+
 ---
 
 ## 4. Input / Output Contracts
@@ -52,7 +58,7 @@
 ### Input Contract
 ```json
 {
-  "model": "claude-3-5-sonnet-20241022",
+  "model": "claude-sonnet-5-5",
   "tools": ["query_database", "send_notification"],
   "cache_strategy": "System prompt + Reference schema cached"
 }
@@ -68,7 +74,7 @@ const anthropic = new Anthropic();
 
 export async function runAgentStep(userMessage: string, history: Anthropic.MessageParam[]) {
   const response = await anthropic.messages.create({
-    model: 'claude-3-5-sonnet-20241022',
+    model: 'claude-sonnet-5-5', // resolve the current ID before use — see models overview
     max_tokens: 4096,
     system: [
       {
@@ -110,7 +116,7 @@ client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
 
 def run_agent_step_python(user_prompt: str, messages: list):
     response = client.messages.create(
-        model="claude-3-5-sonnet-20241022",
+        model="claude-sonnet-5-5",  # resolve the current ID before use
         max_tokens=4096,
         system=[
             {

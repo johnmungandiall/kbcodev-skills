@@ -51,6 +51,12 @@
 - **Local State (`useState` / `useReducer`)**: Form inputs, dropdown open/close, toggle switches.
 - **Global Client Store (Zustand / Jotai)**: Authentication session, global audio player, theme toggle.
 
+### Verification Gate
+- Run this domain's own check against the real artefact before claiming success — the project's test/build/lint command, a schema or spec validator, a render or screenshot/diff inspection, or a dry run — whichever the project actually provides. Report the exact command and its result.
+- Written, drafted, generated or merely executed is NOT verified; only the check passing is. If no such check exists or none can be run, say so plainly and deliver the claim as unverified.
+- On failure: stop, keep the diagnostic output, name the actual failure, and retry only after something changed.
+- Never report a result the check did not produce.
+
 ---
 
 ## 4. Input / Output Contracts

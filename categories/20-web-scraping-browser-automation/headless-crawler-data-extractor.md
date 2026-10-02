@@ -14,7 +14,7 @@
 ---
 
 ## 2. Core Mental Model & Invariant Principles
-1. **HTTP First, Browser Only When Necessary**: 90% of web data can be scraped 50x faster using lightweight HTTP requests (`axios` / `undici`) parsed with `cheerio` rather than launching heavy Chromium browser instances. Use headless browsers only for client-side SPAs.
+1. **HTTP First, Browser Only When Necessary**: most web data can be scraped far faster with lightweight HTTP requests (`axios` / `undici`) parsed with `cheerio` than by launching a heavy Chromium instance — measure the actual saving on the target site rather than assuming one. Use headless browsers only for client-side SPAs.
 2. **Domain-Level Rate Limiting & Politeness**: Respect domain rate limits using token buckets (e.g. max 5 req/sec per target host) to prevent server throttling and IP bans.
 3. **Deduplication via URL Normalization & Bloom Filters**: Normalize URLs (strip tracking query params like `utm_*`, sort query keys) and maintain an in-memory Bloom filter to prevent crawling the same page twice.
 
@@ -45,6 +45,12 @@
 │ Step 4: Stream to Parquet │ ── Flush batch of 1,000 records to disk/S3
 └───────────────────────────┘
 ```
+
+### Verification Gate
+- Run this domain's own check against the real artefact before claiming success — the project's test/build/lint command, a schema or spec validator, a render or screenshot/diff inspection, or a dry run — whichever the project actually provides. Report the exact command and its result.
+- Written, drafted, generated or merely executed is NOT verified; only the check passing is. If no such check exists or none can be run, say so plainly and deliver the claim as unverified.
+- On failure: stop, keep the diagnostic output, name the actual failure, and retry only after something changed.
+- Never report a result the check did not produce.
 
 ---
 

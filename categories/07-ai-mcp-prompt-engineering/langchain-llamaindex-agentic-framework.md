@@ -69,7 +69,7 @@ class AgentState(TypedDict):
 tools = [query_financial_knowledge_base]
 tool_node = ToolNode(tools)
 
-model = ChatAnthropic(model="claude-3-5-sonnet-20241022").bind_tools(tools)
+model = ChatAnthropic(model="claude-sonnet-5-5").bind_tools(tools)  # resolve the current model ID before use
 
 def should_continue(state: AgentState) -> str:
     messages = state["messages"]
@@ -129,13 +129,19 @@ def create_subquestion_engine(docs_dir: str):
         ),
     ]
 
-    llm = Anthropic(model="claude-3-5-sonnet-20241022")
+    llm = Anthropic(model="claude-sonnet-5-5")  # resolve the current model ID before use
     return SubQuestionQueryEngine.from_defaults(
         query_engine_tools=query_engine_tools,
         llm=llm,
         use_async=True,
     )
 ```
+
+### Verification Gate
+- Run this domain's own check against the real artefact before claiming success — the project's test/build/lint command, a schema or spec validator, a render or screenshot/diff inspection, or a dry run — whichever the project actually provides. Report the exact command and its result.
+- Written, drafted, generated or merely executed is NOT verified; only the check passing is. If no such check exists or none can be run, say so plainly and deliver the claim as unverified.
+- On failure: stop, keep the diagnostic output, name the actual failure, and retry only after something changed.
+- Never report a result the check did not produce.
 
 ---
 
