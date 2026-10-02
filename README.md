@@ -1,6 +1,6 @@
 # 🚀 kbcodedev-skills: The Advanced AI Developer Skills Master Library
 
-A production-grade, meticulously synthesized, category-wise library of **129 advanced yet simplified AI developer skills, agentic orchestration engines, architectural frameworks, and engineering playbooks** designed specifically for **kbcode**, Claude Code, and modern autonomous AI coding assistants.
+A production-grade, meticulously synthesized, category-wise library of **130 advanced yet simplified AI developer skills, agentic orchestration engines, architectural frameworks, and engineering playbooks** designed specifically for **kbcode**, Claude Code, and modern autonomous AI coding assistants.
 
 Synthesized and completely rewritten from over 50,000 raw prompts and prompt repositories into clean, contract-driven, high-signal skill modules.
 
@@ -22,12 +22,12 @@ Unlike raw prompt dumps filled with conversational filler, repetitive clichés, 
 Click any file or category folder below to navigate directly to it:
 
 - 📄 **[`README.md`](README.md)** — Master Library Documentation & Catalog (With 'When to Use' Guide)
-- 📄 **[`SKILLS_MANIFEST.json`](SKILLS_MANIFEST.json)** — Machine-Readable JSON Skills Registry (129 Skills)
-- 📄 **[`INDEX.md`](INDEX.md)** — Task-to-Skill Fast Lookup Table (129 Mappings)
+- 📄 **[`SKILLS_MANIFEST.json`](SKILLS_MANIFEST.json)** — Machine-Readable JSON Skills Registry (130 Skills)
+- 📄 **[`INDEX.md`](INDEX.md)** — Task-to-Skill Fast Lookup Table (130 Mappings)
 - 📄 **[`AGENT.md`](AGENT.md)** — Agent Navigation & Project Guide
 - 📄 **[`LICENSE`](LICENSE)** — Open-Source MIT License
 - 📄 **[`LEGAL.md`](LEGAL.md)** — Intellectual Property, Clean-Room Synthesis & Fair Use Compliance
-- 📁 **[`categories/`](categories/)** — Master Skills Directory (129 Skills across 21 Categories)
+- 📁 **[`categories/`](categories/)** — Master Skills Directory (130 Skills across 21 Categories)
   - 📂 **[`01-agentic-orchestration/`](categories/01-agentic-orchestration/)** — Autonomous ReAct, Swarms, DAGs, Reflexion, Guards (8 Skills)
   - 📂 **[`02-system-architecture/`](categories/02-system-architecture/)** — C4, Distributed Microservices, DB Schemas, IaC, Kafka (6 Skills)
   - 📂 **[`03-software-engineering/`](categories/03-software-engineering/)** — Scaffolding, Refactoring, Big-O, Concurrency, Regex (7 Skills)
@@ -81,7 +81,7 @@ Click any file or category folder below to navigate directly to it:
 
 ---
 
-## 🎯 Master Skills Catalog & "When to Use" Guide (129 Production Skills)
+## 🎯 Master Skills Catalog & "When to Use" Guide (130 Production Skills)
 
 ---
 
@@ -173,7 +173,7 @@ Click any file or category folder below to navigate directly to it:
 
 ---
 
-### 07. AI, MCP & Prompt Engineering (7 Skills)
+### 07. AI, MCP & Prompt Engineering (9 Skills)
 
 | Skill File | Skill ID | Core Capability | When to Use (Edhi Eppudu Use Cheyyali / Triggers) |
 |---|---|---|---|
@@ -185,6 +185,7 @@ Click any file or category folder below to navigate directly to it:
 | [`structured-output-json-schema.md`](categories/07-ai-mcp-prompt-engineering/structured-output-json-schema.md) | `kbcodedev/structured-output-json-schema` | JSON Schema Draft 7 validation, prose stripping, self-correcting repair loops | **Use when**: Enforcing guaranteed, strictly valid JSON output from LLMs conforming to JSON Schema (Draft 7), auto-repairing malformed JSON strings. |
 | [`context-save-restore-checkpoint.md`](categories/07-ai-mcp-prompt-engineering/context-save-restore-checkpoint.md) | `kbcodedev/context-save-restore-checkpoint` | Session state snapshots, persistent memory serialization across LLM restarts | **Use when**: Serializing active agent state, modified files, and verified milestones to disk, enabling instant session recovery upon cold reboots. |
 | [`langchain-llamaindex-agentic-framework.md`](categories/07-ai-mcp-prompt-engineering/langchain-llamaindex-agentic-framework.md) | `kbcodedev/langchain-llamaindex-agentic-framework` | LangGraph stateful multi-actor graphs, LlamaIndex hierarchical sub-question query engines, tool calling, LangSmith | **Use when**: Building stateful multi-agent workflows, complex RAG architectures, sub-question decomposition, and agent evaluation. |
+| [`universal-skill-quality.md`](categories/07-ai-mcp-prompt-engineering/universal-skill-quality.md) | `kbcodedev/universal-skill-quality` | Universal skill audit, repair & production hardening; assumption/absolute triage, evidence discipline, verification gates | **Use when**: Reviewing, repairing or production-hardening any skill definition — auditing hardcoded assumptions, false absolutes, contradictions, outdated APIs and missing verification. |
 
 ---
 
@@ -363,7 +364,7 @@ Click any file or category folder below to navigate directly to it:
 
 ### 1. Interactive Terminal Commands
 ```bash
-# List all 129 skills across 21 categories
+# List all 130 skills across 21 categories
 npm run skill list
 
 # Fast keyword search across IDs, titles, and categories
@@ -373,7 +374,7 @@ npm run search react
 # Read any skill directly in terminal
 npm run skill show zero-downtime-ship-pipeline
 
-# Validate all 129 skills against the canonical production schema
+# Validate all 130 skills against the canonical production schema
 npm run validate
 ```
 

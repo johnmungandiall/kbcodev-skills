@@ -17,3 +17,6 @@ An audit found **0 of 129** skills carried any directive telling the executing a
 - `categories/03-software-engineering/flask-modular-microservice-engine.md` pytest fixture: replaced the bare `db.session.begin_nested()` with `join_transaction_mode="create_savepoint"` bound to an external connection transaction — in SQLAlchemy 2.0 `Session.commit()` commits the OUTERMOST transaction, so a route-level commit would durably persist test data.
 - `categories/03-software-engineering/flask-modular-microservice-engine.md`: removed `JSON_SORT_KEYS` config and `FLASK_ENV` (both removed in Flask 2.3).
 - `categories/03-software-engineering/django-enterprise-architecture.md`: Pydantic v1 `.dict()` → `model_dump()`.
+
+## Library growth
+- 2026-10-02: library now **130 skills** across 21 categories — added `universal-skill-quality` (category 07), a structure-agnostic audit/repair/hardening engine for any skill definition (assumption & absolute triage, project-grounding, evidence discipline, verification gates, fixed four-part report). It carries the Project-Grounding Invariant in its own section 2 and treats every numeric bound as a heuristic.

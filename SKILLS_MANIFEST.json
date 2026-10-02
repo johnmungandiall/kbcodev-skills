@@ -3,7 +3,7 @@
   "name": "kbcodedev-skills",
   "version": "2.0.0",
   "description": "The Complete Advanced AI Developer Skills Master Library for kbcode and modern coding agents",
-  "total_skills": 129,
+  "total_skills": 130,
   "total_categories": 21,
   "categories": [
     {
@@ -889,8 +889,8 @@
     {
       "id": "07-ai-mcp-prompt-engineering",
       "name": "AI, MCP & Prompt Engineering",
-      "description": "Claude API caching & thinking, MCP server building in TS/Py, metaprompts, skill authoring, KV-cache optimization, JSON Schema, and checkpoints",
-      "skills_count": 8,
+      "description": "Claude API caching & thinking, MCP server building in TS/Py, metaprompts, skill authoring, skill quality hardening, KV-cache optimization, JSON Schema, and checkpoints",
+      "skills_count": 9,
       "skills": [
         {
           "id": "kbcodedev/claude-api-advanced-patterns",
@@ -1026,6 +1026,23 @@
             "llamaindex",
             "langgraph",
             "agentic"
+          ]
+        },
+        {
+          "id": "kbcodedev/universal-skill-quality",
+          "path": "categories/07-ai-mcp-prompt-engineering/universal-skill-quality.md",
+          "title": "Universal Skill Quality & Production Hardening",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "07",
+            "ai",
+            "prompt",
+            "engineering",
+            "skill",
+            "quality",
+            "hardening",
+            "audit"
           ]
         }
       ]

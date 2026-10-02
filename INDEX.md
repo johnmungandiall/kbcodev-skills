@@ -1,4 +1,4 @@
-# 🗺️ Task-to-Skill Fast Lookup Index (129 Skills Master Map)
+# 🗺️ Task-to-Skill Fast Lookup Index (130 Skills Master Map)
 
 Find the exact skill file for your development task instantly:
 
@@ -61,6 +61,7 @@ Find the exact skill file for your development task instantly:
 | **Strict JSON Schema Validation** | `kbcodedev/structured-output-json-schema` | `categories/07-ai-mcp-prompt-engineering/structured-output-json-schema.md` |
 | **Context Checkpoint Serializer** | `kbcodedev/context-save-restore-checkpoint` | `categories/07-ai-mcp-prompt-engineering/context-save-restore-checkpoint.md` |
 | **LangChain & LlamaIndex Agentic** | `kbcodedev/langchain-llamaindex-agentic-framework` | `categories/07-ai-mcp-prompt-engineering/langchain-llamaindex-agentic-framework.md` |
+| **Universal Skill Quality & Hardening** | `kbcodedev/universal-skill-quality` | `categories/07-ai-mcp-prompt-engineering/universal-skill-quality.md` |
 | **CEO Strategic / PMF Review** | `kbcodedev/ceo-strategic-plan-review` | `categories/08-strategic-product-leadership/ceo-strategic-plan-review.md` |
 | **Staff Architect RFC Review** | `kbcodedev/staff-eng-architect-review` | `categories/08-strategic-product-leadership/staff-eng-architect-review.md` |
 | **Product UX Friction Audit** | `kbcodedev/product-design-ux-review` | `categories/08-strategic-product-leadership/product-design-ux-review.md` |
