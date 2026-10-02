@@ -1,9 +1,9 @@
-# Categories & Skill Index (115 Skills Master Map)
+# Categories & Skill Index (125 Skills Master Map)
 
-Complete mapping of all 115 skills across 21 categories in `categories/`:
+Complete mapping of all 125 skills across 21 categories in `categories/`:
 
 ### 01. Agentic Orchestration (`categories/01-agentic-orchestration/`)
-- `autonomous-react-loop.md` — ReAct loops, step budgets, oscillation detection.
+- `autonomous-react-loop.md` — ReAct loops, dynamic step budgets, oscillation detection.
 - `multi-agent-swarm.md` — Supervisor-worker topologies, context isolation, file ownership gating.
 - `dag-task-planner.md` — Dynamic prerequisite DAG planning, parallel execution.
 - `memory-reflexion-engine.md` — Episodic memory, failure diagnosis, immediate mistake binding.
@@ -28,6 +28,10 @@ Complete mapping of all 115 skills across 21 categories in `categories/`:
 - `regex-parser-engineering.md` — ReDoS-safe regex, lexers, AST recursive descent parsers.
 - `clean-code-solid-principles.md` — SOLID architectural implementation, interface segregation.
 - `concurrency-async-patterns.md` — Bounded worker pools, event loop concurrency, deadlock elimination.
+- `fastapi-async-production-architecture.md` — FastAPI async API engine, Pydantic v2, async SQLAlchemy 2.0, lifespan handlers, OAuth2 JWT.
+- `django-enterprise-architecture.md` — Django 5+, DRF/Ninja, zero N+1 ORM queries (select_related/prefetch_related), service/selector layers.
+- `flask-modular-microservice-engine.md` — Flask 3+, Application Factory pattern, Blueprints, Marshmallow/Pydantic validation, Flask-SQLAlchemy.
+- `celery-distributed-task-queue.md` — Celery 5+, Redis/RabbitMQ brokers, canvas workflows (group/chain/chord), exponential backoff retries.
 
 ### 04. Testing, QA & Debugging (`categories/04-testing-qa-debugging/`)
 - `root-cause-investigator.md` — 5-Whys diagnostic protocol, stack frame inspection.
@@ -46,6 +50,7 @@ Complete mapping of all 115 skills across 21 categories in `categories/`:
 - `responsive-layout-engine.md` — Mobile-first CSS Grid & Flexbox, container queries.
 - `canvas-generative-visuals.md` — High-DPI Retina HTML5 Canvas, delta-time animation loops.
 - `multi-modal-vision-inspector.md` — Multi-modal vision model UI screenshot bug localization.
+- `streamlit-reflex-python-ui-engine.md` — Streamlit caching (@st.cache_data/resource), session state, Reflex pure-Python full-stack reactive apps.
 
 ### 06. DevOps, SRE & Release (`categories/06-devops-sre-release/`)
 - `zero-downtime-ship-pipeline.md` — Blue-Green releases, expand-and-contract DB staging.
@@ -63,12 +68,13 @@ Complete mapping of all 115 skills across 21 categories in `categories/`:
 - `context-window-optimization.md` — KV-cache reuse, session worklog compaction.
 - `structured-output-json-schema.md` — JSON Schema Draft 7 validation, self-correcting repair.
 - `context-save-restore-checkpoint.md` — Session state checkpointing and disk serialization.
+- `langchain-llamaindex-agentic-framework.md` — LangGraph stateful multi-actor graphs, LlamaIndex hierarchical sub-question query engines, tool calling, LangSmith.
 
 ### 08. Strategic & Product Leadership (`categories/08-strategic-product-leadership/`)
 - `ceo-strategic-plan-review.md` — Product-Market Fit (PMF) audits, scope-halving pass.
 - `staff-eng-architect-review.md` — One-way vs two-way doors, failure domain segregation.
-- `product-design-ux-review.md` — Cognitive friction audits, 60-second onboarding tests.
-- `developer-experience-devex-review.md` — Time-to-Hello-World < 5 min, actionable errors.
+- `product-design-ux-review.md` — Cognitive friction audits, dynamic cognitive SLAs.
+- `developer-experience-devex-review.md` — Time-to-First-Call SLA, actionable errors.
 - `yc-startup-playbook.md` — Do Things That Don't Scale, 7-day MVP sprints.
 - `prd-roadmap-engineering.md` — Structured PRDs, explicit non-goals, RICE prioritization.
 - `post-mortem-incident-retro.md` — Blameless incident post-mortems, 5-Whys root cause.
@@ -110,6 +116,8 @@ Complete mapping of all 115 skills across 21 categories in `categories/`:
 - `mlops-model-serving-triton.md` — NVIDIA Triton Server, TensorRT/ONNX, dynamic batching.
 - `airflow-dag-orchestration.md` — Apache Airflow 2 TaskFlow DAGs, idempotent partitions.
 - `data-lakehouse-delta-iceberg.md` — Apache Iceberg / Delta Lake, ACID object storage.
+- `pytorch-deep-learning-pipeline.md` — PyTorch 2.x, torch.compile, DDP/FSDP multi-GPU, custom DataLoader, mixed precision AMP fp16/bf16, ONNX export.
+- `polars-pandas-dataframe-engine.md` — Polars lazy execution, streaming out-of-core batches, Apache Arrow memory format, Pandas 2.x PyArrow backend.
 
 ### 14. Security & Compliance (`categories/14-security-compliance-governance/`)
 - `soc2-gdpr-compliance-os.md` — SOC2 Type II controls, automated GDPR Right-to-be-Forgotten.
@@ -143,7 +151,7 @@ Complete mapping of all 115 skills across 21 categories in `categories/`:
 - `state-machine-transition-diagram.md` — Finite State Machines (FSM), stateDiagram-v2, guards.
 
 ### 18. YC & Tech Leaders Frameworks (`categories/18-yc-tech-leaders-frameworks/`)
-- `sam-altman-execution-velocity.md` — Relentless execution momentum, 48-hour falsification tests.
+- `sam-altman-execution-velocity.md` — Relentless execution momentum, dynamic falsification sprints.
 - `dario-amodei-scaling-safety.md` — Chinchilla compute scaling laws, Constitutional AI self-critiques.
 - `andrej-karpathy-software-3.0.md` — Software 3.0 LLM OS paradigm, Context RAM management.
 - `andrew-ng-data-centric-ai.md` — Data-Centric AI iteration, 100-sample structured error analysis.
@@ -154,7 +162,7 @@ Complete mapping of all 115 skills across 21 categories in `categories/`:
 - `game-loop-physics-engine.md` — Fixed-timestep 60Hz game loops, Quadtrees collision.
 
 ### 20. Web Scraping & Browser Engineering (`categories/20-web-scraping-browser-automation/`)
-- `anti-detect-browser-automation.md` — Stealth Playwright, Cloudflare Turnstile bypass.
+- `anti-detect-browser-automation.md` — Stealth Playwright / Extension drivers, Cloudflare Turnstile bypass.
 - `headless-crawler-data-extractor.md` — High-concurrency Cheerio crawlers, URL Bloom filter.
 
 ### 21. Systems & Embedded Programming (`categories/21-systems-embedded-programming/`)

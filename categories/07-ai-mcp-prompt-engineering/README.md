@@ -1,7 +1,7 @@
 # 📁 Category: AI, MCP & Prompt Engineering (`07-ai-mcp-prompt-engineering`)
 
 > **Claude API caching & thinking, MCP server building in TS/Py, metaprompts, skill authoring, KV-cache optimization, JSON Schema, and checkpoints**
-> Total Skills: **7** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
+> Total Skills: **8** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
 
 ---
 
@@ -16,6 +16,7 @@
 | **Context Window Optimization & KV-Cache Compaction** | `kbcodedev/context-window-optimization` | `agnostic` | `advanced` | [📄 Open context-window-optimization.md](context-window-optimization.md) |
 | **Structured Output & JSON Schema Validation Engine** | `kbcodedev/structured-output-json-schema` | `agnostic` | `advanced` | [📄 Open structured-output-json-schema.md](structured-output-json-schema.md) |
 | **Context Save & State Checkpoint Serializer** | `kbcodedev/context-save-restore-checkpoint` | `agnostic` | `advanced` | [📄 Open context-save-restore-checkpoint.md](context-save-restore-checkpoint.md) |
+| **LangChain & LlamaIndex Agentic Orchestration Framework** | `kbcodedev/langchain-llamaindex-agentic-framework` | `python` | `advanced` | [📄 Open langchain-llamaindex-agentic-framework.md](langchain-llamaindex-agentic-framework.md) |
 
 ---
 

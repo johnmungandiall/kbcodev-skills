@@ -3,7 +3,7 @@
   "name": "kbcodedev-skills",
   "version": "2.0.0",
   "description": "The Complete Advanced AI Developer Skills Master Library for kbcode and modern coding agents",
-  "total_skills": 117,
+  "total_skills": 125,
   "total_categories": 21,
   "categories": [
     {
@@ -263,7 +263,7 @@
       "id": "03-software-engineering",
       "name": "Software Engineering & Code Mastery",
       "description": "Code scaffolding, refactoring, complexity optimization, language migration, regex, and concurrency",
-      "skills_count": 7,
+      "skills_count": 11,
       "skills": [
         {
           "id": "kbcodedev/code-scaffolding-synthesis",
@@ -382,6 +382,74 @@
             "patterns",
             "asynchronous",
             "agnostic"
+          ]
+        },
+        {
+          "id": "kbcodedev/fastapi-async-production-architecture",
+          "path": "categories/03-software-engineering/fastapi-async-production-architecture.md",
+          "title": "FastAPI Async Production Architecture & Enterprise API Engine",
+          "runtime": "python",
+          "difficulty": "advanced",
+          "tags": [
+            "03",
+            "software",
+            "engineering",
+            "python",
+            "fastapi",
+            "async",
+            "pydantic",
+            "sqlalchemy"
+          ]
+        },
+        {
+          "id": "kbcodedev/django-enterprise-architecture",
+          "path": "categories/03-software-engineering/django-enterprise-architecture.md",
+          "title": "Django Enterprise Architecture & High-Scale Optimization Engine",
+          "runtime": "python",
+          "difficulty": "advanced",
+          "tags": [
+            "03",
+            "software",
+            "engineering",
+            "python",
+            "django",
+            "drf",
+            "orm",
+            "celery"
+          ]
+        },
+        {
+          "id": "kbcodedev/flask-modular-microservice-engine",
+          "path": "categories/03-software-engineering/flask-modular-microservice-engine.md",
+          "title": "Flask Modular Microservices & Application Factory Architecture",
+          "runtime": "python",
+          "difficulty": "advanced",
+          "tags": [
+            "03",
+            "software",
+            "engineering",
+            "python",
+            "flask",
+            "microservices",
+            "blueprints",
+            "gunicorn"
+          ]
+        },
+        {
+          "id": "kbcodedev/celery-distributed-task-queue",
+          "path": "categories/03-software-engineering/celery-distributed-task-queue.md",
+          "title": "Celery Distributed Task Queue & Asynchronous Architecture Engine",
+          "runtime": "python",
+          "difficulty": "advanced",
+          "tags": [
+            "03",
+            "software",
+            "engineering",
+            "python",
+            "celery",
+            "redis",
+            "rabbitmq",
+            "async"
           ]
         }
       ]
@@ -517,7 +585,7 @@
       "id": "05-frontend-ui-ux",
       "name": "Frontend UI/UX & Design Systems",
       "description": "Modern frontend architectures, semantic design tokens, interactive artifacts, WCAG a11y, responsive grid, canvas graphics, and vision inspection",
-      "skills_count": 7,
+      "skills_count": 8,
       "skills": [
         {
           "id": "kbcodedev/modern-frontend-architecture",
@@ -637,6 +705,23 @@
             "vision",
             "inspector"
           ]
+        },
+        {
+          "id": "kbcodedev/streamlit-reflex-python-ui-engine",
+          "path": "categories/05-frontend-ui-ux/streamlit-reflex-python-ui-engine.md",
+          "title": "Streamlit & Reflex Pure-Python Full-Stack UI Engineering Engine",
+          "runtime": "python",
+          "difficulty": "advanced",
+          "tags": [
+            "05",
+            "frontend",
+            "ui",
+            "python",
+            "streamlit",
+            "reflex",
+            "fullstack",
+            "dashboard"
+          ]
         }
       ]
     },
@@ -754,7 +839,7 @@
       "id": "07-ai-mcp-prompt-engineering",
       "name": "AI, MCP & Prompt Engineering",
       "description": "Claude API caching & thinking, MCP server building in TS/Py, metaprompts, skill authoring, KV-cache optimization, JSON Schema, and checkpoints",
-      "skills_count": 7,
+      "skills_count": 8,
       "skills": [
         {
           "id": "kbcodedev/claude-api-advanced-patterns",
@@ -873,6 +958,23 @@
             "context",
             "save",
             "restore"
+          ]
+        },
+        {
+          "id": "kbcodedev/langchain-llamaindex-agentic-framework",
+          "path": "categories/07-ai-mcp-prompt-engineering/langchain-llamaindex-agentic-framework.md",
+          "title": "LangChain & LlamaIndex Agentic Orchestration Framework",
+          "runtime": "python",
+          "difficulty": "advanced",
+          "tags": [
+            "07",
+            "ai",
+            "mcp",
+            "python",
+            "langchain",
+            "llamaindex",
+            "langgraph",
+            "agentic"
           ]
         }
       ]
@@ -1438,7 +1540,7 @@
       "id": "13-data-engineering-mlops",
       "name": "Data Engineering & MLOps",
       "description": "Feast feature stores, Qdrant hybrid RAG, Triton inference serving, Airflow DAGs, and Iceberg lakehouses",
-      "skills_count": 5,
+      "skills_count": 7,
       "skills": [
         {
           "id": "kbcodedev/feature-store-pipeline",
@@ -1523,6 +1625,40 @@
             "delta",
             "iceberg",
             "architecture"
+          ]
+        },
+        {
+          "id": "kbcodedev/pytorch-deep-learning-pipeline",
+          "path": "categories/13-data-engineering-mlops/pytorch-deep-learning-pipeline.md",
+          "title": "PyTorch Deep Learning Training Pipeline & Model Optimization Engine",
+          "runtime": "python",
+          "difficulty": "advanced",
+          "tags": [
+            "13",
+            "data",
+            "mlops",
+            "python",
+            "pytorch",
+            "deep-learning",
+            "cuda",
+            "onnx"
+          ]
+        },
+        {
+          "id": "kbcodedev/polars-pandas-dataframe-engine",
+          "path": "categories/13-data-engineering-mlops/polars-pandas-dataframe-engine.md",
+          "title": "Polars & Pandas High-Performance DataFrame Processing Engine",
+          "runtime": "python",
+          "difficulty": "advanced",
+          "tags": [
+            "13",
+            "data",
+            "mlops",
+            "python",
+            "polars",
+            "pandas",
+            "arrow",
+            "parquet"
           ]
         }
       ]

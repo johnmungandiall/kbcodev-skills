@@ -1,7 +1,7 @@
 # 📁 Category: Software Engineering & Code Mastery (`03-software-engineering`)
 
 > **Code scaffolding, refactoring, complexity optimization, language migration, regex, and concurrency**
-> Total Skills: **7** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
+> Total Skills: **11** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
 
 ---
 
@@ -16,6 +16,10 @@
 | **Regular Expressions & Parser Engineering** | `kbcodedev/regex-parser-engineering` | `agnostic` | `advanced` | [📄 Open regex-parser-engineering.md](regex-parser-engineering.md) |
 | **Clean Code & SOLID Architectural Principles** | `kbcodedev/clean-code-solid-principles` | `agnostic` | `advanced` | [📄 Open clean-code-solid-principles.md](clean-code-solid-principles.md) |
 | **Concurrency & Asynchronous Patterns** | `kbcodedev/concurrency-async-patterns` | `agnostic` | `advanced` | [📄 Open concurrency-async-patterns.md](concurrency-async-patterns.md) |
+| **FastAPI Async Production Architecture & Enterprise API Engine** | `kbcodedev/fastapi-async-production-architecture` | `python` | `advanced` | [📄 Open fastapi-async-production-architecture.md](fastapi-async-production-architecture.md) |
+| **Django Enterprise Architecture & High-Scale Optimization Engine** | `kbcodedev/django-enterprise-architecture` | `python` | `advanced` | [📄 Open django-enterprise-architecture.md](django-enterprise-architecture.md) |
+| **Flask Modular Microservices & Application Factory Architecture** | `kbcodedev/flask-modular-microservice-engine` | `python` | `advanced` | [📄 Open flask-modular-microservice-engine.md](flask-modular-microservice-engine.md) |
+| **Celery Distributed Task Queue & Asynchronous Architecture Engine** | `kbcodedev/celery-distributed-task-queue` | `python` | `advanced` | [📄 Open celery-distributed-task-queue.md](celery-distributed-task-queue.md) |
 
 ---
 

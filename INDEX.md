@@ -25,6 +25,10 @@ Find the exact skill file for your development task instantly:
 | **ReDoS-Safe Regex & AST Parsers** | `kbcodedev/regex-parser-engineering` | `categories/03-software-engineering/regex-parser-engineering.md` |
 | **SOLID Architecture Design** | `kbcodedev/clean-code-solid-principles` | `categories/03-software-engineering/clean-code-solid-principles.md` |
 | **Async / Concurrency Worker Pools**| `kbcodedev/concurrency-async-patterns` | `categories/03-software-engineering/concurrency-async-patterns.md` |
+| **FastAPI Async Production API** | `kbcodedev/fastapi-async-production-architecture` | `categories/03-software-engineering/fastapi-async-production-architecture.md` |
+| **Django Enterprise Architecture** | `kbcodedev/django-enterprise-architecture` | `categories/03-software-engineering/django-enterprise-architecture.md` |
+| **Flask Modular Microservices** | `kbcodedev/flask-modular-microservice-engine` | `categories/03-software-engineering/flask-modular-microservice-engine.md` |
+| **Celery Distributed Task Queue** | `kbcodedev/celery-distributed-task-queue` | `categories/03-software-engineering/celery-distributed-task-queue.md` |
 | **5-Whys Deep Debugging** | `kbcodedev/root-cause-investigator` | `categories/04-testing-qa-debugging/root-cause-investigator.md` |
 | **Unit & Integration Test Suites** | `kbcodedev/unit-integration-test-generator` | `categories/04-testing-qa-debugging/unit-integration-test-generator.md` |
 | **Playwright Browser E2E Tests** | `kbcodedev/e2e-webapp-testing` | `categories/04-testing-qa-debugging/e2e-webapp-testing.md` |
@@ -39,6 +43,7 @@ Find the exact skill file for your development task instantly:
 | **Mobile-First CSS Grid Layouts** | `kbcodedev/responsive-layout-engine` | `categories/05-frontend-ui-ux/responsive-layout-engine.md` |
 | **High-DPI HTML5 Canvas Graphics** | `kbcodedev/canvas-generative-visuals` | `categories/05-frontend-ui-ux/canvas-generative-visuals.md` |
 | **Multi-Modal Vision UI Inspection**| `kbcodedev/multi-modal-vision-inspector` | `categories/05-frontend-ui-ux/multi-modal-vision-inspector.md` |
+| **Streamlit & Reflex Python UI** | `kbcodedev/streamlit-reflex-python-ui-engine` | `categories/05-frontend-ui-ux/streamlit-reflex-python-ui-engine.md` |
 | **Zero-Downtime Blue-Green Deploys**| `kbcodedev/zero-downtime-ship-pipeline` | `categories/06-devops-sre-release/zero-downtime-ship-pipeline.md` |
 | **GitHub Actions Matrix Pipelines** | `kbcodedev/ci-cd-workflow-automation` | `categories/06-devops-sre-release/ci-cd-workflow-automation.md` |
 | **Multi-Stage Dockerfiles** | `kbcodedev/docker-container-orchestration` | `categories/06-devops-sre-release/docker-container-orchestration.md` |
@@ -52,6 +57,7 @@ Find the exact skill file for your development task instantly:
 | **KV-Cache & Context Compaction** | `kbcodedev/context-window-optimization` | `categories/07-ai-mcp-prompt-engineering/context-window-optimization.md` |
 | **Strict JSON Schema Validation** | `kbcodedev/structured-output-json-schema` | `categories/07-ai-mcp-prompt-engineering/structured-output-json-schema.md` |
 | **Context Checkpoint Serializer** | `kbcodedev/context-save-restore-checkpoint` | `categories/07-ai-mcp-prompt-engineering/context-save-restore-checkpoint.md` |
+| **LangChain & LlamaIndex Agentic** | `kbcodedev/langchain-llamaindex-agentic-framework` | `categories/07-ai-mcp-prompt-engineering/langchain-llamaindex-agentic-framework.md` |
 | **CEO Strategic / PMF Review** | `kbcodedev/ceo-strategic-plan-review` | `categories/08-strategic-product-leadership/ceo-strategic-plan-review.md` |
 | **Staff Architect RFC Review** | `kbcodedev/staff-eng-architect-review` | `categories/08-strategic-product-leadership/staff-eng-architect-review.md` |
 | **Product UX Friction Audit** | `kbcodedev/product-design-ux-review` | `categories/08-strategic-product-leadership/product-design-ux-review.md` |
@@ -87,6 +93,8 @@ Find the exact skill file for your development task instantly:
 | **NVIDIA Triton Model Serving** | `kbcodedev/mlops-model-serving-triton` | `categories/13-data-engineering-mlops/mlops-model-serving-triton.md` |
 | **Airflow DAG Idempotent ETL** | `kbcodedev/airflow-dag-orchestration` | `categories/13-data-engineering-mlops/airflow-dag-orchestration.md` |
 | **Apache Iceberg Lakehouse** | `kbcodedev/data-lakehouse-delta-iceberg` | `categories/13-data-engineering-mlops/data-lakehouse-delta-iceberg.md` |
+| **PyTorch Deep Learning Pipeline** | `kbcodedev/pytorch-deep-learning-pipeline` | `categories/13-data-engineering-mlops/pytorch-deep-learning-pipeline.md` |
+| **Polars & Pandas DataFrame Engine**| `kbcodedev/polars-pandas-dataframe-engine` | `categories/13-data-engineering-mlops/polars-pandas-dataframe-engine.md` |
 | **SOC2 / GDPR Compliance Controls** | `kbcodedev/soc2-gdpr-compliance-os` | `categories/14-security-compliance-governance/soc2-gdpr-compliance-os.md` |
 | **SAML 2.0 / SCIM Enterprise SSO** | `kbcodedev/zero-trust-identity-saml-oidc` | `categories/14-security-compliance-governance/zero-trust-identity-saml-oidc.md` |
 | **AWS KMS Envelope Encryption** | `kbcodedev/cryptographic-key-management-kms` | `categories/14-security-compliance-governance/cryptographic-key-management-kms.md` |

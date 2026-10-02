@@ -1,7 +1,7 @@
 # 📁 Category: Frontend UI/UX & Design Systems (`05-frontend-ui-ux`)
 
 > **Modern frontend architectures, semantic design tokens, interactive artifacts, WCAG a11y, responsive grid, canvas graphics, and vision inspection**
-> Total Skills: **7** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
+> Total Skills: **8** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
 
 ---
 
@@ -16,6 +16,7 @@
 | **Responsive Layout & Adaptive CSS Grid Engine** | `kbcodedev/responsive-layout-engine` | `agnostic` | `advanced` | [📄 Open responsive-layout-engine.md](responsive-layout-engine.md) |
 | **Canvas & Generative Visuals Engine** | `kbcodedev/canvas-generative-visuals` | `typescript` | `advanced` | [📄 Open canvas-generative-visuals.md](canvas-generative-visuals.md) |
 | **Multi-Modal Vision & UI Screenshot Inspector** | `kbcodedev/multi-modal-vision-inspector` | `agnostic` | `advanced` | [📄 Open multi-modal-vision-inspector.md](multi-modal-vision-inspector.md) |
+| **Streamlit & Reflex Pure-Python Full-Stack UI Engineering Engine** | `kbcodedev/streamlit-reflex-python-ui-engine` | `python` | `advanced` | [📄 Open streamlit-reflex-python-ui-engine.md](streamlit-reflex-python-ui-engine.md) |
 
 ---
 

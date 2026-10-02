@@ -1,7 +1,7 @@
 # 📁 Category: Data Engineering & MLOps (`13-data-engineering-mlops`)
 
 > **Feast feature stores, Qdrant hybrid RAG, Triton inference serving, Airflow DAGs, and Iceberg lakehouses**
-> Total Skills: **5** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
+> Total Skills: **7** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
 
 ---
 
@@ -14,6 +14,8 @@
 | **MLOps Model Serving & Triton Inference Engine** | `kbcodedev/mlops-model-serving-triton` | `python` | `expert` | [📄 Open mlops-model-serving-triton.md](mlops-model-serving-triton.md) |
 | **Apache Airflow DAG & Orchestration Engineering** | `kbcodedev/airflow-dag-orchestration` | `python` | `advanced` | [📄 Open airflow-dag-orchestration.md](airflow-dag-orchestration.md) |
 | **Data Lakehouse Architecture (Delta Lake & Apache Iceberg)** | `kbcodedev/data-lakehouse-delta-iceberg` | `agnostic` | `advanced` | [📄 Open data-lakehouse-delta-iceberg.md](data-lakehouse-delta-iceberg.md) |
+| **PyTorch Deep Learning Training Pipeline & Model Optimization Engine** | `kbcodedev/pytorch-deep-learning-pipeline` | `python` | `advanced` | [📄 Open pytorch-deep-learning-pipeline.md](pytorch-deep-learning-pipeline.md) |
+| **Polars & Pandas High-Performance DataFrame Processing Engine** | `kbcodedev/polars-pandas-dataframe-engine` | `python` | `advanced` | [📄 Open polars-pandas-dataframe-engine.md](polars-pandas-dataframe-engine.md) |
 
 ---
 
