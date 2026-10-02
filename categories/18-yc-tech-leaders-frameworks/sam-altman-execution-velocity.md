@@ -15,7 +15,7 @@
 
 ## 2. Core Mental Model & Invariant Principles
 1. **Relentless Execution Momentum**: Momentum is the lifeblood of a startup. A mediocre decision executed with furious momentum almost always beats a perfect decision debated for 6 months.
-2. **High-Agency Mindset**: High agency is the conviction that you can bend reality to your will. When told something is "impossible", ask: *"What would have to be true for this to work in 48 hours?"*.
+2. **High-Agency Mindset**: High agency is the conviction that you can bend reality to your will. When told something is "impossible", formulate the minimal high-velocity falsification sprint to test the hypothesis immediately.
 3. **Compound Growth Invariance**: Small 1% compounding daily improvements yield $37.8\times$ annual gains ($1.01^{365} \approx 37.8$). Focus on compounding daily shipping cadence.
 
 ---
@@ -27,7 +27,7 @@
                      │
                      ▼
 ┌───────────────────────────────────────────┐
-│ Phase 1: The 48-Hour Falsification Test   │ ── What is the single fastest experiment?
+│ Phase 1: Rapid Falsification Sprint       │ ── What is the single fastest experiment?
 └────────────────────┬──────────────────────┘
                      ▼
 ┌───────────────────────────────────────────┐

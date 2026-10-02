@@ -16,7 +16,7 @@
 ## 2. Core Mental Model & Invariant Principles
 1. **Thought-Action-Observation Triad**: Never execute a tool without a clear hypothesis; never form a new hypothesis without grounding in the latest observation.
 2. **Loop & Oscillation Detection**: If an identical tool signature is invoked 3 times with unchanged state, force a strategy pivot immediately.
-3. **Step Budget Allocation**: Maintain a strict step budget (e.g., 30-80 steps). Spend 20% on discovery/grounding, 50% on core execution, and 30% on verification and rollback readiness.
+3. **Dynamic Step Budget Allocation**: Size the step budget dynamically from the task blast radius and uncertainty (`max_steps = f(blast_radius, affected_files, uncertainty)`), dynamically balancing discovery, execution, and verification phases to the specific task rather than enforcing a static step constant.
 
 ---
 

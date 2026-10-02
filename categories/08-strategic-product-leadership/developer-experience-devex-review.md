@@ -14,7 +14,7 @@
 ---
 
 ## 2. Core Mental Model & Invariant Principles
-1. **Time-to-Hello-World < 5 Minutes**: A developer must be able to install the package, authenticate, and execute their first successful API call in under 5 minutes.
+1. **Dynamic Time-to-Hello-World SLA**: Minimize time-to-first-successful-call to fit the target ecosystem SLA (benchmarking < 5 minutes for lightweight APIs, proportional for complex enterprise SDKs) with zero unhandled friction.
 2. **Actionable Error Messages**: An error message must tell the developer (a) What went wrong, (b) Why it happened, and (c) Exactly what command or parameter change fixes it.
 3. **Sensible Defaults with Progressive Disclosure**: Make the common 90% case require 1 line of code; allow advanced customization through optional config objects.
 
@@ -27,7 +27,7 @@
                  │
                  ▼
 ┌────────────────────────────────┐
-│ Phase 1: The 5-Minute Test     │ ── Time-to-first-request walkthrough
+│ Phase 1: Time-to-First-Call    │ ── Target SLA onboarding walkthrough
 └────────────────┬───────────────┘
                  ▼
 ┌────────────────────────────────┐

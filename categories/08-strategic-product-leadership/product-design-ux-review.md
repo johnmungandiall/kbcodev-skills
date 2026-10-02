@@ -27,7 +27,7 @@
                │
                ▼
 ┌──────────────────────────────┐
-│ Phase 1: First-Time User Run │ ── Can a user complete the core goal in < 60 seconds?
+│ Phase 1: First-Time User Run │ ── Can a user complete the core goal within the target cognitive SLA?
 └──────────────┬───────────────┘
                ▼
 ┌──────────────────────────────┐

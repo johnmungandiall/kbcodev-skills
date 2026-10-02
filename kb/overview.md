@@ -11,4 +11,4 @@ kbcodedev-skills is a comprehensive, production-grade library of 115 advanced ye
 - `bin/skill-runner.mjs` — Interactive CLI runner, search engine, and canonical schema validator.
 - `tools/export-prompt.mjs` — Automated prompt exporter for Claude XML, Cursor rules, JSON, and Markdown.
 
-See [[architecture]] for the design standards, [[categories]] for the full category index, and [[cheatsheet]] for CLI commands.
+See [[architecture]] for the design standards, [[categories]] for the full category index, [[skills-gap-analysis]] for the inventory audit and missing skills roadmap, and [[cheatsheet]] for CLI commands.

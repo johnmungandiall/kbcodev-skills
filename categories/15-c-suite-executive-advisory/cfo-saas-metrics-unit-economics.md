@@ -15,7 +15,7 @@
 
 ## 2. Core Mental Model & Invariant Principles
 1. **The Core SaaS Benchmark Triad**:
-   - **LTV : CAC Ratio**: Target $> 3.0\times$ (Healthy growth without capital destruction).
+   - **LTV : CAC Ratio**: Target calibrated dynamically by segment (SMB $\ge 2.5\times$, Mid-Market $\ge 3.0\times$, Enterprise $\ge 4.0\times$).
    - **CAC Payback Period**: Target $< 12 \text{ months}$ (Efficient cash recycling).
    - **Net Revenue Retention (NRR)**: Target $> 110\%$ for SMB, $> 130\%$ for Enterprise.
 2. **Burn Multiple (Efficiency Metric)**:

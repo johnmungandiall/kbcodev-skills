@@ -7,9 +7,9 @@
 ---
 
 ## 1. Intent & Trigger Conditions
-- **When to Use**: Driving automated browser tasks on websites protected by Cloudflare Turnstile, Akamai Bot Manager, PerimeterX, Datadome, and browser fingerprinting defenses using stealth Playwright / Puppeteer.
+- **When to Use**: Driving automated browser tasks on websites protected by Cloudflare Turnstile, Akamai Bot Manager, PerimeterX, Datadome, and browser fingerprinting defenses across real Chrome extensions or stealth browser drivers.
 - **Triggers**: Bot detection blocks (403 Forbidden / Cloudflare challenge page), headless browser fingerprint leaks (`navigator.webdriver === true`), automated data extraction.
-- **Prerequisites**: Playwright / Puppeteer with stealth patches (`puppeteer-extra-plugin-stealth`), residential proxy pools.
+- **Prerequisites**: Real Chrome extension session OR stealth browser automation driver (Playwright/Puppeteer with stealth patches), proxy pools.
 
 ---
 
