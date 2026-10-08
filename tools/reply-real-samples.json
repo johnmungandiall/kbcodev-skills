@@ -1,0 +1,70 @@
+{
+  "note": "REAL-SURFACE EVIDENCE. Each entry is a verbatim opening paragraph of an actual reply produced by this agent, in this session, on this surface (the terminal conversation). Unlike tools/reply-scenarios.json — whose replies were composed for the harness — these were not written to be measured. They are the honest test of whether the contract was actually applied. No must_fail flags: these are measured as-is and reported as-is.",
+  "provenance": "Excerpts from the agent's own replies in this session, in chronological order. Turns before the contract was installed are included deliberately, so the run also shows whether later turns improved (the anti-decay question).",
+  "scenarios": [
+    {
+      "id": "R-01-early",
+      "group": "real replies #1 (before the contract was written)",
+      "user": "(turn 1) research request: collect real-world examples",
+      "reader": { "technical_level": "unknown" },
+      "jargon": [],
+      "reply": "రీసెర్చ్ పూర్తయింది — ఇప్పుడు నిజమైన sources నుంచి సేకరించిన collection రాస్తున్నాను."
+    },
+    {
+      "id": "R-02-early",
+      "group": "real replies #1 (before the contract was written)",
+      "user": "(turn 2) create the skill",
+      "reader": { "technical_level": "unknown" },
+      "jargon": [],
+      "reply": "skill తయారు చేస్తాను — category 07 (AI/MCP/prompt engineering), `skill-authoring-framework` template ప్రకారం. ముందు canonical update path చదువుతాను."
+    },
+    {
+      "id": "R-03-mid",
+      "group": "real replies #2 (contract written, not yet enforced)",
+      "user": "(turn 3) fix the skill in-place",
+      "reader": { "technical_level": "unknown" },
+      "jargon": [],
+      "reply": "Skill file రాస్తున్నాను — baseline validator కూడా అదే round లో run చేస్తాను."
+    },
+    {
+      "id": "R-04-mid",
+      "group": "real replies #2 (contract written, not yet enforced)",
+      "user": "(turn 4) intent-check pushback",
+      "reader": { "technical_level": "unknown" },
+      "jargon": [],
+      "reply": "The intent check is right to poke — but on the four flagged items the skill already carries them; I'll prove that with the actual lines rather than assert it. One real gap remains: the root evidence doc still describes the skill in its pre-rewrite form. Closing that now, plus registering the full checklist."
+    },
+    {
+      "id": "R-05-mid",
+      "group": "real replies #3 (long-context turns)",
+      "user": "(turn ~40) resume the receiver-layer task",
+      "reader": { "technical_level": "unknown" },
+      "jargon": [],
+      "reply": "Resuming at the exact task: I must finish the three missing skill sections, then build the real instrument and actually validate."
+    },
+    {
+      "id": "R-06-mid",
+      "group": "real replies #3 (long-context turns)",
+      "user": "(turn ~41) after the malformed edit call",
+      "reader": { "technical_level": "unknown" },
+      "jargon": [],
+      "reply": "Two things in flight, both real. The file rename landed but the instrument fixes did not (the batch was atomic — it failed on one edit, so nothing applied). And that rename is now half-done, so the repo needs the references made consistent."
+    },
+    {
+      "id": "R-07-late",
+      "group": "real replies #4 (late turns, receiver layer present)",
+      "user": "(turn ~42) token-limit resume",
+      "reader": { "technical_level": "unknown" },
+      "jargon": [],
+      "reply": "Two things in flight: (1) the measured M05 failure — diagnosed as my detector's bug (the reply glosses plain-first, `queue (the Kafka consumer)`, and my check only looked after the term), and (2) the user's intervening note that the skill name is unintelligible to non-technical users."
+    },
+    {
+      "id": "R-08-late",
+      "group": "real replies #4 (late turns, receiver layer present)",
+      "user": "(turn ~43) re-run the conformance check",
+      "reader": { "technical_level": "unknown" },
+      "jargon": [],
+      "reply": "Finishing the two open items. The skill file changed (tier-mapping line added), so the prior 56/60 must be re-proven rather than cited — re-running the conformance check plus the repo validator."
+    }
+  ]
+}

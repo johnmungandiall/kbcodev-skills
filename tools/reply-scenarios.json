@@ -1,0 +1,202 @@
+{
+  "note": "Real replies produced by the agent (this session's surface) for each scenario in the request. The tool measures the REPLY TEXT, never the rules. Two falsification controls are included and MUST fail.",
+  "scenarios": [
+    {
+      "id": "S01-R1",
+      "group": "A. task-complexity classes",
+      "user": "what does parse_token return on expiry?",
+      "expected_class": "R1",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "reply": "`None` — `parse_token` returns `None` once the token is past its `exp` claim (auth/tokens.py#parse_token)."
+    },
+    {
+      "id": "S02-R2",
+      "group": "A. task-complexity classes",
+      "user": "fix the null-pointer in the cart total",
+      "expected_class": "R2",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "expect_markers": ["npm test"],
+      "reply": "Fixed: `cart.py#total` no longer dereferences an empty item list.\n\nDelta: added an early return when `self.items` is empty.\nVerification: `npm test` — 12 passed, 0 failed."
+    },
+    {
+      "id": "S03-R3",
+      "group": "A. task-complexity classes",
+      "user": "add pagination to the orders endpoint and wire the frontend",
+      "expected_class": "R3",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "expect_markers": ["npm test"],
+      "reply": "Done: cursor pagination is wired end to end.\n\n- `api/orders.py#list_orders` — keyset pagination, `nextCursor` in the response envelope.\n- `web/Orders.tsx` — reads `nextCursor` and appends on scroll.\n- `lib/pagination.ts` — reused `encodeCursor`, no new helper.\n\nVerification: `npm test` — 34 passed, 0 failed; scrolled 3 pages in staging.\nRemaining: ordering for equal `created_at` values is documented but not yet covered by a test."
+    },
+    {
+      "id": "S04-R4",
+      "group": "A. task-complexity classes",
+      "user": "explain how the retry logic works, with examples",
+      "expected_class": "R4",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "reply": "Retries are attempt-bounded with full-jitter exponential backoff, and they are only retried when the error is classified transient.\n\nMechanism: `retry.py#with_retry` wraps a call in a loop capped by `max_attempts`. Between attempts it sleeps a random value in `[0, min(cap, base * 2**attempt))` — the jitter spreads a thundering herd of clients so they do not all retry on the same tick. A non-transient error raises immediately and never consumes an attempt.\n\nExample 1 — transient, succeeds on the third attempt: attempt 1 raises `ConnectionResetError` (transient), sleeps ~180ms; attempt 2 raises again, sleeps ~640ms; attempt 3 returns 200 and the loop exits.\n\nExample 2 — permanent, fails fast: `ValidationError` is not in `TRANSIENT`, so the first raise propagates without a sleep or a second attempt."
+    },
+    {
+      "id": "S05-CR",
+      "group": "A. task-complexity classes",
+      "user": "the build is failing",
+      "expected_class": "R3/R4 (failure is the purpose)",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "expect_markers": ["FAILED", "TypeError", "cart.py"],
+      "reply": "The build fails at `test_checkout_flow`: the cart total dereferences an empty item list.\n\nFailing output (verbatim):\n\n    FAILED test_checkout_flow\n    TypeError: 'NoneType' object is not subscriptable\n      at cart.py:88 in total()\n      1 failed, 11 passed\n\nCause: `cart.py#total` indexes `self.items` without guarding the empty case.\nFix: return `0` when `self.items` is empty."
+    },
+    {
+      "id": "S06-assume",
+      "group": "A. task-complexity classes",
+      "user": "make the log output nicer",
+      "expected_class": "R2 (ambiguous but reversible)",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "reply": "Assumed JSON-lines (one object per line), because every other emitter in `logs/` already writes JSON.\n\nChanged: `logger.py#format` now emits one JSON object per line with `ts`, `level`, `msg`.\nVerification: `npm test` — 12 passed, 0 failed.\nRevert: one commit if you meant the human-readable table instead."
+    },
+    {
+      "id": "S07-blocking",
+      "group": "A. task-complexity classes",
+      "user": "deploy this to production",
+      "expected_class": "R1 question (genuinely blocking)",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "reply": "Blocked on one decision: this migration adds a NOT NULL column to `orders`, so it needs a backfill window.\n\nApply it now with a backfill, or stage it behind Friday's release?"
+    },
+    {
+      "id": "S08-progress",
+      "group": "A. task-complexity classes",
+      "user": "find and fix the memory leak (long run)",
+      "expected_class": "R3, event-driven progress",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "reply": "Progress: the leak is in `worker.py#drain` — the queue batch is never released, so each poll retains ~2MB.\n\nRisk: the fix needs a migration of the queue table; deploying that mid-run is your call, so I am holding at the patch."
+    },
+    {
+      "id": "S09-completion",
+      "group": "A. task-complexity classes",
+      "user": "ship the fix",
+      "expected_class": "R2 + verification block",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "expect_markers": ["npm test"],
+      "reply": "Shipped the fix to staging.\n\nVerification: `npm test` — 12 passed, 0 failed; `curl -sf /health` returned 200.\nNot done, and yours to call: the production deploy."
+    },
+    {
+      "id": "S10-longcontext",
+      "group": "A. task-complexity classes",
+      "user": "summarise where we are (turn 40 of a long session)",
+      "expected_class": "R3 (policy must not have decayed)",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "reply": "The reply contract is installed and still governing this late turn.\n\nDone: the skill is extended with the receiver layer and the repo registry is synced.\nVerification: `node bin/skill-runner.mjs validate` — 132 skills, 1 pre-existing failure unrelated to this change.\nOpen: the metrics harness has not been run against a live transcript tap yet."
+    },
+
+    {
+      "id": "M01",
+      "group": "B. receiver matrix",
+      "user": "expert + simple question: what does --wait do?",
+      "reader": { "technical_level": "expert" },
+      "jargon": [],
+      "reply": "`--wait` blocks until the process exits and returns its exit code (cli/run.py#cmd_up)."
+    },
+    {
+      "id": "M02",
+      "group": "B. receiver matrix",
+      "user": "expert + complex task: why does this deadlock?",
+      "reader": { "technical_level": "expert" },
+      "jargon": [],
+      "reply": "Lock-ordering inversion. `Bank#transfer` acquires `A` then `B`; `Bank#audit` acquires `B` then `A`. Two threads at opposite orders deadlock.\n\nFix: impose a total order on `account.id` before acquiring, or hold one `ReentrantLock` over the pair."
+    },
+    {
+      "id": "M03",
+      "group": "B. receiver matrix",
+      "user": "non-technical + technical error: why does the build fail?",
+      "reader": { "technical_level": "non-technical" },
+      "jargon": [],
+      "expect_markers": ["TypeError"],
+      "reply": "The build stops because one test expects an item in the shopping cart, but the cart was empty at that moment — the code reached for something that was not there (a `null-pointer`).\n\nWhat to do: the guard is already in; re-run `npm test` and it passes.\n\nThe error, unchanged: `TypeError: 'NoneType' object is not subscriptable`."
+    },
+    {
+      "id": "M04",
+      "group": "B. receiver matrix",
+      "user": "non-technical + simple question: why is the site slow today?",
+      "reader": { "technical_level": "non-technical" },
+      "jargon": [],
+      "reply": "Today the site is slow because the search database is taking about 4 seconds to answer instead of 0.2.\n\nWe are adding an index; once that finishes it should return to normal."
+    },
+    {
+      "id": "M05",
+      "group": "B. receiver matrix",
+      "user": "unknown + complex technical task",
+      "reader": { "technical_level": "unknown" },
+      "jargon": ["consumer", "offset"],
+      "reply": "The service that reads new orders from the queue (the Kafka consumer) is replaying old messages, because how far it had read (its offset) was reset when the process restarted.\n\nThe reset comes from `auto.offset.reset=earliest` in `config/consumer.yml` — change it to `latest` to stop the replay."
+    },
+    {
+      "id": "M06",
+      "group": "B. receiver matrix",
+      "user": "concise preference + complex task: short ga cheppu",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "reply": "Cause: offsets reset on restart (`config/consumer.yml`).\nFix: `auto.offset.reset=latest`."
+    },
+    {
+      "id": "M07",
+      "group": "B. receiver matrix",
+      "user": "detailed preference + simple task: explain in detail what a lock is",
+      "reader": { "technical_level": "intermediate" },
+      "jargon": [],
+      "reply": "A lock is a mutual-exclusion primitive: it lets exactly one thread be inside a critical section at a time.\n\nWhy it exists: without it, two threads can read-modify-write the same value and lose one update. `counter += 1` is not atomic — it is a load, an add and a store, and a second thread can interleave between them.\n\nHow it behaves: `acquire` blocks the caller until the lock is free, `release` hands it on. `with lock:` guarantees the release even if the body raises.\n\nWhat it costs: every acquire is a potential stall, and two locks acquired in different orders deadlock — which is why the fixes above impose a total order.\n\nWhere it stops being enough: across processes a lock in memory is invisible, so you need a database row lock or a file lock instead."
+    },
+    {
+      "id": "M08",
+      "group": "B. receiver matrix",
+      "user": "mid-conversation change: actually, keep it short from now on",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "reply": "Fixed: `cart.py#total` guards the empty list. `npm test` — 12 passed."
+    },
+    {
+      "id": "M09",
+      "group": "B. receiver matrix",
+      "user": "\"I don't understand\" — re-frame, do not repeat",
+      "reader": { "technical_level": "non-technical" },
+      "jargon": [],
+      "reply": "Different angle: the code assumed the cart always has at least one item. When the cart was empty it had nothing to add up, and it stopped with an error instead of saying 0.\n\nThe guard makes an empty cart total 0."
+    },
+    {
+      "id": "M10",
+      "group": "B. receiver matrix",
+      "user": "safety/error case with evidence intact",
+      "reader": { "technical_level": "intermediate" },
+      "jargon": [],
+      "expect_markers": ["auth/session.py#create_session", "rotate"],
+      "reply": "Security finding: the session token is written to the debug log in full, so anyone who can read the logs can replay a live session.\n\nEvidence (verbatim): `logger.debug(f\"session={token}\")` at `auth/session.py#create_session`.\n\nRequired action: after removing the line, rotate the session secret — every token already written must be treated as exposed."
+    },
+
+    {
+      "id": "CTL-bad-1",
+      "must_fail": true,
+      "group": "C. falsification controls (these MUST fail)",
+      "user": "control: preamble + narration + complement + praise",
+      "reader": { "technical_level": "technical" },
+      "jargon": [],
+      "reply": "Great question! Let me take a look at the cart code.\nI searched for the total function and I read cart.py.\nExcellent news — the fix is a significant improvement. I edited a.py and b.py but I did not edit README.md and I did not commit."
+    },
+    {
+      "id": "CTL-bad-2",
+      "must_fail": true,
+      "group": "C. falsification controls (these MUST fail)",
+      "user": "control: patronising + classification exposure + missing evidence",
+      "reader": { "technical_level": "non-technical" },
+      "jargon": ["null-pointer"],
+      "expect_markers": ["TypeError"],
+      "reply": "Basically, since I classified you as a non-technical user, I am adapting my response to your expertise: the null-pointer thing broke the build. Don't worry — it's easy."
+    }
+  ]
+}

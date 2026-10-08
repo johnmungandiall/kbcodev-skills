@@ -3,7 +3,7 @@
   "name": "kbcodedev-skills",
   "version": "2.0.0",
   "description": "The Complete Advanced AI Developer Skills Master Library for kbcode and modern coding agents",
-  "total_skills": 131,
+  "total_skills": 132,
   "total_categories": 21,
   "categories": [
     {
@@ -908,8 +908,8 @@
     {
       "id": "07-ai-mcp-prompt-engineering",
       "name": "AI, MCP & Prompt Engineering",
-      "description": "Claude API caching & thinking, MCP server building in TS/Py, metaprompts, skill authoring, skill quality hardening, KV-cache optimization, JSON Schema, and checkpoints",
-      "skills_count": 9,
+      "description": "Claude API caching & thinking, MCP server building in TS/Py, metaprompts, skill authoring, skill quality hardening, agent reply-style contracts, KV-cache optimization, JSON Schema, and checkpoints",
+      "skills_count": 10,
       "skills": [
         {
           "id": "kbcodedev/claude-api-advanced-patterns",
@@ -1062,6 +1062,23 @@
             "quality",
             "hardening",
             "audit"
+          ]
+        },
+        {
+          "id": "kbcodedev/clear-replies",
+          "path": "categories/07-ai-mcp-prompt-engineering/clear-replies.md",
+          "title": "Clear Replies - Answer-First Writing & Reading-Level Adaptation",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "07",
+            "ai",
+            "prompt",
+            "engineering",
+            "reply",
+            "style",
+            "communication",
+            "user-facing"
           ]
         }
       ]

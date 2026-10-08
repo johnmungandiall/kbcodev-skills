@@ -1,6 +1,6 @@
 # 🚀 kbcodedev-skills: The Advanced AI Developer Skills Master Library
 
-A production-grade, meticulously synthesized, category-wise library of **131 advanced yet simplified AI developer skills, agentic orchestration engines, architectural frameworks, and engineering playbooks** designed specifically for **kbcode**, Claude Code, and modern autonomous AI coding assistants.
+A production-grade, meticulously synthesized, category-wise library of **132 advanced yet simplified AI developer skills, agentic orchestration engines, architectural frameworks, and engineering playbooks** designed specifically for **kbcode**, Claude Code, and modern autonomous AI coding assistants.
 
 Synthesized and completely rewritten from over 50,000 raw prompts and prompt repositories into clean, contract-driven, high-signal skill modules.
 
@@ -22,19 +22,19 @@ Unlike raw prompt dumps filled with conversational filler, repetitive clichés, 
 Click any file or category folder below to navigate directly to it:
 
 - 📄 **[`README.md`](README.md)** — Master Library Documentation & Catalog (With 'When to Use' Guide)
-- 📄 **[`SKILLS_MANIFEST.json`](SKILLS_MANIFEST.json)** — Machine-Readable JSON Skills Registry (131 Skills)
-- 📄 **[`INDEX.md`](INDEX.md)** — Task-to-Skill Fast Lookup Table (131 Mappings)
+- 📄 **[`SKILLS_MANIFEST.json`](SKILLS_MANIFEST.json)** — Machine-Readable JSON Skills Registry (132 Skills)
+- 📄 **[`INDEX.md`](INDEX.md)** — Task-to-Skill Fast Lookup Table (132 Mappings)
 - 📄 **[`AGENT.md`](AGENT.md)** — Agent Navigation & Project Guide
 - 📄 **[`LICENSE`](LICENSE)** — Open-Source MIT License
 - 📄 **[`LEGAL.md`](LEGAL.md)** — Intellectual Property, Clean-Room Synthesis & Fair Use Compliance
-- 📁 **[`categories/`](categories/)** — Master Skills Directory (130 Skills across 21 Categories)
+- 📁 **[`categories/`](categories/)** — Master Skills Directory (132 Skills across 21 Categories)
   - 📂 **[`01-agentic-orchestration/`](categories/01-agentic-orchestration/)** — Autonomous ReAct, Swarms, DAGs, Reflexion, Guards (8 Skills)
   - 📂 **[`02-system-architecture/`](categories/02-system-architecture/)** — C4, Distributed Microservices, DB Schemas, IaC, Kafka (6 Skills)
   - 📂 **[`03-software-engineering/`](categories/03-software-engineering/)** — Scaffolding, Refactoring, Big-O, Concurrency, Regex (7 Skills)
   - 📂 **[`04-testing-qa-debugging/`](categories/04-testing-qa-debugging/)** — Root Cause, Test Generators, E2E, Profilers, Bisect (7 Skills)
   - 📂 **[`05-frontend-ui-ux/`](categories/05-frontend-ui-ux/)** — Next.js, Design Tokens, Artifacts, A11y, Vision (7 Skills)
   - 📂 **[`06-devops-sre-release/`](categories/06-devops-sre-release/)** — Zero-Downtime Ship, CI/CD, K8s, Docker, OTel (6 Skills)
-  - 📂 **[`07-ai-mcp-prompt-engineering/`](categories/07-ai-mcp-prompt-engineering/)** — Claude API, MCP Servers, Metaprompts, Checkpoints (7 Skills)
+  - 📂 **[`07-ai-mcp-prompt-engineering/`](categories/07-ai-mcp-prompt-engineering/)** — Claude API, MCP Servers, Metaprompts, Reply-Style Contracts, Checkpoints (10 Skills)
   - 📂 **[`08-strategic-product-leadership/`](categories/08-strategic-product-leadership/)** — CEO/Staff Reviews, YC Playbook, PRDs, Retros (7 Skills)
   - 📂 **[`09-document-media-synthesis/`](categories/09-document-media-synthesis/)** — Programmatic DOCX, PDF, PPTX, XLSX, RFCs (5 Skills)
   - 📂 **[`10-communication-humanizer-career/`](categories/10-communication-humanizer-career/)** — De-AI Voice, ATS Resumes, XYZ Bullets, Memos (5 Skills)
@@ -63,7 +63,7 @@ Click any file or category folder below to navigate directly to it:
 | `categories/04-testing-qa-debugging/` | Testing, QA & Deep Debugging | 7 Skills | [📂 Open 04-testing-qa-debugging](categories/04-testing-qa-debugging/) |
 | `categories/05-frontend-ui-ux/` | Frontend UI/UX & Design Systems | 7 Skills | [📂 Open 05-frontend-ui-ux](categories/05-frontend-ui-ux/) |
 | `categories/06-devops-sre-release/` | DevOps, SRE & Release Engineering | 6 Skills | [📂 Open 06-devops-sre-release](categories/06-devops-sre-release/) |
-| `categories/07-ai-mcp-prompt-engineering/` | AI, MCP & Prompt Engineering | 7 Skills | [📂 Open 07-ai-mcp-prompt-engineering](categories/07-ai-mcp-prompt-engineering/) |
+| `categories/07-ai-mcp-prompt-engineering/` | AI, MCP & Prompt Engineering | 10 Skills | [📂 Open 07-ai-mcp-prompt-engineering](categories/07-ai-mcp-prompt-engineering/) |
 | `categories/08-strategic-product-leadership/` | Strategic & Product Leadership | 7 Skills | [📂 Open 08-strategic-product-leadership](categories/08-strategic-product-leadership/) |
 | `categories/09-document-media-synthesis/` | Document & Media Synthesis | 5 Skills | [📂 Open 09-document-media-synthesis](categories/09-document-media-synthesis/) |
 | `categories/10-communication-humanizer-career/` | Communication, Humanizer & Career Engineering | 5 Skills | [📂 Open 10-communication-humanizer-career](categories/10-communication-humanizer-career/) |
@@ -81,7 +81,7 @@ Click any file or category folder below to navigate directly to it:
 
 ---
 
-## 🎯 Master Skills Catalog & "When to Use" Guide (131 Production Skills)
+## 🎯 Master Skills Catalog & "When to Use" Guide (132 Production Skills)
 
 ---
 
@@ -177,7 +177,7 @@ Click any file or category folder below to navigate directly to it:
 
 ---
 
-### 07. AI, MCP & Prompt Engineering (9 Skills)
+### 07. AI, MCP & Prompt Engineering (10 Skills)
 
 | Skill File | Skill ID | Core Capability | When to Use (Edhi Eppudu Use Cheyyali / Triggers) |
 |---|---|---|---|
@@ -190,6 +190,7 @@ Click any file or category folder below to navigate directly to it:
 | [`context-save-restore-checkpoint.md`](categories/07-ai-mcp-prompt-engineering/context-save-restore-checkpoint.md) | `kbcodedev/context-save-restore-checkpoint` | Session state snapshots, persistent memory serialization across LLM restarts | **Use when**: Serializing active agent state, modified files, and verified milestones to disk, enabling instant session recovery upon cold reboots. |
 | [`langchain-llamaindex-agentic-framework.md`](categories/07-ai-mcp-prompt-engineering/langchain-llamaindex-agentic-framework.md) | `kbcodedev/langchain-llamaindex-agentic-framework` | LangGraph stateful multi-actor graphs, LlamaIndex hierarchical sub-question query engines, tool calling, LangSmith | **Use when**: Building stateful multi-agent workflows, complex RAG architectures, sub-question decomposition, and agent evaluation. |
 | [`universal-skill-quality.md`](categories/07-ai-mcp-prompt-engineering/universal-skill-quality.md) | `kbcodedev/universal-skill-quality` | Universal skill audit, repair & production hardening; assumption/absolute triage, evidence discipline, verification gates | **Use when**: Reviewing, repairing or production-hardening any skill definition — auditing hardcoded assumptions, false absolutes, contradictions, outdated APIs and missing verification. |
+| [`clear-replies.md`](categories/07-ai-mcp-prompt-engineering/clear-replies.md) | `kbcodedev/clear-replies` | Runtime reply governance: 6-step per-turn loop, D1–D7 axes → Response Classes R0–R4, P0–P5 conflict ladder, 13-failure catalogue with detection tests, event-driven progress + announce-ledger, verified completion, 10-gate self-check, receiver/reading-level adaptation, anti-decay install + AO/NC/CC/CR/LM/OA metrics | **Use when**: Governing the reply an agent is about to send this turn, or authoring/repairing how an agent talks to its receiver — system prompts, output styles, `AGENTS.md` rules, status updates, PR comments — or diagnosing "the replies are unclear / too long / I can't find the answer / they assume I'm technical". |
 
 ---
 
@@ -369,7 +370,7 @@ Click any file or category folder below to navigate directly to it:
 
 ### 1. Interactive Terminal Commands
 ```bash
-# List all 131 skills across 21 categories
+# List all 132 skills across 21 categories
 npm run skill list
 
 # Fast keyword search across IDs, titles, and categories
@@ -379,7 +380,7 @@ npm run search react
 # Read any skill directly in terminal
 npm run skill show zero-downtime-ship-pipeline
 
-# Validate all 131 skills against the canonical production schema
+# Validate all 132 skills against the canonical production schema
 npm run validate
 ```
 

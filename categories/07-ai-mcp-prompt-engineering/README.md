@@ -1,7 +1,7 @@
 # 📁 Category: AI, MCP & Prompt Engineering (`07-ai-mcp-prompt-engineering`)
 
-> **Claude API caching & thinking, MCP server building in TS/Py, metaprompts, skill authoring, skill quality hardening, KV-cache optimization, JSON Schema, and checkpoints**
-> Total Skills: **9** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
+> **Claude API caching & thinking, MCP server building in TS/Py, metaprompts, skill authoring, skill quality hardening, agent reply-style contracts, KV-cache optimization, JSON Schema, and checkpoints**
+> Total Skills: **10** | Back to [Master Catalog](../../README.md) | [Fast Index](../../INDEX.md)
 
 ---
 
@@ -18,6 +18,7 @@
 | **Context Save & State Checkpoint Serializer** | `kbcodedev/context-save-restore-checkpoint` | `agnostic` | `advanced` | [📄 Open context-save-restore-checkpoint.md](context-save-restore-checkpoint.md) |
 | **LangChain & LlamaIndex Agentic Orchestration Framework** | `kbcodedev/langchain-llamaindex-agentic-framework` | `python` | `advanced` | [📄 Open langchain-llamaindex-agentic-framework.md](langchain-llamaindex-agentic-framework.md) |
 | **Universal Skill Quality & Production Hardening** | `kbcodedev/universal-skill-quality` | `agnostic` | `advanced` | [📄 Open universal-skill-quality.md](universal-skill-quality.md) |
+| **Clear Replies - Answer-First Writing & Reading-Level Adaptation** | `kbcodedev/clear-replies` | `agnostic` | `advanced` | [📄 Open clear-replies.md](clear-replies.md) |
 
 ---
 

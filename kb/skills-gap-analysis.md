@@ -3,7 +3,7 @@
 Documents the full architectural audit and missing skills across the 21 categories in `SKILLS_MANIFEST.json` and `SKILLS_GAP_ANALYSIS.md`.
 
 ## Inventory Summary
-- Total Current Skills: 130 across 21 categories.
+- Total Current Skills: 132 across 21 categories.
 - Status: 100% validated via `bin/skill-runner.mjs validate`.
 
 ## 9 Critical Gap Areas Identified

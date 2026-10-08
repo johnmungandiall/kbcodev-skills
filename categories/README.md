@@ -1,6 +1,6 @@
 # 📁 Master Categories Directory (21 Domains)
 
-This directory contains the 130 rewritten, production-grade skills partitioned into 21 domain categories.
+This directory contains the 132 rewritten, production-grade skills partitioned into 21 domain categories.
 Click any category folder below to access its skills:
 
 | Category Folder | Domain Name | Skills | Direct Access |

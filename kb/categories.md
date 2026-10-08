@@ -1,6 +1,6 @@
-# Categories & Skill Index (131 Skills Master Map)
+# Categories & Skill Index (132 Skills Master Map)
 
-Complete mapping of all 131 skills across 21 categories in `categories/`:
+Complete mapping of all 132 skills across 21 categories in `categories/`:
 
 ### 01. Agentic Orchestration (`categories/01-agentic-orchestration/`)
 - `autonomous-react-loop.md` — ReAct loops, dynamic step budgets, oscillation detection.
@@ -74,6 +74,7 @@ Complete mapping of all 131 skills across 21 categories in `categories/`:
 - `context-save-restore-checkpoint.md` — Session state checkpointing and disk serialization.
 - `langchain-llamaindex-agentic-framework.md` — LangGraph stateful multi-actor graphs, LlamaIndex hierarchical sub-question query engines, tool calling, LangSmith.
 - `universal-skill-quality.md` — Structure-agnostic skill audit/hardening: assumption & absolute triage, project-grounding, evidence discipline, verification gates.
+- `clear-replies.md` — Runtime reply governance: per-turn loop, R0–R4 response classes from D1–D7 axes, P0–P5 conflict ladder, 13-failure catalogue, event-driven progress, 10-gate self-check, receiver/reading-level adaptation, anti-decay metrics.
 
 ### 08. Strategic & Product Leadership (`categories/08-strategic-product-leadership/`)
 - `ceo-strategic-plan-review.md` — Product-Market Fit (PMF) audits, scope-halving pass.
