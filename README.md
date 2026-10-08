@@ -1,6 +1,6 @@
 # 🚀 kbcodedev-skills: The Advanced AI Developer Skills Master Library
 
-A production-grade, meticulously synthesized, category-wise library of **130 advanced yet simplified AI developer skills, agentic orchestration engines, architectural frameworks, and engineering playbooks** designed specifically for **kbcode**, Claude Code, and modern autonomous AI coding assistants.
+A production-grade, meticulously synthesized, category-wise library of **131 advanced yet simplified AI developer skills, agentic orchestration engines, architectural frameworks, and engineering playbooks** designed specifically for **kbcode**, Claude Code, and modern autonomous AI coding assistants.
 
 Synthesized and completely rewritten from over 50,000 raw prompts and prompt repositories into clean, contract-driven, high-signal skill modules.
 
@@ -22,8 +22,8 @@ Unlike raw prompt dumps filled with conversational filler, repetitive clichés, 
 Click any file or category folder below to navigate directly to it:
 
 - 📄 **[`README.md`](README.md)** — Master Library Documentation & Catalog (With 'When to Use' Guide)
-- 📄 **[`SKILLS_MANIFEST.json`](SKILLS_MANIFEST.json)** — Machine-Readable JSON Skills Registry (130 Skills)
-- 📄 **[`INDEX.md`](INDEX.md)** — Task-to-Skill Fast Lookup Table (130 Mappings)
+- 📄 **[`SKILLS_MANIFEST.json`](SKILLS_MANIFEST.json)** — Machine-Readable JSON Skills Registry (131 Skills)
+- 📄 **[`INDEX.md`](INDEX.md)** — Task-to-Skill Fast Lookup Table (131 Mappings)
 - 📄 **[`AGENT.md`](AGENT.md)** — Agent Navigation & Project Guide
 - 📄 **[`LICENSE`](LICENSE)** — Open-Source MIT License
 - 📄 **[`LEGAL.md`](LEGAL.md)** — Intellectual Property, Clean-Room Synthesis & Fair Use Compliance
@@ -59,7 +59,7 @@ Click any file or category folder below to navigate directly to it:
 |---|---|---|---|
 | `categories/01-agentic-orchestration/` | Agentic Orchestration & Autonomous Systems | 8 Skills | [📂 Open 01-agentic-orchestration](categories/01-agentic-orchestration/) |
 | `categories/02-system-architecture/` | System Architecture & Distributed Systems | 6 Skills | [📂 Open 02-system-architecture](categories/02-system-architecture/) |
-| `categories/03-software-engineering/` | Software Engineering & Code Mastery | 7 Skills | [📂 Open 03-software-engineering](categories/03-software-engineering/) |
+| `categories/03-software-engineering/` | Software Engineering & Code Mastery | 14 Skills | [📂 Open 03-software-engineering](categories/03-software-engineering/) |
 | `categories/04-testing-qa-debugging/` | Testing, QA & Deep Debugging | 7 Skills | [📂 Open 04-testing-qa-debugging](categories/04-testing-qa-debugging/) |
 | `categories/05-frontend-ui-ux/` | Frontend UI/UX & Design Systems | 7 Skills | [📂 Open 05-frontend-ui-ux](categories/05-frontend-ui-ux/) |
 | `categories/06-devops-sre-release/` | DevOps, SRE & Release Engineering | 6 Skills | [📂 Open 06-devops-sre-release](categories/06-devops-sre-release/) |
@@ -81,7 +81,7 @@ Click any file or category folder below to navigate directly to it:
 
 ---
 
-## 🎯 Master Skills Catalog & "When to Use" Guide (130 Production Skills)
+## 🎯 Master Skills Catalog & "When to Use" Guide (131 Production Skills)
 
 ---
 
@@ -113,7 +113,7 @@ Click any file or category folder below to navigate directly to it:
 
 ---
 
-### 03. Software Engineering & Code Mastery (7 Skills)
+### 03. Software Engineering & Code Mastery (14 Skills)
 
 | Skill File | Skill ID | Core Capability | When to Use (Edhi Eppudu Use Cheyyali / Triggers) |
 |---|---|---|---|
@@ -130,6 +130,7 @@ Click any file or category folder below to navigate directly to it:
 | [`celery-distributed-task-queue.md`](categories/03-software-engineering/celery-distributed-task-queue.md) | `kbcodedev/celery-distributed-task-queue` | Celery 5+, Redis/RabbitMQ brokers, canvas workflows (group/chain/chord), exponential backoff retries, dead-letter queues | **Use when**: Offloading asynchronous background tasks, executing distributed batch pipelines, or scheduling periodic cron jobs. |
 | [`typer-click-rich-cli-engine.md`](categories/03-software-engineering/typer-click-rich-cli-engine.md) | `kbcodedev/typer-click-rich-cli-engine` | Typer/Click/Rich CLI engine, type-annotated command contracts, POSIX exit codes, graceful signal handling | **Use when**: Building production Python CLIs with typed arguments, rich terminal output, and correct exit-code and signal behaviour. |
 | [`litestar-async-api-engine.md`](categories/03-software-engineering/litestar-async-api-engine.md) | `kbcodedev/litestar-async-api-engine` | Litestar async API, DTO-driven architecture, msgspec serialization, hierarchical DI guard layers, OpenAPI 3.1 | **Use when**: Building high-throughput async Python APIs where serialization speed, typed DTOs and layered guards matter. |
+| [`business-logic-workflow-extractor.md`](categories/03-software-engineering/business-logic-workflow-extractor.md) | `kbcodedev/business-logic-workflow-extractor` | Business logic rules, call-graph flows, explicit delays/sleeps, timeouts, cron cadences | **Use when**: Reverse-engineering repositories, extracting domain business logic, mapping end-to-end execution flows, or discovering hidden delays and timeouts. |
 
 ---
 
@@ -368,7 +369,7 @@ Click any file or category folder below to navigate directly to it:
 
 ### 1. Interactive Terminal Commands
 ```bash
-# List all 130 skills across 21 categories
+# List all 131 skills across 21 categories
 npm run skill list
 
 # Fast keyword search across IDs, titles, and categories
@@ -378,7 +379,7 @@ npm run search react
 # Read any skill directly in terminal
 npm run skill show zero-downtime-ship-pipeline
 
-# Validate all 130 skills against the canonical production schema
+# Validate all 131 skills against the canonical production schema
 npm run validate
 ```
 

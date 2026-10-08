@@ -3,7 +3,7 @@
   "name": "kbcodedev-skills",
   "version": "2.0.0",
   "description": "The Complete Advanced AI Developer Skills Master Library for kbcode and modern coding agents",
-  "total_skills": 130,
+  "total_skills": 131,
   "total_categories": 21,
   "categories": [
     {
@@ -263,7 +263,7 @@
       "id": "03-software-engineering",
       "name": "Software Engineering & Code Mastery",
       "description": "Code scaffolding, refactoring, complexity optimization, language migration, regex, and concurrency",
-      "skills_count": 13,
+      "skills_count": 14,
       "skills": [
         {
           "id": "kbcodedev/code-scaffolding-synthesis",
@@ -484,6 +484,25 @@
           "runtime": "python",
           "path": "categories/03-software-engineering/litestar-async-api-engine.md",
           "title": "Litestar High-Performance Modern ASGI Engine"
+        },
+        {
+          "id": "kbcodedev/business-logic-workflow-extractor",
+          "path": "categories/03-software-engineering/business-logic-workflow-extractor.md",
+          "title": "Business Logic, Workflow & Delay Extractor",
+          "runtime": "agnostic",
+          "difficulty": "advanced",
+          "tags": [
+            "03",
+            "software",
+            "engineering",
+            "business-logic",
+            "workflow",
+            "flow-extraction",
+            "delay",
+            "timeout",
+            "ast-analysis",
+            "reverse-engineering"
+          ]
         }
       ]
     },

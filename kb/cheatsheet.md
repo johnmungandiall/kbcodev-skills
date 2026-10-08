@@ -3,10 +3,10 @@
 Fast reference for CLI commands, testing, and agent integration patterns in this repository.
 
 ## CLI Runner Commands
-- `npm run skill list` — Display all 130 skills across 21 categories.
+- `npm run skill list` — Display all 131 skills across 21 categories.
 - `npm run search <query>` — Search skills by keyword, title, or category.
 - `npm run skill show <id>` — View complete skill markdown in terminal.
-- `npm run validate` — Validates all 130 skills: file existence, heading-anchored required sections **outside code fences**, and that every `json` block in the Input/Output Contracts section parses.
+- `npm run validate` — Validates all 131 skills: file existence, heading-anchored required sections **outside code fences**, and that every `json` block in the Input/Output Contracts section parses.
 
 ## Agent Prompt Exporter Tool
 - `node tools/export-prompt.mjs <skill-id> claude` — Export into Claude XML `<skill>` block.

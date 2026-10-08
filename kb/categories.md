@@ -1,6 +1,6 @@
-# Categories & Skill Index (130 Skills Master Map)
+# Categories & Skill Index (131 Skills Master Map)
 
-Complete mapping of all 130 skills across 21 categories in `categories/`:
+Complete mapping of all 131 skills across 21 categories in `categories/`:
 
 ### 01. Agentic Orchestration (`categories/01-agentic-orchestration/`)
 - `autonomous-react-loop.md` — ReAct loops, dynamic step budgets, oscillation detection.
@@ -34,6 +34,7 @@ Complete mapping of all 130 skills across 21 categories in `categories/`:
 - `celery-distributed-task-queue.md` — Celery 5+, Redis/RabbitMQ brokers, canvas workflows (group/chain/chord), exponential backoff retries.
 - `typer-click-rich-cli-engine.md` — Typer/Click/Rich CLI engine, type-annotated command contracts, POSIX exit codes, graceful signal handling.
 - `litestar-async-api-engine.md` — Litestar async API, DTO-driven architecture, msgspec serialization, hierarchical DI guard layers, OpenAPI 3.1.
+- `business-logic-workflow-extractor.md` — Business logic rules, call-graph flows, explicit delays/sleeps, timeouts, cron cadences.
 
 ### 04. Testing, QA & Debugging (`categories/04-testing-qa-debugging/`)
 - `root-cause-investigator.md` — 5-Whys diagnostic protocol, stack frame inspection.

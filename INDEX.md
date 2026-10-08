@@ -31,6 +31,7 @@ Find the exact skill file for your development task instantly:
 | **Celery Distributed Task Queue** | `kbcodedev/celery-distributed-task-queue` | `categories/03-software-engineering/celery-distributed-task-queue.md` |
 | **Litestar Async ASGI Engine** | `kbcodedev/litestar-async-api-engine` | `categories/03-software-engineering/litestar-async-api-engine.md` |
 | **Typer, Click & Rich CLI Engine** | `kbcodedev/typer-click-rich-cli-engine` | `categories/03-software-engineering/typer-click-rich-cli-engine.md` |
+| **Business Logic & Workflow Extractor** | `kbcodedev/business-logic-workflow-extractor` | `categories/03-software-engineering/business-logic-workflow-extractor.md` |
 | **5-Whys Deep Debugging** | `kbcodedev/root-cause-investigator` | `categories/04-testing-qa-debugging/root-cause-investigator.md` |
 | **Unit & Integration Test Suites** | `kbcodedev/unit-integration-test-generator` | `categories/04-testing-qa-debugging/unit-integration-test-generator.md` |
 | **Playwright Browser E2E Tests** | `kbcodedev/e2e-webapp-testing` | `categories/04-testing-qa-debugging/e2e-webapp-testing.md` |
