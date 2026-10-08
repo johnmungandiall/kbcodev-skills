@@ -1,152 +1,1077 @@
 # Skill: Business Logic, Workflow & Delay Extractor
+
 `id`: `kbcodedev/business-logic-workflow-extractor`  
 `category`: `03-software-engineering`  
-`version`: `2.1.0`  
+`version`: `2.2.0`  
 `type`: `advanced-simplified`
 
 ---
 
 ## 1. Intent & Trigger Conditions
-- **When to Use**: Performing comprehensive codebase archaeology, reverse-engineering legacy or undocumented systems, auditing architectural boundaries, and synthesizing a Complete Behavioral Specification covering domain business logic, end-to-end execution flows, temporal mechanics, concurrency, queues, storage, and configuration.
-- **Triggers**: Reverse-engineering unknown repositories, extracting hidden business rules from monolithic codebases, uncovering latency/timeout bottlenecks, mapping distributed event topologies, discovering cache/database invariants, and detecting documentation-vs-implementation drift.
-- **Prerequisites**: Access to the project source tree, configuration manifests, schema definitions, and read-only repository inspection tools.
+
+### When to Use
+
+Use this skill whenever the objective requires comprehensive behavioral understanding of an existing software system, including:
+
+- Codebase archaeology
+- Reverse-engineering unknown or undocumented repositories
+- Business-rule extraction
+- End-to-end workflow reconstruction
+- Call-graph and execution-path analysis
+- Delay, timeout, retry, polling, and scheduling extraction
+- Concurrency and parallelism analysis
+- Database, cache, queue, and event topology analysis
+- External dependency analysis
+- Configuration and feature-flag behavior analysis
+- Documentation-vs-implementation drift detection
+- Architectural boundary auditing
+- Generation of a complete behavioral specification from actual project evidence
+
+The skill's mission is not to produce a plan for later execution.
+
+**The mission is to autonomously execute the complete analysis and return a verified behavioral specification.**
+
+### Triggers
+
+Activate when the user requests or the surrounding task implies:
+
+- "Extract all business logic"
+- "Understand how this project works"
+- "Map the complete flow"
+- "Find all delays/timeouts/retries"
+- "Reverse engineer this repository"
+- "Document the complete behavior"
+- "Find hidden business rules"
+- "Analyze execution paths"
+- "Analyze trading/order/payment/workflow logic"
+- "Find all dependencies and integrations"
+- "Generate a behavioral specification"
+- "Compare implementation with documentation"
+- "Explain what the system actually does"
+
+### Prerequisites
+
+Use whatever project evidence is available, including:
+
+- Source tree
+- Dependency manifests and lockfiles
+- Configuration files
+- Environment definitions
+- Database schemas and migrations
+- API specifications
+- Queue/event definitions
+- Infrastructure/deployment definitions
+- Tests
+- Build/lint/type-check configuration
+- Runtime evidence where available
+- Logs, traces, metrics, fixtures, or recorded outputs where available
+
+Do not require a particular programming language, framework, database, broker, deployment model, or project structure.
 
 ---
 
-## 2. Core Mental Model & Invariant Principles
-1. **Three-Plane Universal Decomposition**: Deconstruct any codebase along three orthogonal semantic planes:
-   - **Plane A (Domain Rules & Business Invariants)**: Conditional guard branches, domain entities, validation schemas, state machine lifecycles, decision graphs, permission boundaries, and pricing/calculation algorithms.
-   - **Plane B (Workflow & Execution Topologies)**: Ingress entry points, middleware sequences, call graphs, synchronous vs. asynchronous hops, message queue/event topologies, cache behaviors, external dependencies, error/recovery paths, and database transaction scopes.
-   - **Plane C (Temporal Mechanics & Delays)**: Explicit thread/task pauses, transport and socket timeouts, database statement execution deadlines, retry backoff algorithms with jitter, queue visibility timeouts, polling intervals, and periodic cron schedules.
-2. **Multi-Modal Evidence Synthesis over AST Alone**: Semantic AST/CST analysis is necessary but insufficient on its own. Comprehensive behavioral extraction synthesizes six converging evidence modalities:
-   - (a) *Semantic AST/CST & Symbol Graphs*: Syntax trees, type hierarchies, interface implementations, and call graphs.
-   - (b) *Configuration & Environment Modality*: Environment variables, static and dynamic config files, feature flags, secret manifests, and runtime settings.
-   - (c) *Dependency Injection & Framework Modality*: DI container registrations, middleware pipelines, framework conventions, reflection, and dynamic import bindings.
-   - (d) *Persistence & Storage Modality*: Raw SQL files, ORM migration histories, database triggers/procedures, indices, locking mechanisms, and transaction isolation levels.
-   - (e) *Messaging & Integration Modality*: Message broker routing keys, topic bindings, dead-letter queues, RPC/REST client contracts, and webhook subscriptions.
-   - (f) *Operational & Verification Modality*: Test suites, build manifests, CI/CD scripts, and deployment configurations providing ground-truth proof of runtime behavior.
-3. **Evidence Precedence Hierarchy for Conflicting Sources**: When multiple evidence sources report conflicting information about behavior, constraints, timeouts, or flows, resolve the conflict deterministically using this strict 6-tier precedence hierarchy:
-   - **Tier 1 (Highest Precedence) — Live Runtime Execution & Test Assertions**: Real executed test assertions, CI/CD run outputs, and live system metrics represent undeniable runtime ground truth.
-   - **Tier 2 — Running Configuration & Active Environment Variables**: Production config files, container env overrides, active feature flags, and deployment manifests override static code defaults (e.g. an env var `TIMEOUT=10s` overrides in-code default `timeout=5s`).
-   - **Tier 3 — Code Implementation & Abstract Syntax Tree (AST/CST)**: Actual implementation logic, branching conditions, SQL statements, and call hierarchies override comments, documentation, and interface stubs.
-   - **Tier 4 — Dependency Injection & Declarative Schemas**: DI wiring, ORM schema mappings, serializer validation models, and migration histories.
-   - **Tier 5 — Static Configuration Defaults & Fallbacks**: Default settings objects, fallback constants, and un-overridden template configs.
-   - **Tier 6 (Lowest Precedence) — Documentation, Comments & OpenAPI Specs**: Inline docstrings, code comments, READMEs, architectural docs, and OpenAPI/Swagger YAML specs. If code or config conflicts with documentation, **the code/config wins**, and the discrepancy is flagged as **Documentation Drift / Contradiction**.
-4. **Strict Dependency Ordering in Discovery & Extraction**: Extraction phases must execute in strict prerequisite dependency order to prevent analyzing dead branches or hallucinating unconfigured behaviors:
-   - *Order 1: Manifests, Configurations & Active Environment* (must be inspected first to resolve runtime flags, module boundaries, and active toggles before parsing code).
-   - *Order 2: Database Schemas, Migrations & Storage Contracts* (must be parsed before business logic to establish ground-truth entity relations, unique constraints, and transaction capabilities).
-   - *Order 3: Ingress Boundaries & Routing Definitions* (must be mapped before call graphs to establish true entry-point roots).
-   - *Order 4: AST Call-Graph & Execution Pipeline Traversal* (traces from verified ingress roots downstream to storage and integration sinks).
-   - *Order 5: Domain Invariant, Guard & Decision Mining* (mined along verified call paths using resolved configuration values and schema constraints).
-   - *Order 6: Temporal Mechanics & Concurrency Audit* (derives timeouts, retries, and cadences using Tier 2 config values over Tier 5 static defaults).
-   - *Order 7: Conflict Resolution & Behavioral Specification Synthesis* (applies evidence precedence to resolve contradictions and flags documentation drift).
-5. **Pure Prompt Directives without Synthetic Code Examples**: Guide the agent through structural semantic instructions, analytical protocols, and schema contracts. Never clutter the prompt with fragile, language-specific code snippets or static keyword dictionaries.
-6. **Project-Grounding Invariant (MANDATORY)**: Every version number, package name, API signature, CLI flag, file path, numeric threshold and code sample in this skill is an **illustrative reference pattern from a known-good configuration — never a literal instruction to paste**. Before changing the target codebase: (a) inspect the real project (dependency manifest and lockfile, installed toolchain, existing module layout, current implementations of anything you are about to modify — grep and symbol hits are discovery, only the actual function body is proof of behaviour); (b) reconcile each example here against what you find and adapt its specifics (versions, names, paths, thresholds) while keeping the principle intact; (c) where this skill and the real code disagree, **the real code wins** — follow it and say so plainly. Any numeric bound stated here (step budget, timeout, pool size, retry count, coverage %, latency target) is a **starting heuristic to be re-derived from the project's own evidence**, not a fixed constant. Nothing may be reported as verified until it has been checked against the running implementation; an unverified claim is delivered as unverified, never as fact.
+# 2. Autonomous Execution Contract
+
+## 2.1 Mission Completion Principle
+
+The agent MUST treat the skill as an **end-to-end execution task**, not as a request to describe future work.
+
+The agent must autonomously:
+
+1. Discover the project.
+2. Determine the project's architecture and evidence sources.
+3. Select appropriate inspection methods.
+4. Extract behavioral evidence.
+5. Resolve dependencies between evidence sources.
+6. Reconstruct workflows.
+7. Extract business rules.
+8. Extract temporal behavior.
+9. Normalize overlapping findings.
+10. Synthesize the complete 24-dimension behavioral specification.
+11. Validate the generated artifact.
+12. Verify claims against project artifacts.
+13. Repair failures or inconsistencies.
+14. Re-run validation and verification.
+15. Return the completed result.
+
+The agent must not wait for the user to tell it how to perform any of these steps.
 
 ---
 
-## 3. High-Signal Execution Workflow
+## 2.2 No Planning-Only Completion
 
+The following are **not completion**:
+
+- "I will now create the JSON."
+- "The next step is to validate."
+- "I need to formulate the specification."
+- "I will inspect the artifacts."
+- "Phase 5 is in progress."
+- "The script will generate the specification."
+- "The specification needs verification."
+- "I have identified the components."
+- "I am going to map these components."
+- A TODO list describing work that has not been executed.
+- A proposed schema without populated findings.
+- A partially populated JSON artifact presented as the final result.
+
+Planning may be used internally, but the agent must continue execution automatically.
+
+**Do not end the task merely because a plan has been created.**
+
+---
+
+## 2.3 No Manual Phase Steering
+
+The agent must not require user instructions such as:
+
+- "Now do Phase 5."
+- "Now validate it."
+- "Now check the source code."
+- "Now generate the JSON."
+- "Now verify the results."
+- "Now fix the failed validation."
+- "Continue to the next phase."
+
+The agent owns the complete workflow.
+
+If the current phase produces enough evidence to proceed, proceed automatically.
+
+---
+
+## 2.4 Adaptive Execution
+
+Do not assume a fixed implementation technique.
+
+The agent must dynamically select the best available evidence and inspection mechanism based on the target project.
+
+Examples:
+
+- Python project → inspect Python modules, imports, decorators, async flows, tests, configuration.
+- Flutter project → inspect Dart entry points, routes, providers, services, isolates, platform channels, Firebase configuration, native integration.
+- Node.js project → inspect package manifests, module graph, middleware, async/event flows, workers.
+- Java/Spring → inspect controllers, services, repositories, DI configuration, annotations, transactions.
+- Rust → inspect crates, traits, async runtime, ownership boundaries, channels, database integrations.
+- Go → inspect packages, handlers, goroutines, channels, contexts, interfaces.
+- SQL-heavy system → inspect migrations, procedures, triggers, indexes, constraints, isolation.
+- Distributed system → inspect services, brokers, queues, events, retries, idempotency, deployment configuration.
+
+Never require the user to identify these mechanisms manually.
+
+---
+
+# 3. Core Mental Model & Invariant Principles
+
+## 3.1 Three Behavioral Planes
+
+Deconstruct the target system across three orthogonal planes.
+
+### Plane A — Domain Rules & Business Invariants
+
+Extract:
+
+- Business rules
+- Guard clauses
+- Validation
+- Domain entities
+- State machines
+- Permission boundaries
+- Pricing/calculation logic
+- Decision algorithms
+- Quotas
+- Eligibility rules
+- Risk controls
+- State-dependent behavior
+- Hidden domain rules
+
+### Plane B — Workflow & Execution Topologies
+
+Extract:
+
+- Entry points
+- Routing
+- Middleware
+- Services
+- Call graphs
+- Synchronous flows
+- Asynchronous flows
+- Event emission
+- Queue consumption
+- Database operations
+- Cache operations
+- External integrations
+- Transactions
+- Error and recovery paths
+
+### Plane C — Temporal Mechanics
+
+Extract:
+
+- Explicit delays
+- Sleeps
+- Polling
+- Timeouts
+- Cancellation deadlines
+- Retry attempts
+- Backoff
+- Jitter
+- Cron schedules
+- Worker intervals
+- Queue visibility timeouts
+- Connection-pool waits
+- Rate-limit windows
+- Scheduling conversions
+- Time-dependent business rules
+
+---
+
+## 3.2 Multi-Modal Evidence Synthesis
+
+AST analysis alone is insufficient.
+
+Use all relevant evidence modalities available in the target project:
+
+1. Semantic AST/CST and symbol graphs
+2. Configuration and environment
+3. Dependency injection and framework wiring
+4. Persistence, SQL, schemas, migrations
+5. Messaging and integrations
+6. Tests and operational/runtime evidence
+
+Do not force all six modalities when a modality does not exist in the project.
+
+**Absence of a modality is itself project information, not an error.**
+
+---
+
+## 3.3 Project-Grounding Invariant
+
+The real project always wins.
+
+Before asserting behavior:
+
+1. Inspect the actual project.
+2. Locate the implementation.
+3. Resolve configuration affecting that implementation.
+4. Trace dependencies.
+5. Determine whether the behavior is statically provable or runtime-dependent.
+6. Record provenance.
+7. Assign confidence.
+
+Never convert an example, convention, framework assumption, or inferred pattern into project fact.
+
+If evidence is unavailable:
+
+`confidence = "unverified_gap"`
+
+and record the verification requirement.
+
+---
+
+## 3.4 Evidence Precedence
+
+When multiple sources appear to conflict, resolve them according to the following hierarchy **only when the sources govern the same runtime context**:
+
+### Tier 1 — Executed Runtime/Test Evidence
+
+Highest precedence:
+
+- Executed tests
+- Runtime measurements
+- Logs
+- Traces
+- Metrics
+- Actual execution outputs
+
+Runtime evidence must correspond to the relevant environment/configuration.
+
+### Tier 2 — Active Runtime Configuration
+
+Examples:
+
+- Active environment variables
+- Deployment overrides
+- Runtime feature flags
+- Container configuration
+- Active remote configuration
+
+### Tier 3 — Actual Code Implementation
+
+Examples:
+
+- Function bodies
+- Branches
+- SQL statements
+- Call paths
+- State transitions
+- Error handlers
+
+### Tier 4 — Declarative Wiring and Schemas
+
+Examples:
+
+- Dependency injection
+- ORM mappings
+- Serialization schemas
+- Database migrations
+- API contracts
+
+### Tier 5 — Static Defaults
+
+Examples:
+
+- Default configuration
+- Fallback constants
+- Template configuration
+
+### Tier 6 — Documentation
+
+Examples:
+
+- README
+- Comments
+- Docstrings
+- Architecture documents
+- OpenAPI descriptions
+
+Documentation never silently overrides stronger implementation evidence.
+
+When a conflict exists, record it under `documentation_contradictions`.
+
+---
+
+# 4. Dependency-Aware Discovery Order
+
+The agent must dynamically respect prerequisite relationships.
+
+The default dependency order is:
+
+```text
+PROJECT DISCOVERY
+       ↓
+ACTIVE CONFIGURATION
+       ↓
+DATABASE / STORAGE CONTRACTS
+       ↓
+INGRESS & BOUNDARIES
+       ↓
+CALL GRAPH / EXECUTION FLOWS
+       ↓
+BUSINESS RULES & STATE
+       ↓
+TEMPORAL / CONCURRENCY BEHAVIOR
+       ↓
+CROSS-EVIDENCE RECONCILIATION
+       ↓
+24-DIMENSION SYNTHESIS
+       ↓
+SCHEMA VALIDATION
+       ↓
+PROJECT VERIFICATION
+       ↓
+REPAIR / REVALIDATE
+       ↓
+FINAL VERIFIED SPECIFICATION
 ```
-[Target Codebase Source Tree + Manifests + Schemas + Configurations]
-                               │
-                               ▼
-┌──────────────────────────────────────────────────────────────┐
-│ Phase 1: Ingress & Boundary Discovery                        │
-│ ── HTTP/gRPC/CLI, Message Queues, Schedulers, Feature Flags │
-└──────────────────────────────┬───────────────────────────────┘
-                               ▼
-┌──────────────────────────────────────────────────────────────┐
-│ Phase 2: Flow & Call-Graph Reconstruction                    │
-│ ── Entry Points -> Interceptors -> Services -> Sinks/Storage │
-└──────────────────────────────┬───────────────────────────────┘
-                               ▼
-┌──────────────────────────────────────────────────────────────┐
-│ Phase 3: Business Invariant & Decision Mining                │
-│ ── Guards, State Lifecycles, Calculations, Hidden Rules      │
-└──────────────────────────────┬───────────────────────────────┘
-                               ▼
-┌──────────────────────────────────────────────────────────────┐
-│ Phase 4: Temporal, Concurrency & Infrastructure Discovery    │
-│ ── Delays, Timeouts, Retries, Crons, DB, Cache & Queues      │
-└──────────────────────────────┬───────────────────────────────┘
-                               ▼
-┌──────────────────────────────────────────────────────────────┐
-│ Phase 5: Complete Behavioral Specification Synthesis         │
-│ ── 24-Dimension Behavioral Model, Evidence Index & Drift     │
-└──────────────────────────────────────────────────────────────┘
-```
 
-### Phase 1: Ingress & Boundary Discovery
-1. Inspect project manifests, package files, and configuration descriptors to detect runtime platforms, framework conventions, and active modules.
-2. Discover all ingress entry points:
-   - Network APIs: REST, GraphQL, gRPC, WebSocket endpoints and route handlers.
-   - Messaging consumers: Queue listeners, event stream subscribers, and worker loops.
-   - Schedulers & Daemons: Periodic cron tasks, interval tickers, and maintenance runners.
-   - CLI commands, background job runners, and external webhook receivers.
-3. Inspect feature flags and environment configuration:
-   - Identify toggles, tenant flags, dynamic config values, and environment variable bindings that control feature activation.
+This is a dependency model, not a rigid tool-specific implementation.
 
-### Phase 2: Flow & Call-Graph Reconstruction
-1. Trace downstream call graphs from each ingress point to data and network sinks:
-   - Interceptors & Middleware: Authentication, rate limiting, logging, distributed tracing, and tenancy scoping.
-   - Service Logic: Domain orchestrators, application services, and business handlers.
-   - Storage Sinks: ORM calls, SQL queries, transaction demarcations, and row/table lock acquisitions.
-   - External Network Outbounds: Third-party REST/gRPC client invocations and payment/service integrations.
-2. Identify critical execution paths:
-   - Map high-traffic and latency-sensitive trajectories from request entry to terminal response.
-3. Identify error and recovery flows:
-   - Catch handlers, fallback branches, circuit breaker trips, compensation transactions, and dead-letter queues.
+If project evidence reveals a different dependency relationship, adapt while preserving the invariant:
 
-### Phase 3: Business Invariant & Decision Mining
-1. Extract business invariants and guard clauses:
-   - Locate conditional branches that evaluate domain state and trigger abrupt terminations, rejections, or business errors.
-2. Extract domain models and validation rules:
-   - Catalog entity definitions, field constraints, type assertions, unique constraints, and schema validations.
-3. Extract state machines and lifecycle transitions:
-   - Enumerate all entity lifecycle states, permitted transitions, triggering events, validation gates, and mutation side effects.
-4. Extract decision graphs and business algorithms:
-   - Trace complex multi-branch decision tables, pricing formulas, discount tiers, interest computations, and quota allocations.
-5. Uncover hidden business logic:
-   - Identify implicit rules residing in database triggers, default column values, framework convention hooks, dynamic reflection, or unstated side effects.
-6. Identify documentation-vs-implementation contradictions:
-   - Compare code logic against inline documentation, READMEs, OpenAPI specs, and user guides to flag architectural and behavioral drift.
-
-### Phase 4: Temporal, Concurrency & Infrastructure Discovery
-1. Discover temporal mechanics and delays:
-   - Explicit pauses and sleeps: locate thread/task pauses and record their operational rationale.
-   - Transport and socket timeouts: extract connect, read, write, and cancellation timeouts for HTTP, gRPC, and database connections.
-   - Retry policies: extract retry counts, backoff factors, decorrelated jitter, and retryable error filters.
-   - Periodic cadences: extract cron expressions, interval timers, polling frequencies, and queue worker sleep intervals.
-2. Discover concurrency and parallelism:
-   - Map thread pools, async event loop spawns, worker queue concurrency caps, mutex/lock acquisitions, and race-hazard zones.
-3. Discover database behavior:
-   - Document transaction scopes, isolation levels, row-level locks (such as select for update), migration constraints, and cascade deletes.
-4. Discover cache behavior:
-   - Identify caching patterns (cache-aside, write-through), TTL durations, cache key composition, and invalidation triggers.
-5. Discover queue and event topologies:
-   - Map exchange-to-queue bindings, partition routing keys, consumer concurrency, ack/nack semantics, and dead-letter queue routing.
-
-### Phase 5: Complete Behavioral Specification Synthesis
-1. Compile all findings into the 24-dimension Complete Behavioral Specification:
-   - Business Rules, Entry Points, Call Graph, End-to-End Flows, State Machines, Decision Graphs, Database Behavior, Cache Behavior, External Dependencies, Queue/Event Topology, Parallelism, Concurrency, Retries, Timeouts, Polling, Delays, Critical Paths, Error/Recovery Flows, Configuration Behavior, Feature Flags, Hidden Business Logic, Documentation Contradictions, Evidence Index, and Unknown/Unverified Behavior.
-2. Tag every finding with file provenance (`path#symbol`), line references, and a confidence rating (`verified_code`, `inferred_convention`, `unverified_gap`).
-
-### Verification Gate
-- Run this domain's own check against the real artefact before claiming success — the project's test/build/lint command, a schema or spec validator, a render or screenshot/diff inspection, or a dry run — whichever the project actually provides. Report the exact command and its result.
-- Written, drafted, generated or merely executed is NOT verified; only the check passing is. If no such check exists or none can be run, say so plainly and deliver the claim as unverified.
-- On failure: stop, keep the diagnostic output, name the actual failure, and retry only after something changed.
-- Never report a result the check did not produce.
+**Do not make a behavioral claim before resolving the evidence required to establish that claim.**
 
 ---
 
-## 4. Input / Output Contracts
+# 5. Autonomous Execution Workflow
 
-### Input Contract
+## Phase 0 — Project Discovery
+
+Automatically determine:
+
+- Repository structure
+- Languages
+- Frameworks
+- Runtime targets
+- Build systems
+- Dependency managers
+- Databases
+- Caches
+- Message brokers
+- External services
+- Test systems
+- Deployment systems
+- Configuration mechanisms
+
+Determine which evidence modalities actually exist.
+
+Do not assume a modality exists.
+
+### Completion condition
+
+The agent can identify:
+
+- What the project is.
+- How it runs.
+- Where configuration comes from.
+- Where major runtime boundaries exist.
+- Which evidence sources are available.
+
+---
+
+## Phase 1 — Configuration, Environment & Storage Grounding
+
+Resolve:
+
+- Environment variables
+- Configuration files
+- Feature flags
+- Runtime profiles
+- Deployment overrides
+- Database schemas
+- Migrations
+- Constraints
+- Triggers
+- Indexes
+- Transactions
+- Storage relationships
+
+Determine which configuration is active or potentially active.
+
+Do not treat inactive/default configuration as active runtime behavior without evidence.
+
+### Completion condition
+
+The agent has enough configuration and storage context to correctly interpret downstream code.
+
+---
+
+## Phase 2 — Ingress & Boundary Discovery
+
+Automatically discover:
+
+- HTTP routes
+- REST APIs
+- GraphQL
+- gRPC
+- WebSockets
+- CLI commands
+- Scheduled jobs
+- Cron jobs
+- Background workers
+- Queue consumers
+- Event subscribers
+- Webhooks
+- Internal service entry points
+
+For each entry point identify:
+
+- Identifier
+- Handler
+- Authentication/authorization
+- Input contract
+- Configuration dependencies
+- Downstream boundary
+
+### Completion condition
+
+All discoverable runtime roots have been mapped or explicitly marked as unresolved.
+
+---
+
+## Phase 3 — Flow & Execution Reconstruction
+
+For each relevant ingress/root:
+
+1. Trace middleware/interceptors.
+2. Trace service calls.
+3. Trace domain operations.
+4. Trace storage.
+5. Trace cache operations.
+6. Trace external calls.
+7. Trace events/messages.
+8. Trace state mutations.
+9. Trace error branches.
+10. Trace recovery/compensation paths.
+
+Construct complete causative chains.
+
+Do not produce disconnected lists of functions when a flow can be reconstructed.
+
+Represent both:
+
+- synchronous paths
+- asynchronous/event-driven paths
+
+### Completion condition
+
+Every major entry point has a reconstructed execution path or an explicit unresolved boundary.
+
+---
+
+## Phase 4 — Domain Logic Extraction
+
+Extract:
+
+- Business rules
+- Guard clauses
+- Validation
+- Domain entities
+- State machines
+- State transitions
+- Decision graphs
+- Algorithms
+- Calculations
+- Permissions
+- Eligibility
+- Quotas
+- Risk controls
+- Hidden business logic
+
+For each rule identify:
+
+- Trigger
+- Preconditions
+- Predicate
+- Outcome
+- Side effects
+- State mutation
+- Failure behavior
+- Provenance
+- Confidence
+
+Do not infer business intent solely from variable names.
+
+Use executable behavior as evidence.
+
+---
+
+## Phase 5 — Temporal, Concurrency & Infrastructure Extraction
+
+Extract:
+
+### Delays
+
+- `sleep`
+- Task delays
+- Thread pauses
+- Scheduled waits
+- Debounce
+- Throttle
+- Delayed execution
+
+### Timeouts
+
+- Connect timeout
+- Read timeout
+- Write timeout
+- Request timeout
+- Database timeout
+- RPC deadline
+- Cancellation timeout
+- Queue visibility timeout
+
+### Polling
+
+- Polling interval
+- Maximum polling duration
+- Polling termination condition
+
+### Retries
+
+- Max attempts
+- Retryable errors
+- Backoff
+- Jitter
+- Retry delay
+- Retry termination condition
+
+### Scheduling
+
+- Cron
+- Periodic tasks
+- Worker intervals
+- Time-window logic
+- Timezone conversion
+- Market/business hours
+
+### Concurrency
+
+- Worker pools
+- Thread pools
+- Async gather
+- Task spawning
+- Queue concurrency
+- Locks
+- Mutexes
+- Atomic operations
+- Race hazards
+
+### Infrastructure
+
+- Database transactions
+- Isolation
+- Locks
+- Cache
+- TTL
+- Invalidation
+- Queues
+- Events
+- Dead-letter handling
+- External service dependencies
+
+---
+
+# 6. Temporal Classification Rules
+
+Do not collapse all time-related behavior into `delays`.
+
+Use this classification:
+
+| Behavior | Dimension |
+|---|---|
+| `sleep(5)` | `temporal_delays_and_timeouts` |
+| HTTP read timeout | `temporal_delays_and_timeouts` |
+| Retry after failure | `retries_and_backoffs` |
+| Exponential retry | `retries_and_backoffs` |
+| Poll every 2 seconds | `temporal_delays_and_timeouts` |
+| Cron `*/5 * * * *` | `temporal_delays_and_timeouts` |
+| Worker concurrency | `parallelism_and_concurrency` |
+| Queue visibility timeout | `temporal_delays_and_timeouts` |
+| Rate-limit window | `temporal_delays_and_timeouts` |
+| Database lock wait | `database_behavior` and, where applicable, `temporal_delays_and_timeouts` |
+| External service latency | `critical_paths` when measured |
+| Target SLA | `critical_paths.latency_target` |
+
+A single behavior may legitimately appear in multiple dimensions when the relationships are meaningful.
+
+Do not duplicate the same finding merely to fill fields.
+
+Use references between dimensions where needed.
+
+---
+
+# 7. Automatic 24-Dimension Synthesis
+
+The agent MUST automatically synthesize the final behavioral specification.
+
+The 24 dimensions are:
+
+1. Business Rules
+2. Entry Points
+3. Call Graph
+4. End-to-End Flows
+5. State Machines
+6. Decision Graphs
+7. Database Behavior
+8. Cache Behavior
+9. External Dependencies
+10. Queue/Event Topology
+11. Parallelism
+12. Concurrency
+13. Retries
+14. Timeouts
+15. Polling
+16. Delays
+17. Critical Paths
+18. Error/Recovery Flows
+19. Configuration Behavior
+20. Feature Flags
+21. Hidden Business Logic
+22. Documentation Contradictions
+23. Evidence Index
+24. Unknown/Unverified Behavior
+
+The agent must not stop after extracting only the dimensions that are easy to populate.
+
+Every dimension must receive one of:
+
+- Actual findings
+- An explicit empty collection with evidence that the dimension does not apply
+- An `UNKNOWN`/unverified finding when the behavior could not be established
+
+Therefore:
+
+**"Not found" and "not analyzed" are never equivalent.**
+
+---
+
+# 8. Automatic Synthesis Algorithm
+
+The agent must perform this internally:
+
+```text
+FOR every discovered system behavior:
+
+    identify source evidence
+
+    determine affected subsystem
+
+    determine behavioral category
+
+    resolve prerequisite configuration/schema
+
+    trace upstream trigger
+
+    trace downstream effect
+
+    classify synchronous/asynchronous behavior
+
+    classify temporal behavior
+
+    classify state mutation
+
+    classify persistence/cache/event effects
+
+    classify error/recovery behavior
+
+    assign provenance
+
+    assign confidence
+
+    add finding to normalized evidence graph
+
+AFTER extraction:
+
+    reconcile duplicate findings
+
+    resolve conflicting evidence
+
+    identify missing dimensions
+
+    populate all 24 dimensions
+
+    generate behavioral_specification.json
+
+    validate JSON syntax
+
+    validate output contract
+
+    cross-check findings against project artifacts
+
+    identify unsupported claims
+
+    repair unsupported claims
+
+    revalidate
+
+    reverify
+
+    only then finalize
+```
+
+The agent must execute this process rather than merely describe it.
+
+---
+
+# 9. No Forced Script Generation
+
+Do not create a script merely because a JSON artifact is required.
+
+Choose the simplest reliable mechanism available.
+
+A script is appropriate only when it materially improves:
+
+- deterministic generation
+- schema validation
+- repeatability
+- large-scale normalization
+- evidence reconciliation
+- verification
+
+If direct structured generation is sufficient, use it.
+
+The objective is the **verified behavioral specification**, not the existence of a generator script.
+
+---
+
+# 10. Evidence Graph & Normalization
+
+Internally normalize findings into an evidence graph.
+
+Each finding should conceptually contain:
+
+```text
+Finding
+ ├── ID
+ ├── Behavior
+ ├── Source
+ ├── Symbol
+ ├── Location
+ ├── Evidence Type
+ ├── Runtime Context
+ ├── Configuration Dependency
+ ├── Upstream Trigger
+ ├── Downstream Effect
+ ├── Temporal Properties
+ ├── State Effects
+ ├── Persistence Effects
+ ├── Integration Effects
+ ├── Error Effects
+ └── Confidence
+```
+
+Use this normalized representation to populate the final 24 dimensions.
+
+This prevents the same behavior from being independently and inconsistently reinterpreted for every output section.
+
+---
+
+# 11. Confidence Model
+
+Every finding must use one of:
+
+### `verified_code`
+
+The behavior is directly established by implementation or executed project evidence.
+
+### `inferred_convention`
+
+The behavior is strongly implied by project structure/framework conventions but is not directly proven.
+
+### `unverified_gap`
+
+The available evidence is insufficient.
+
+Never upgrade confidence merely because the behavior appears likely.
+
+---
+
+# 12. Unknown / Unverified Behavior Protocol
+
+When behavior cannot be established:
+
+Do not guess.
+
+Record:
+
+- subsystem
+- unresolved question
+- available evidence
+- missing evidence
+- verification requirement
+- confidence
+
+Example:
+
+```json
+{
+  "subsystem": "WebSocket feed",
+  "unresolved_question": "Whether silence detection is enforced server-side or only client-side",
+  "verification_requirement": "Inspect runtime event handling and execute the feed silence test",
+  "confidence": "unverified_gap"
+}
+```
+
+Unknowns are valid output.
+
+Invented certainty is not.
+
+---
+
+# 13. Automatic Validation & Repair Loop
+
+The agent must not merely create the specification.
+
+After generation:
+
+```text
+GENERATE
+   ↓
+PARSE
+   ↓
+SCHEMA VALIDATE
+   ↓
+PROVENANCE CHECK
+   ↓
+PROJECT ARTIFACT CHECK
+   ↓
+CONTRADICTION CHECK
+   ↓
+UNKNOWN CHECK
+   ↓
+FAILURE?
+ ┌───────┴───────┐
+ YES             NO
+ ↓                ↓
+REPAIR          COMPLETE
+ ↓
+REVALIDATE
+ ↓
+REVERIFY
+```
+
+If validation fails:
+
+1. Identify the actual failure.
+2. Modify the artifact.
+3. Re-run validation.
+4. Re-check affected evidence.
+5. Repeat until passing or until a genuine environmental blocker prevents completion.
+
+Do not stop after reporting a failure.
+
+---
+
+# 14. Verification Gate
+
+Verification is mandatory.
+
+The agent must determine the project's strongest available verification mechanism.
+
+Possible mechanisms:
+
+- Tests
+- Build
+- Type checking
+- Linting
+- Schema validation
+- Integration tests
+- CLI dry run
+- Runtime execution
+- API contract validation
+- Database migration validation
+- Snapshot/diff validation
+- Configuration validation
+
+Run the relevant check.
+
+Record:
+
+- exact command/tool
+- result
+- relevant output
+- artifact verified
+- limitations
+
+### Important
+
+"Created successfully" is not verification.
+
+"JSON parses" is not sufficient if behavioral correctness still requires project evidence.
+
+"Script executed" is not proof of behavioral correctness.
+
+A passing check is required.
+
+If no meaningful project verification mechanism exists:
+
+- perform all available static verification
+- explicitly mark runtime-dependent claims as unverified
+- never claim stronger verification than the evidence supports
+
+---
+
+# 15. Completion Gate
+
+The task is complete only when ALL of the following are true:
+
+- Project discovery completed
+- Relevant evidence modalities inspected
+- Runtime configuration resolved where available
+- Storage/schema behavior analyzed where applicable
+- Ingress boundaries mapped
+- Major execution flows reconstructed
+- Business rules extracted
+- State transitions extracted
+- Decision logic extracted
+- Temporal behavior extracted
+- Concurrency analyzed
+- Infrastructure behavior analyzed
+- All 24 dimensions synthesized
+- Provenance attached
+- Confidence attached
+- Unknown behavior explicitly recorded
+- Documentation contradictions recorded
+- Behavioral specification generated
+- JSON syntax validated
+- Output contract validated
+- Findings cross-checked against project artifacts
+- Verification executed
+- Verification result recorded
+- Any validation failures repaired or explicitly blocked by a real external constraint
+
+**Do not end the task before these conditions are evaluated.**
+
+---
+
+# 16. Completion-State Controller
+
+Internally maintain a completion state:
+
+```text
+DISCOVERY
+→ GROUNDED
+→ EXTRACTING
+→ NORMALIZING
+→ SYNTHESIZING
+→ VALIDATING
+→ VERIFYING
+→ REPAIRING
+→ VERIFIED_COMPLETE
+```
+
+The agent must not transition to `VERIFIED_COMPLETE` merely because:
+
+- a file was generated
+- a plan exists
+- extraction started
+- JSON parses
+- a script ran
+- some dimensions are populated
+
+The final state requires successful validation and the strongest available project verification.
+
+---
+
+# 17. User Communication Policy
+
+The agent should minimize progress narration.
+
+Do not repeatedly tell the user:
+
+- what phase you are about to start
+- what you intend to do next
+- that you are "now focusing"
+- that you "will generate"
+- that you "will validate"
+- that you "need to continue"
+
+Execute instead.
+
+Only surface:
+
+### A. Final result
+
+When work is complete.
+
+### B. Genuine blocker
+
+When external intervention is actually required, such as:
+
+- missing project access
+- unavailable credentials
+- permission denial
+- unavailable runtime dependency
+- destructive action requiring authorization
+- inaccessible external system
+
+### C. Material verification limitation
+
+When the project cannot provide the evidence needed for a stronger claim.
+
+Do not convert ordinary implementation work into a user-facing blocker.
+
+---
+
+# 18. Input / Output Contracts
+
+## Input Contract
+
 ```json
 {
   "project_root": "path/to/target/project",
   "analysis_mode": "complete_behavioral_specification",
+  "execution_mode": "autonomous_end_to_end",
   "evidence_modalities": [
     "ast_cst_symbol_graph",
     "runtime_configuration_and_env",
@@ -159,7 +1084,12 @@
 }
 ```
 
-### Output Contract
+`evidence_modalities` is descriptive rather than mandatory. The agent must dynamically determine which modalities actually exist.
+
+---
+
+## Output Contract
+
 ```json
 {
   "summary": {
@@ -173,229 +1103,634 @@
     "configuration_flags_count": 0,
     "documentation_contradictions_count": 0
   },
+
   "behavioral_specification": {
-    "business_rules": [
-      {
-        "id": "BR-001",
-        "domain": "Domain Name",
-        "description": "Rule description",
-        "invariant_type": "guard_clause_or_validation",
-        "source": "path/to/file#symbol",
-        "condition": "Condition expression",
-        "violation_action": "Action on violation",
-        "confidence": "verified_code"
-      }
-    ],
-    "entry_points": [
-      {
-        "id": "EP-001",
-        "protocol": "HTTP / gRPC / Queue / CLI / Cron",
-        "route_or_identifier": "Ingress identifier",
-        "handler": "path/to/file#symbol",
-        "auth_scope": "Required permissions or auth middleware"
-      }
-    ],
-    "call_graph": [
-      {
-        "from_symbol": "path/to/file#caller",
-        "to_symbol": "path/to/file#callee",
-        "invocation_type": "synchronous_call / async_dispatch / event_emit"
-      }
-    ],
-    "end_to_end_flows": [
-      {
-        "flow_id": "FLOW-001",
-        "name": "Pipeline Name",
-        "entry_point_id": "EP-001",
-        "critical_path": true,
-        "steps": ["Step sequence description"],
-        "transaction_boundary": "Transaction demarcation scope"
-      }
-    ],
-    "state_machines": [
-      {
-        "entity": "Entity Name",
-        "states": ["STATE_A", "STATE_B"],
-        "transitions": [
-          {
-            "from": "STATE_A",
-            "to": "STATE_B",
-            "trigger": "Event or method call",
-            "guard_condition": "Validation check"
-          }
-        ]
-      }
-    ],
-    "decision_graphs": [
-      {
-        "decision_name": "Decision Name",
-        "input_variables": ["var1", "var2"],
-        "branches": [
-          {
-            "predicate": "Condition",
-            "outcome": "Computed result or routing path"
-          }
-        ]
-      }
-    ],
-    "database_behavior": [
-      {
-        "operation": "Query or mutation name",
-        "table": "table_name",
-        "locking": "none / row_lock_for_update / table_lock",
-        "transaction_isolation": "read_committed / repeatable_read / serializable",
-        "cascades_and_triggers": "Trigger names or cascade behaviors"
-      }
-    ],
-    "cache_behavior": [
-      {
-        "cache_tier": "Redis / In-Memory / CDN",
-        "pattern": "cache_aside / write_through",
-        "ttl_seconds": "<actual project value or UNKNOWN>",
-        "invalidation_triggers": ["Events or mutations invalidating this cache"]
-      }
-    ],
-    "external_dependencies": [
-      {
-        "service_name": "Service Name",
-        "integration_type": "REST / gRPC / Webhook / SDK",
-        "endpoint_or_host": "Configured host reference",
-        "timeout_seconds": "<actual project value or UNKNOWN>",
-        "failure_mode": "fail_fast / fallback_response / dead_letter"
-      }
-    ],
-    "queue_event_topology": [
-      {
-        "broker": "Kafka / RabbitMQ / SQS / Redis",
-        "topic_or_queue": "topic_name",
-        "direction": "producer / consumer",
-        "dead_letter_queue": "dlq_name",
-        "concurrency": "Worker concurrency setting"
-      }
-    ],
-    "parallelism_and_concurrency": [
-      {
-        "scope": "Operation scope",
-        "model": "worker_pool / async_gather / thread_pool",
-        "concurrency_limit": "Max concurrency limit or unbounded",
-        "race_hazard_safeguards": "Locks, atomic operations, or mutexes"
-      }
-    ],
-    "temporal_delays_and_timeouts": [
-      {
-        "type": "explicit_delay / transport_timeout / polling_interval / cron_schedule",
-        "source": "path/to/file#symbol",
-        "duration_or_cadence": "Duration expression or cron pattern",
-        "purpose": "Operational rationale"
-      }
-    ],
-    "retries_and_backoffs": [
-      {
-        "target_operation": "Operation name",
-        "max_attempts": "<actual project value or UNKNOWN>",
-        "backoff_policy": "exponential_with_jitter / linear / fixed",
-        "retryable_errors": ["Error classes triggering retry"]
-      }
-    ],
-    "critical_paths": [
-      {
-        "path_name": "Primary checkout pipeline",
-        "p99_latency": {
-          "value": null,
-          "source": "runtime_measurement|config|documentation|unknown"
-        },
-        "latency_target": {
-          "value": null,
-          "source": "config|documentation|contract|unknown"
-        },
-        "bottleneck_operations": ["External payment call", "Database row lock"]
-      }
-    ],
-    "error_and_recovery_flows": [
-      {
-        "error_scenario": "Scenario name",
-        "detection_point": "path/to/file#symbol",
-        "recovery_strategy": "circuit_breaker / compensation_transaction / fallback",
-        "user_facing_outcome": "Sanitized error message or fallback value"
-      }
-    ],
-    "configuration_behavior": [
-      {
-        "config_key": "CONFIG_KEY_NAME",
-        "source": "env / file / remote_store",
-        "default_value": "Default value",
-        "behavioral_impact": "Impact on system behavior when toggled"
-      }
-    ],
-    "feature_flags": [
-      {
-        "flag_name": "feature_flag_name",
-        "evaluation_location": "path/to/file#symbol",
-        "active_branches": ["Enabled branch logic", "Disabled branch logic"]
-      }
-    ],
-    "hidden_business_logic": [
-      {
-        "location": "Database trigger / default value / middleware convention",
-        "implicit_rule": "Implicit behavior not documented in application code",
-        "risk_level": "high / medium / low"
-      }
-    ],
-    "documentation_contradictions": [
-      {
-        "documented_claim": "Claim in documentation or comments",
-        "actual_implementation": "Actual code behavior",
-        "discrepancy_impact": "Impact of behavioral drift"
-      }
-    ],
-    "evidence_index": [
-      {
-        "finding_id": "BR-001",
-        "evidence_type": "ast_node / config_file / sql_migration / test_case",
-        "provenance": "path/to/file#symbol:line",
-        "confidence": "verified_code"
-      }
-    ],
-    "unknown_unverified_behavior": [
-      {
-        "subsystem": "Subsystem name",
-        "unresolved_question": "Unknown behavior due to missing dynamic evidence",
-        "verification_requirement": "How to verify in running environment"
-      }
-    ]
+    "business_rules": [],
+    "entry_points": [],
+    "call_graph": [],
+    "end_to_end_flows": [],
+    "state_machines": [],
+    "decision_graphs": [],
+    "database_behavior": [],
+    "cache_behavior": [],
+    "external_dependencies": [],
+    "queue_event_topology": [],
+    "parallelism_and_concurrency": [],
+    "temporal_delays_and_timeouts": [],
+    "retries_and_backoffs": [],
+    "critical_paths": [],
+    "error_and_recovery_flows": [],
+    "configuration_behavior": [],
+    "feature_flags": [],
+    "hidden_business_logic": [],
+    "documentation_contradictions": [],
+    "evidence_index": [],
+    "unknown_unverified_behavior": []
+  },
+
+  "verification": {
+    "schema_validation": {
+      "status": "passed|failed|not_available"
+    },
+    "project_verification": {
+      "status": "passed|failed|not_available|partial",
+      "command": "actual command or UNKNOWN",
+      "result": "actual result"
+    },
+    "completion_status": "verified_complete|partially_verified|blocked"
   }
 }
 ```
 
 ---
 
-## 5. Anti-Patterns & Critical Traps
-- ❌ **Inverted Precedence / Documentation Credulity**: Believing README documentation, code comments, or architectural diagrams over real code execution and active configuration. Static documentation must never override verified implementation; discrepancies must be classified as documentation drift.
-- ❌ **Unordered Extraction**: Attempting to extract business logic or call graphs before resolving active environment configuration flags and database storage schemas, leading to analyzing dead branches or hallucinating unconfigured behaviors.
-- ❌ **AST-Only Monoculture**: Relying solely on AST parsing while ignoring configuration files, database triggers, message brokers, dependency injection bindings, and dynamic environment flags where critical business behavior actually lives.
-- ❌ **Hardcoded Code Examples in Prompt**: Including synthetic or language-specific code snippets in the skill prompt. Directives must remain purely conceptual, analytical, and instruction-driven.
-- ❌ **Static Rosters & Keyword Dictionaries**: Relying on static lists of function names, frameworks, or libraries instead of semantic AST node introspection and type-directed discovery.
-- ❌ **Ignoring Implicit & Cascading Delays**: Overlooking connection pool checkout timeouts, socket keepalive delays, gRPC channel deadlines, or queue visibility timeouts.
-- ❌ **Disconnected Flow Spaghetti**: Generating disjointed lists of functions without tracing the complete causative sequence connecting ingress, domain logic, external I/O, delays, and state mutations.
-- ❌ **Unverified Assertions**: Reporting inferred conventions as verified ground truth without corroboration from codebase evidence or configuration manifests.
+# 19. Detailed Output Semantics
+
+## `business_rules`
+
+Each finding should contain:
+
+```json
+{
+  "id": "BR-001",
+  "domain": "actual domain",
+  "description": "actual rule",
+  "invariant_type": "guard_clause_or_validation",
+  "source": "path/to/file#symbol",
+  "condition": "actual condition",
+  "violation_action": "actual behavior",
+  "confidence": "verified_code"
+}
+```
 
 ---
 
-## 6. Real-World Production Example
+## `entry_points`
 
-**Objective**: Perform complete behavioral extraction across an enterprise multi-service repository to synthesize the 24-dimension Complete Behavioral Specification.
+```json
+{
+  "id": "EP-001",
+  "protocol": "actual protocol",
+  "route_or_identifier": "actual identifier",
+  "handler": "path/to/file#symbol",
+  "auth_scope": "actual auth requirement or UNKNOWN"
+}
+```
 
-**Step 1: Multi-Modal Ingress & Configuration Discovery**
-Inspect project manifests, environment files, container definitions, and feature flag configs. Catalog all ingress API endpoints, queue listeners, and cron schedulers alongside active environment variables and feature flags.
+---
 
-**Step 2: Flow & Call-Graph Reconstruction**
-Walk downstream from each ingress point through middleware, service layers, and storage boundaries. Demarcate database transaction scopes, cache operations, and external network dependencies. Trace error handling branches and circuit breaker recovery fallbacks.
+## `call_graph`
 
-**Step 3: Domain Invariants, Decisions & State Machines**
-Mine conditional branching nodes to extract business invariants and guard clauses. Extract domain entities, validation constraints, and decision tables. Trace state mutation triggers to reconstruct complete entity state machine lifecycles.
+```json
+{
+  "from_symbol": "path/to/file#caller",
+  "to_symbol": "path/to/file#callee",
+  "invocation_type": "synchronous_call|async_dispatch|event_emit"
+}
+```
 
-**Step 4: Temporal Mechanics, Concurrency & Infrastructure Audit**
-Catalog explicit thread pauses, client/socket timeouts, database statement limits, retry backoff algorithms with jitter, and cron intervals. Map worker concurrency limits, database transaction isolation levels, cache invalidation hooks, and message queue topic topologies.
+---
 
-**Step 5: Complete Behavioral Specification Synthesis**
-Compile all 24 behavioral dimensions into the structured JSON specification. Index every finding with exact file#symbol provenance and confidence ratings. Flag any discrepancies between existing documentation and actual code implementation.
+## `end_to_end_flows`
+
+```json
+{
+  "flow_id": "FLOW-001",
+  "name": "actual flow",
+  "entry_point_id": "EP-001",
+  "critical_path": true,
+  "steps": [
+    "actual step sequence"
+  ],
+  "transaction_boundary": "actual boundary or UNKNOWN"
+}
+```
+
+---
+
+## `state_machines`
+
+```json
+{
+  "entity": "actual entity",
+  "states": [
+    "STATE_A",
+    "STATE_B"
+  ],
+  "transitions": [
+    {
+      "from": "STATE_A",
+      "to": "STATE_B",
+      "trigger": "actual trigger",
+      "guard_condition": "actual condition or UNKNOWN"
+    }
+  ]
+}
+```
+
+---
+
+## `decision_graphs`
+
+```json
+{
+  "decision_name": "actual decision",
+  "input_variables": [
+    "actual variables"
+  ],
+  "branches": [
+    {
+      "predicate": "actual predicate",
+      "outcome": "actual outcome"
+    }
+  ]
+}
+```
+
+---
+
+## `database_behavior`
+
+Capture:
+
+- Query/mutation
+- Table/entity
+- Transaction scope
+- Locking
+- Isolation
+- Constraints
+- Triggers
+- Cascades
+
+```json
+{
+  "operation": "actual operation",
+  "table": "actual table",
+  "locking": "actual locking or none",
+  "transaction_isolation": "actual isolation or UNKNOWN",
+  "cascades_and_triggers": "actual behavior or UNKNOWN"
+}
+```
+
+---
+
+## `cache_behavior`
+
+```json
+{
+  "cache_tier": "actual cache",
+  "pattern": "actual pattern",
+  "ttl_seconds": "<actual project value or UNKNOWN>",
+  "invalidation_triggers": [
+    "actual triggers"
+  ]
+}
+```
+
+---
+
+## `external_dependencies`
+
+```json
+{
+  "service_name": "actual service",
+  "integration_type": "REST|gRPC|Webhook|SDK|other",
+  "endpoint_or_host": "configured reference",
+  "timeout_seconds": "<actual project value or UNKNOWN>",
+  "failure_mode": "actual behavior"
+}
+```
+
+---
+
+## `queue_event_topology`
+
+```json
+{
+  "broker": "actual broker",
+  "topic_or_queue": "actual topic",
+  "direction": "producer|consumer",
+  "dead_letter_queue": "actual DLQ or UNKNOWN",
+  "concurrency": "actual setting or UNKNOWN"
+}
+```
+
+---
+
+## `parallelism_and_concurrency`
+
+```json
+{
+  "scope": "actual operation",
+  "model": "actual concurrency model",
+  "concurrency_limit": "actual value or UNKNOWN",
+  "race_hazard_safeguards": "actual safeguards"
+}
+```
+
+---
+
+## `temporal_delays_and_timeouts`
+
+```json
+{
+  "type": "explicit_delay|transport_timeout|polling_interval|cron_schedule",
+  "source": "path/to/file#symbol",
+  "duration_or_cadence": "actual value/expression",
+  "purpose": "actual operational or behavioral purpose"
+}
+```
+
+---
+
+## `retries_and_backoffs`
+
+```json
+{
+  "target_operation": "actual operation",
+  "max_attempts": "<actual project value or UNKNOWN>",
+  "backoff_policy": "actual policy",
+  "retryable_errors": [
+    "actual errors"
+  ]
+}
+```
+
+---
+
+## `critical_paths`
+
+Separate measured performance from target expectations.
+
+```json
+{
+  "path_name": "actual path",
+  "p99_latency": {
+    "value": null,
+    "source": "runtime_measurement|unknown"
+  },
+  "latency_target": {
+    "value": null,
+    "source": "config|documentation|contract|unknown"
+  },
+  "bottleneck_operations": [
+    "actual bottleneck"
+  ]
+}
+```
+
+Never convert a latency target into a measured p99.
+
+Never invent a performance measurement.
+
+---
+
+## `error_and_recovery_flows`
+
+```json
+{
+  "error_scenario": "actual scenario",
+  "detection_point": "path/to/file#symbol",
+  "recovery_strategy": "actual strategy",
+  "user_facing_outcome": "actual outcome"
+}
+```
+
+---
+
+## `configuration_behavior`
+
+```json
+{
+  "config_key": "actual key",
+  "source": "env|file|remote_store|other",
+  "default_value": "actual value or UNKNOWN",
+  "behavioral_impact": "actual impact"
+}
+```
+
+---
+
+## `feature_flags`
+
+```json
+{
+  "flag_name": "actual flag",
+  "evaluation_location": "path/to/file#symbol",
+  "active_branches": [
+    "actual enabled behavior",
+    "actual disabled behavior"
+  ]
+}
+```
+
+---
+
+## `hidden_business_logic`
+
+```json
+{
+  "location": "actual location",
+  "implicit_rule": "actual implicit behavior",
+  "risk_level": "high|medium|low"
+}
+```
+
+---
+
+## `documentation_contradictions`
+
+```json
+{
+  "documented_claim": "actual documented claim",
+  "actual_implementation": "actual implementation",
+  "discrepancy_impact": "actual impact"
+}
+```
+
+---
+
+## `evidence_index`
+
+Every major finding should be traceable.
+
+```json
+{
+  "finding_id": "BR-001",
+  "evidence_type": "actual evidence type",
+  "provenance": "path/to/file#symbol:line",
+  "confidence": "verified_code"
+}
+```
+
+---
+
+## `unknown_unverified_behavior`
+
+```json
+{
+  "subsystem": "actual subsystem",
+  "unresolved_question": "actual unresolved question",
+  "verification_requirement": "actual verification requirement"
+}
+```
+
+---
+
+# 20. Cross-Dimension Consistency Checks
+
+Before finalization, automatically check:
+
+### Business Rules ↔ State Machines
+
+Every state-dependent rule should correspond to a state or transition where applicable.
+
+### Entry Points ↔ Call Graph
+
+Every major entry point should have downstream behavior or an explicit unresolved boundary.
+
+### Call Graph ↔ End-to-End Flows
+
+Flows should be reconstructable from the discovered call relationships.
+
+### External Dependencies ↔ Timeouts
+
+External calls with configured deadlines should be reflected in temporal behavior.
+
+### Retries ↔ Errors
+
+Retryable errors should correspond to actual error/recovery paths.
+
+### Queues ↔ Concurrency
+
+Consumer concurrency should agree with worker configuration where evidence exists.
+
+### Cache ↔ Database
+
+Cache invalidation should correspond to actual state mutations where applicable.
+
+### Configuration ↔ Feature Flags
+
+Configuration-controlled branches should not be represented as universally active.
+
+### Critical Paths ↔ Measurements
+
+Measured latency must have measurement evidence.
+
+### Documentation ↔ Implementation
+
+Conflicts must appear in `documentation_contradictions`.
+
+### Evidence ↔ Findings
+
+Every verified finding must have provenance.
+
+---
+
+# 21. Anti-Patterns & Critical Traps
+
+### Planning Instead of Executing
+
+Generating a plan and ending before performing the analysis.
+
+### Status Narration Instead of Progress
+
+Repeatedly describing what will happen instead of doing it.
+
+### Manual Phase Dependency
+
+Stopping and waiting for the user to say "continue."
+
+### Premature Phase 5 Completion
+
+Generating only a partial behavioral specification.
+
+### Script-First Thinking
+
+Assuming a generator script is required before understanding the project.
+
+### Schema-Only Thinking
+
+Producing structurally valid JSON without verifying behavioral correctness.
+
+### AST-Only Monoculture
+
+Ignoring configuration, runtime evidence, storage, queues, DI, and integrations.
+
+### Documentation Credulity
+
+Treating documentation as stronger than actual implementation.
+
+### Unordered Extraction
+
+Analyzing code before resolving the configuration/schema context required to interpret it.
+
+### Static Rosters
+
+Using hardcoded function-name or framework-name lists instead of semantic discovery.
+
+### Ignoring Implicit Delays
+
+Missing connection-pool waits, queue visibility, socket deadlines, polling, scheduling, or rate-limit windows.
+
+### Disconnected Flow Spaghetti
+
+Listing functions without reconstructing causal execution paths.
+
+### Duplicate Temporal Classification
+
+Putting retries, timeouts, polling, and delays into one generic category.
+
+### Invented Values
+
+Guessing timeout, retry, TTL, concurrency, latency, or configuration values.
+
+### Unverified Assertions
+
+Reporting inferred behavior as fact.
+
+### Empty-Dimension Evasion
+
+Leaving difficult dimensions empty merely because they are harder to establish.
+
+### False Verification
+
+Calling a generated artifact "verified" without a passing verification check.
+
+---
+
+# 22. Real-World Production Example
+
+For a multi-service trading platform, the agent may discover:
+
+- REST order APIs
+- WebSocket market-data feeds
+- Trading strategies
+- Order execution
+- Timeout handling
+- Retry logic
+- PnL calculations
+- Auto-stop scheduling
+- Timezone conversion
+- Database RLS
+- Cache layers
+- License heartbeats
+- Device activation
+- Trend alerts
+- Queue/event processing
+
+The agent must not stop after listing these components.
+
+It must automatically continue:
+
+```text
+DISCOVER
+   ↓
+GROUND CONFIGURATION
+   ↓
+MAP DATABASE / RLS
+   ↓
+MAP REST + WEBSOCKET ENTRY POINTS
+   ↓
+TRACE STRATEGY FLOWS
+   ↓
+TRACE ORDER EXECUTION
+   ↓
+TRACE PNL STATE
+   ↓
+TRACE AUTO-STOP SCHEDULING
+   ↓
+TRACE WEBSOCKET GAP/SILENCE DETECTION
+   ↓
+TRACE LICENSE / DEVICE FLOWS
+   ↓
+EXTRACT DELAYS / TIMEOUTS / RETRIES
+   ↓
+MAP CONCURRENCY
+   ↓
+MAP CACHE / EVENTS
+   ↓
+RECONCILE EVIDENCE
+   ↓
+SYNTHESIZE 24 DIMENSIONS
+   ↓
+VALIDATE JSON
+   ↓
+VERIFY AGAINST PROJECT
+   ↓
+REPAIR IF REQUIRED
+   ↓
+FINAL VERIFIED SPECIFICATION
+```
+
+The agent should not produce a message such as:
+
+> "Phase 5 is still in progress."
+
+Instead, it should continue executing Phase 5 automatically.
+
+If Phase 5 cannot be completed, the agent must identify the concrete evidence blocker and record it under `unknown_unverified_behavior` rather than merely announcing that Phase 5 remains incomplete.
+
+---
+
+# 23. Final Response Contract
+
+After successful completion, the final response should be concise and evidence-oriented.
+
+Return:
+
+```text
+Behavioral specification: <path>
+
+Dimensions:
+24/24 synthesized
+
+Validation:
+<command/tool>
+PASS/FAIL
+
+Verification:
+<command/tool>
+PASS/FAIL/PARTIAL
+
+Verified findings:
+<count>
+
+Unverified findings:
+<count>
+
+Documentation contradictions:
+<count>
+
+Remaining blockers:
+<none or concrete blocker>
+```
+
+Do not provide a long progress diary.
+
+Do not claim `verified_complete` unless the completion gate has actually passed.
+
+---
+
+# 24. Absolute Rules
+
+1. **The agent owns the entire workflow.**
+2. **Do not wait for the user to advance phases.**
+3. **Do not stop at planning.**
+4. **Do not stop at partial extraction.**
+5. **Do not stop after generating JSON.**
+6. **Do not stop after JSON parsing.**
+7. **Do not stop after script execution.**
+8. **Do not invent missing evidence.**
+9. **Do not silently ignore difficult dimensions.**
+10. **Do not confuse documentation with implementation.**
+11. **Do not confuse latency targets with measurements.**
+12. **Do not collapse retries, timeouts, delays, and polling into one behavior.**
+13. **Do not claim verification without an actual verification result.**
+14. **Automatically repair validation failures where possible.**
+15. **Automatically continue until the completion gate is satisfied or a genuine external blocker exists.**
+16. **The final objective is a verified Complete Behavioral Specification, not a description of how to create one.**
+
+---
+
+**Provider:** `https://kbcode.dev/`
